@@ -323,17 +323,31 @@ function FAQItem({ faq, isOpen, onToggle }) {
 /* ─── Page ─── */
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState(null)
-  const [formData, setFormData] = useState({ fullName: '', email: '', company: '', phone: '', service: '', stage: '', budget: '', message: '' })
+  const [formData, setFormData] = useState({
+    fullName: '',
+    email: '',
+    company: '',
+    phone: '',
+    service: '',
+    stage: '',
+    budget: '',
+    message: '',
+  })
   const [agreed, setAgreed] = useState(false)
   const [status, setStatus] = useState('idle')
 
-  const handleChange = (e) => setFormData(prev => ({ ...prev, [e.target.name]: e.target.value }))
+  const handleChange = (e) =>
+    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     if (!agreed) return
     setStatus('loading')
-    const res = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ ...formData, agreed }) })
+    const res = await fetch('/api/contact', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ ...formData, agreed }),
+    })
     setStatus(res.ok ? 'success' : 'error')
   }
 
@@ -646,8 +660,12 @@ export default function ContactPage() {
 
                 {status === 'success' ? (
                   <div className="w-full bg-green-50 border border-green-200 rounded-xl p-4 text-center">
-                    <p className="text-green-700 font-semibold text-sm">Message sent successfully!</p>
-                    <p className="text-green-600 text-xs mt-1">We&apos;ll get back to you within 1 business day.</p>
+                    <p className="text-green-700 font-semibold text-sm">
+                      Message sent successfully!
+                    </p>
+                    <p className="text-green-600 text-xs mt-1">
+                      We&apos;ll get back to you within 1 business day.
+                    </p>
                   </div>
                 ) : (
                   <>
@@ -677,7 +695,8 @@ export default function ContactPage() {
                     </button>
                     {status === 'error' && (
                       <p className="text-red-500 text-xs text-center mt-2">
-                        Something went wrong. Please try again or email us directly.
+                        Something went wrong. Please try again or email us
+                        directly.
                       </p>
                     )}
                   </>
