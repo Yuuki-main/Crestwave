@@ -48,18 +48,18 @@ const footerLinks = {
     'Website Migration',
     'Web Performance',
   ],
-  Company: ['About Us', 'Work', 'Blog', 'Careers', 'Contact'],
+  Company: ['About Us', 'Work', 'Services', 'Contact'],
 }
 
 export default function Footer() {
   return (
-    <footer className="bg-white border-t border-gray-100 pt-14 pb-8">
+    <footer className="bg-[#0A0A0A] border-t border-[#1A1A1A] pt-14 pb-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-8 mb-12">
           {/* Brand */}
           <div className="col-span-2 lg:col-span-1">
             {/* <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-full bg-blue-600 flex items-center justify-center">
+              <div className="w-8 h-8 rounded-full bg-[#000000] flex items-center justify-center">
                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
                   <path
                     d="M9 2C5.13 2 2 5.13 2 9s3.13 7 7 7 7-3.13 7-7-3.13-7-7-7zm0 3c1.1 0 2 .9 2 2s-.9 2-2 2-2-.9-2-2 .9-2 2-2zm0 8.2c-1.67 0-3.14-.85-4-2.15.02-1.33 2.67-2.05 4-2.05 1.33 0 3.98.72 4 2.05a4.8 4.8 0 01-4 2.15z"
@@ -67,17 +67,17 @@ export default function Footer() {
                   />
                 </svg>
               </div>
-              <span className="text-lg font-bold text-gray-900">Crestwave</span>
+              <span className="text-lg font-bold text-white">Crestwave</span>
             </Link> */}
             <Link href="/" className="cursor-pointer flex items-center gap-2">
               <Image
-                src="/crestwave_logo.png"
+                src="/web_logo.png"
                 alt="Crestwave"
                 width={200}
                 height={48}
                 className="h-10 w-auto"
               />
-              {/* <span className="text-lg font-bold text-gray-900">Crestwave</span> */}
+              {/* <span className="text-lg font-bold text-white">Crestwave</span> */}
             </Link>
             <div className="flex items-center gap-3 mt-6">
               {socialLinks.map((s) => (
@@ -87,7 +87,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="cursor-pointer w-8 h-8 bg-gray-100 hover:bg-blue-50 hover:text-blue-600 rounded-lg flex items-center justify-center text-gray-500 transition-colors"
+                  className="cursor-pointer w-8 h-8 bg-[#161616] hover:bg-[#1A1A1A] hover:text-[#AAFF00] rounded-lg flex items-center justify-center text-[#9CA3AF] transition-colors"
                 >
                   <svg
                     width="15"
@@ -109,7 +109,7 @@ export default function Footer() {
           {/* Links */}
           {Object.entries(footerLinks).map(([section, links]) => (
             <div key={section}>
-              <h4 className="font-semibold text-gray-900 mb-4 text-sm">
+              <h4 className="font-semibold text-white mb-4 text-sm">
                 {section}
               </h4>
               <ul className="space-y-2.5">
@@ -117,7 +117,7 @@ export default function Footer() {
                   <li key={link}>
                     <Link
                       href="#"
-                      className="cursor-pointer text-sm text-gray-500 hover:text-gray-800 transition-colors"
+                      className="cursor-pointer text-sm text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
                     >
                       {link}
                     </Link>
@@ -129,13 +129,13 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="font-semibold text-gray-900 mb-4 text-sm">
+            <h4 className="font-semibold text-white mb-4 text-sm">
               Get in touch
             </h4>
             <div className="space-y-3">
               <a
                 href="tel:+61428895741"
-                className="cursor-pointer flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors"
+                className="cursor-pointer flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
               >
                 <svg
                   width="14"
@@ -151,7 +151,7 @@ export default function Footer() {
               </a>
               <a
                 href="mailto:hello@crestwavedigital.com"
-                className="cursor-pointer flex items-center gap-2 text-sm text-gray-500 hover:text-gray-800 transition-colors"
+                className="cursor-pointer flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
               >
                 <svg
                   width="14"
@@ -166,7 +166,7 @@ export default function Footer() {
                 </svg>
                 hello@crestwavedigital.com
               </a>
-              <div className="flex items-center gap-2 text-sm text-gray-500">
+              <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
                 <svg
                   width="14"
                   height="14"
@@ -185,20 +185,20 @@ export default function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="border-t border-gray-100 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-gray-400">
+        <div className="border-t border-[#1A1A1A] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-[#555555]">
             © 2025 Crestwave Pty Ltd. All rights reserved.
           </p>
           <div className="flex gap-6">
             <Link
               href="/privacy-policy"
-              className="cursor-pointer text-xs text-gray-400 hover:text-gray-600 transition-colors"
+              className="cursor-pointer text-xs text-[#555555] hover:text-[#9CA3AF] transition-colors"
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
-              className="cursor-pointer text-xs text-gray-400 hover:text-gray-600 transition-colors"
+              className="cursor-pointer text-xs text-[#555555] hover:text-[#9CA3AF] transition-colors"
             >
               Terms of Service
             </Link>

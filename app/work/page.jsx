@@ -131,29 +131,29 @@ function WorkIllustration() {
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15 }}
-        className="absolute left-16 top-8 w-64 h-44 rounded-3xl bg-white/80 border border-blue-100 shadow-sm"
+        className="absolute left-16 top-8 w-64 h-44 rounded-3xl bg-[#111111]/80 border border-[#222222] shadow-sm"
       >
         <svg viewBox="0 0 260 180" className="w-full h-full" fill="none">
-          <rect x="26" y="24" width="208" height="132" rx="18" fill="#F8FBFF" />
-          <circle cx="47" cy="44" r="4" fill="#60A5FA" />
-          <circle cx="61" cy="44" r="4" fill="#93C5FD" />
-          <circle cx="75" cy="44" r="4" fill="#BFDBFE" />
+          <rect x="26" y="24" width="208" height="132" rx="18" fill="#111111" />
+          <circle cx="47" cy="44" r="4" fill="#444444" />
+          <circle cx="61" cy="44" r="4" fill="#555555" />
+          <circle cx="75" cy="44" r="4" fill="#333333" />
           <path
             d="M48 126C72 98 88 114 110 86C134 55 154 102 180 72C196 54 209 58 220 44"
-            stroke="#2563EB"
+            stroke="#AAFF00"
             strokeWidth="4"
             strokeLinecap="round"
           />
-          <path d="M48 137h172" stroke="#DBEAFE" strokeWidth="2" />
+          <path d="M48 137h172" stroke="#1A1A1A" strokeWidth="2" />
           <path
             d="M58 70h40"
-            stroke="#DBEAFE"
+            stroke="#1A1A1A"
             strokeWidth="8"
             strokeLinecap="round"
           />
           <path
             d="M58 88h28"
-            stroke="#E0E7FF"
+            stroke="#1A1A1A"
             strokeWidth="8"
             strokeLinecap="round"
           />
@@ -163,18 +163,18 @@ function WorkIllustration() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute left-8 top-28 w-24 h-24 bg-white rounded-3xl shadow-lg border border-blue-100 flex items-center justify-center"
+        className="absolute left-8 top-28 w-24 h-24 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center"
       >
-        <div className="relative w-14 h-14 rounded-full bg-blue-50">
-          <div className="absolute inset-2 rounded-full border-8 border-blue-200" />
-          <div className="absolute inset-2 rounded-full border-8 border-blue-600 border-r-transparent border-b-transparent" />
+        <div className="relative w-14 h-14 rounded-full bg-[#1A1A1A]">
+          <div className="absolute inset-2 rounded-full border-8 border-[#333333]" />
+          <div className="absolute inset-2 rounded-full border-8 border-[#AAFF00] border-r-transparent border-b-transparent" />
         </div>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-4 bottom-8 w-24 h-20 bg-white rounded-3xl shadow-lg border border-blue-100 flex items-center justify-center text-blue-600"
+        className="absolute right-4 bottom-8 w-24 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#AAFF00]"
       >
         <Icon name="image" className="w-10 h-10" />
       </motion.div>
@@ -186,13 +186,13 @@ function WorkIllustration() {
       >
         <path
           d="M70 135C95 72 165 45 224 68C290 94 323 42 374 70"
-          stroke="#BFDBFE"
+          stroke="#333333"
           strokeWidth="2"
           strokeDasharray="5 7"
         />
         <path
           d="M68 176C152 235 279 218 350 145"
-          stroke="#BFDBFE"
+          stroke="#333333"
           strokeWidth="2"
           strokeDasharray="5 7"
         />
@@ -205,46 +205,46 @@ function WorkIllustration() {
 
 function ProjectVisual({ project }) {
   const base =
-    'relative h-48 overflow-hidden rounded-t-3xl border-b border-gray-100'
+    'relative h-48 overflow-hidden rounded-t-3xl border-b border-[#1A1A1A]'
 
   if (project.theme === 'dark') {
     return (
-      <div className={`${base} bg-slate-950 text-white`}>
-        <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-slate-900 to-slate-800" />
+      <div className={`${base} bg-[#000000] text-white`}>
+        <div className="absolute inset-0 bg-[#000000]" />
         <div className="absolute inset-0 opacity-30">
           <svg viewBox="0 0 500 220" className="w-full h-full" fill="none">
             <path
               d="M0 160C90 80 185 190 280 110C355 48 420 70 500 30"
-              stroke="#38BDF8"
+              stroke="#AAFF00"
               strokeWidth="3"
             />
             <path
               d="M0 190C120 120 200 210 310 140C390 88 445 96 500 70"
-              stroke="#60A5FA"
+              stroke="#444444"
               strokeWidth="2"
             />
           </svg>
         </div>
         <div className="relative p-7">
-          <p className="text-xs text-blue-300 font-semibold mb-5">Crestwave</p>
+          <p className="text-xs text-[#AAFF00] font-semibold mb-5">Crestwave</p>
           <h3 className="text-2xl font-bold leading-tight max-w-xs">
             Precision Plumbing <br /> Services You Can Trust
           </h3>
           <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-blue-500 text-xs font-semibold">
+            <span className="px-4 py-2 rounded-full bg-[#AAFF00] text-xs font-semibold">
               Book Service
             </span>
-            <span className="px-4 py-2 rounded-full border border-white/20 text-xs">
+            <span className="px-4 py-2 rounded-full border border-[#333333] text-xs">
               View Services
             </span>
           </div>
         </div>
-        <div className="absolute right-7 top-10 w-28 bg-white rounded-2xl p-4 shadow-xl">
+        <div className="absolute right-7 top-10 w-28 bg-[#000000] rounded-2xl p-4 shadow-xl">
           <div className="space-y-2">
-            <div className="h-2 rounded-full bg-gray-200" />
-            <div className="h-2 rounded-full bg-gray-100" />
-            <div className="h-9 rounded-xl bg-blue-50 mt-4" />
-            <div className="h-8 rounded-xl bg-blue-500" />
+            <div className="h-2 rounded-full bg-[#222222]" />
+            <div className="h-2 rounded-full bg-[#161616]" />
+            <div className="h-9 rounded-xl bg-[#1A1A1A] mt-4" />
+            <div className="h-8 rounded-xl bg-[#AAFF00]" />
           </div>
         </div>
       </div>
@@ -253,29 +253,29 @@ function ProjectVisual({ project }) {
 
   if (project.theme === 'green') {
     return (
-      <div className={`${base} bg-[#F1FAEF]`}>
-        <div className="absolute inset-0 bg-linear-to-br from-[#F1FAEF] to-[#DFF3D9]" />
+      <div className={`${base} bg-[#0A0A0A]`}>
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A0A0A] to-[#0D0D0D]" />
         <div className="relative p-7">
           <p className="text-xs text-green-700 font-semibold mb-5">
             GreenScape
           </p>
-          <h3 className="text-2xl font-bold text-gray-900 leading-tight max-w-xs">
+          <h3 className="text-2xl font-bold text-white leading-tight max-w-xs">
             Australia&apos;s Trusted <br /> Landscape Experts
           </h3>
           <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-green-600 text-white text-xs font-semibold">
+            <span className="px-4 py-2 rounded-full bg-[#AAFF00] text-white text-xs font-semibold">
               Get Quote
             </span>
-            <span className="px-4 py-2 rounded-full bg-white text-gray-700 text-xs">
+            <span className="px-4 py-2 rounded-full bg-[#000000] text-[#E5E7EB] text-xs">
               Services
             </span>
           </div>
         </div>
-        <div className="absolute right-6 bottom-6 w-40 h-28 rounded-2xl bg-white shadow-lg border border-green-100 overflow-hidden">
-          <div className="h-16 bg-linear-to-br from-green-200 to-green-500" />
+        <div className="absolute right-6 bottom-6 w-40 h-28 rounded-2xl bg-[#000000] shadow-lg border border-green-100 overflow-hidden">
+          <div className="h-16 bg-linear-to-br from-[#AAFF00]/20 to-[#AAFF00]/40" />
           <div className="p-3 space-y-2">
             <div className="h-2 rounded-full bg-green-100" />
-            <div className="h-2 rounded-full bg-gray-100" />
+            <div className="h-2 rounded-full bg-[#161616]" />
           </div>
         </div>
       </div>
@@ -284,14 +284,14 @@ function ProjectVisual({ project }) {
 
   if (project.theme === 'warm') {
     return (
-      <div className={`${base} bg-[#F8F1E8]`}>
-        <div className="absolute inset-0 bg-linear-to-br from-[#F8F1E8] to-[#EAD7C0]" />
+      <div className={`${base} bg-[#0A0A0A]`}>
+        <div className="absolute inset-0 bg-linear-to-br from-[#0A0A0A] to-[#0D0D0D]" />
         <div className="relative p-7">
           <p className="text-xs text-stone-600 font-semibold mb-5">LivSpace</p>
-          <h3 className="text-2xl font-bold text-gray-900 leading-tight max-w-xs">
+          <h3 className="text-2xl font-bold text-white leading-tight max-w-xs">
             Quality Furniture, <br /> Designed for Life
           </h3>
-          <p className="text-xs text-gray-600 max-w-xs mt-3">
+          <p className="text-xs text-[#9CA3AF] max-w-xs mt-3">
             Discover better living with curated interiors.
           </p>
         </div>
@@ -299,7 +299,7 @@ function ProjectVisual({ project }) {
           {[1, 2, 3].map((item) => (
             <div
               key={item}
-              className="w-20 h-24 bg-white rounded-2xl shadow-md p-2"
+              className="w-20 h-24 bg-[#111111] rounded-2xl shadow-md p-2"
             >
               <div className="h-12 rounded-xl bg-stone-200 mb-2" />
               <div className="h-2 rounded-full bg-stone-200" />
@@ -313,9 +313,9 @@ function ProjectVisual({ project }) {
   if (project.theme === 'black') {
     return (
       <div className={`${base} bg-black text-white`}>
-        <div className="absolute inset-0 bg-linear-to-br from-black via-slate-950 to-slate-900" />
+        <div className="absolute inset-0 bg-[#000000]" />
         <div className="relative p-7">
-          <p className="text-xs text-blue-300 font-semibold mb-5">
+          <p className="text-xs text-[#AAFF00] font-semibold mb-5">
             Apex Fitness
           </p>
           <h3 className="text-2xl font-bold leading-tight">
@@ -332,14 +332,14 @@ function ProjectVisual({ project }) {
             ))}
           </div>
         </div>
-        <div className="absolute right-6 top-9 w-40 h-28 bg-slate-900 rounded-2xl border border-white/10 p-4">
+        <div className="absolute right-6 top-9 w-40 h-28 bg-[#0A0A0A] rounded-2xl border border-[#333333] p-4">
           <svg viewBox="0 0 140 80" className="w-full h-full" fill="none">
             <path
               d="M5 60C25 20 45 70 70 38C95 8 105 55 135 20"
-              stroke="#22C55E"
+              stroke="#AAFF00"
               strokeWidth="3"
             />
-            <path d="M5 70h130" stroke="#334155" />
+            <path d="M5 70h130" stroke="#222222" />
           </svg>
         </div>
       </div>
@@ -348,8 +348,8 @@ function ProjectVisual({ project }) {
 
   if (project.theme === 'data') {
     return (
-      <div className={`${base} bg-slate-950 text-white`}>
-        <div className="absolute inset-0 bg-linear-to-br from-slate-950 via-cyan-950 to-slate-900" />
+      <div className={`${base} bg-[#000000] text-white`}>
+        <div className="absolute inset-0 bg-[#000000]" />
         <div className="relative p-7">
           <p className="text-xs text-cyan-300 font-semibold mb-5">
             Data Driven Co.
@@ -358,7 +358,7 @@ function ProjectVisual({ project }) {
             Data That Drives <br /> Smarter Decisions
           </h3>
         </div>
-        <div className="absolute right-6 bottom-6 w-44 h-28 bg-slate-900/80 rounded-2xl border border-white/10 p-4">
+        <div className="absolute right-6 bottom-6 w-44 h-28 bg-[#0A0A0A]/80 rounded-2xl border border-[#333333] p-4">
           <div className="flex items-end gap-2 h-full">
             {[35, 52, 44, 70, 58, 86, 74].map((h, i) => (
               <div
@@ -374,23 +374,23 @@ function ProjectVisual({ project }) {
   }
 
   return (
-    <div className={`${base} bg-blue-700 text-white`}>
-      <div className="absolute inset-0 bg-linear-to-br from-blue-700 via-indigo-700 to-blue-900" />
+    <div className={`${base} bg-[#000000] text-white`}>
+      <div className="absolute inset-0 bg-[#000000]" />
       <div className="relative p-7">
-        <p className="text-xs text-blue-100 font-semibold mb-5">Crestwave</p>
+        <p className="text-xs text-[#D1D5DB] font-semibold mb-5">Crestwave</p>
         <h3 className="text-2xl font-bold leading-tight max-w-xs">
           All Your Tools. <br /> One Seamless Platform.
         </h3>
-        <p className="text-xs text-blue-100 max-w-xs mt-3">
+        <p className="text-xs text-[#D1D5DB] max-w-xs mt-3">
           Connect your systems and simplify your workflows.
         </p>
       </div>
-      <div className="absolute right-7 bottom-6 w-44 bg-white rounded-2xl p-4 shadow-xl">
+      <div className="absolute right-7 bottom-6 w-44 bg-[#000000] rounded-2xl p-4 shadow-xl">
         <div className="grid grid-cols-4 gap-2">
           {['S', 'X', 'H', 'P'].map((item) => (
             <div
               key={item}
-              className="w-8 h-8 rounded-full bg-blue-50 text-blue-600 text-xs font-bold flex items-center justify-center"
+              className="w-8 h-8 rounded-full bg-[#1A1A1A] text-[#AAFF00] text-xs font-bold flex items-center justify-center"
             >
               {item}
             </div>
@@ -405,15 +405,15 @@ function ProjectVisual({ project }) {
 
 function FilterTabs({ activeFilter, setActiveFilter }) {
   return (
-    <div className="bg-white border border-gray-200 rounded-2xl p-2 flex gap-2 overflow-x-auto">
+    <div className="bg-[#000000] border border-[#222222] rounded-2xl p-2 flex gap-2 overflow-x-auto">
       {filters.map((filter) => (
         <button
           key={filter}
           onClick={() => setActiveFilter(filter)}
           className={`shrink-0 px-5 py-2.5 rounded-xl text-sm font-semibold transition-all ${
             activeFilter === filter
-              ? 'bg-blue-50 text-blue-700 border border-blue-200'
-              : 'text-gray-500 hover:text-gray-900 hover:bg-gray-50'
+              ? 'bg-[#1A1A1A] text-[#D1D5DB] border border-[#333333]'
+              : 'text-[#9CA3AF] hover:text-white hover:bg-[#0A0A0A]'
           }`}
         >
           {filter}
@@ -430,7 +430,7 @@ function MobileFilter({ activeFilter, setActiveFilter }) {
     <div className="lg:hidden relative">
       <button
         onClick={() => setOpen(!open)}
-        className="w-full flex items-center justify-between bg-white border border-gray-200 rounded-2xl px-4 py-3 text-sm font-semibold text-blue-700"
+        className="w-full flex items-center justify-between bg-[#000000] border border-[#222222] rounded-2xl px-4 py-3 text-sm font-semibold text-[#D1D5DB]"
       >
         {activeFilter}
         <Icon
@@ -446,7 +446,7 @@ function MobileFilter({ activeFilter, setActiveFilter }) {
             animate={{ opacity: 1, y: 8 }}
             exit={{ opacity: 0, y: -8 }}
             transition={{ duration: 0.18 }}
-            className="absolute z-20 left-0 right-0 top-full bg-white border border-gray-200 rounded-2xl shadow-lg p-2"
+            className="absolute z-20 left-0 right-0 top-full bg-[#000000] border border-[#222222] rounded-2xl shadow-lg p-2"
           >
             {filters.map((filter) => (
               <button
@@ -457,8 +457,8 @@ function MobileFilter({ activeFilter, setActiveFilter }) {
                 }}
                 className={`w-full text-left px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
                   activeFilter === filter
-                    ? 'bg-blue-50 text-blue-700'
-                    : 'text-gray-600 hover:bg-gray-50'
+                    ? 'bg-[#1A1A1A] text-[#D1D5DB]'
+                    : 'text-[#9CA3AF] hover:bg-[#0A0A0A]'
                 }`}
               >
                 {filter}
@@ -479,26 +479,26 @@ function ProjectCard({ project, index }) {
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 16 }}
       transition={{ duration: 0.35, delay: index * 0.04 }}
-      className="bg-white border border-gray-200 rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-blue-200 transition-all duration-300 group"
+      className="bg-[#000000] border border-[#222222] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-[#333333] transition-all duration-300 group"
     >
       <ProjectVisual project={project} />
 
       <div className="p-6">
-        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-blue-50 text-blue-700 text-[11px] font-bold uppercase tracking-wide border border-blue-100 mb-3">
+        <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#1A1A1A] text-[#D1D5DB] text-[11px] font-bold uppercase tracking-wide border border-[#222222] mb-3">
           {project.category}
         </span>
 
-        <h3 className="text-xl font-bold text-gray-900 mb-2">
+        <h3 className="text-xl font-bold text-white mb-2">
           {project.title}
         </h3>
 
-        <p className="text-sm text-gray-600 leading-relaxed mb-5">
+        <p className="text-sm text-[#9CA3AF] leading-relaxed mb-5">
           {project.description}
         </p>
 
         <a
           href="#"
-          className="inline-flex items-center gap-2 text-sm font-bold text-blue-600 group-hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#AAFF00] group-hover:gap-3 transition-all"
         >
           View Case Study
           <Icon name="arrow" className="w-4 h-4" />
@@ -515,7 +515,7 @@ function MobileProjectCard({ project, index }) {
       initial={{ opacity: 0, y: 18 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.32, delay: index * 0.04 }}
-      className="bg-white border border-gray-200 rounded-2xl p-3 shadow-sm"
+      className="bg-[#000000] border border-[#222222] rounded-2xl p-3 shadow-sm"
     >
       <div className="grid grid-cols-[112px_1fr] gap-4">
         <div className="rounded-xl overflow-hidden h-24">
@@ -523,21 +523,21 @@ function MobileProjectCard({ project, index }) {
         </div>
 
         <div className="min-w-0">
-          <span className="inline-flex px-2 py-0.5 rounded-md bg-blue-50 text-blue-700 text-[9px] font-bold uppercase mb-1.5">
+          <span className="inline-flex px-2 py-0.5 rounded-md bg-[#1A1A1A] text-[#D1D5DB] text-[9px] font-bold uppercase mb-1.5">
             {project.category}
           </span>
 
-          <h3 className="font-bold text-gray-900 text-sm leading-tight mb-1">
+          <h3 className="font-bold text-white text-sm leading-tight mb-1">
             {project.title}
           </h3>
 
-          <p className="text-xs text-gray-600 leading-relaxed line-clamp-2 mb-2">
+          <p className="text-xs text-[#9CA3AF] leading-relaxed line-clamp-2 mb-2">
             {project.description}
           </p>
 
           <a
             href="#"
-            className="inline-flex items-center gap-1 text-xs font-bold text-blue-600"
+            className="inline-flex items-center gap-1 text-xs font-bold text-[#AAFF00]"
           >
             View Case Study
             <Icon name="arrow" className="w-3.5 h-3.5" />
@@ -559,14 +559,14 @@ export default function WorkPage() {
   }, [activeFilter])
 
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#000000]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative pt-16 overflow-hidden bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <section className="relative pt-16 overflow-hidden bg-[#000000]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-blue-200/40 blur-3xl" />
-          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-indigo-200/30 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-[#222222]/40 blur-3xl" />
+          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-[#00AAFF]/10 blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
@@ -576,7 +576,7 @@ export default function WorkPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase"
+                className="inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase"
               >
                 <Icon name="grid" className="w-3 h-3" />
                 Our Work
@@ -586,17 +586,17 @@ export default function WorkPage() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-5"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
               >
                 Digital Solutions. <br />
-                Real Business <span className="text-blue-600">Impact.</span>
+                Real Business <span className="text-[#AAFF00]">Impact.</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-gray-600 text-lg leading-relaxed max-w-xl"
+                className="text-[#9CA3AF] text-lg leading-relaxed max-w-xl"
               >
                 We partner with businesses to design, build and grow digital
                 systems that drive leads, improve performance and create
@@ -617,7 +617,7 @@ export default function WorkPage() {
       </section>
 
       {/* ── Projects ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#000000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="hidden lg:block mb-8">
             <FilterTabs
@@ -664,7 +664,7 @@ export default function WorkPage() {
             transition={{ duration: 0.45 }}
             className="mt-10 flex justify-center"
           >
-            <button className="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-blue-300 bg-white text-blue-700 font-semibold text-sm hover:bg-blue-50 hover:border-blue-400 transition-all">
+            <button className="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-[#333333] bg-[#000000] text-[#D1D5DB] font-semibold text-sm hover:bg-[#1A1A1A] hover:border-[#444444] transition-all">
               Load More Projects
               <Icon name="chevron" className="w-4 h-4" />
             </button>
@@ -673,25 +673,25 @@ export default function WorkPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-10 px-4 bg-white">
+      <section className="py-10 px-4 bg-[#000000]">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="bg-blue-50 border border-blue-100 rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+            className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 bg-white rounded-2xl border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
+              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#AAFF00] shrink-0 shadow-sm">
                 <Icon name="message" className="w-7 h-7" />
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-blue-700 mb-2">
+                <h3 className="text-2xl font-bold text-[#D1D5DB] mb-2">
                   Have a project in mind?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[#9CA3AF]">
                   Let&apos;s build something that drives real results for your
                   business.
                 </p>
@@ -700,7 +700,7 @@ export default function WorkPage() {
 
             <a
               href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200"
+              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] hover:bg-[#000000] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
             >
               Book a Consultation
               <Icon name="arrow" className="w-5 h-5" />

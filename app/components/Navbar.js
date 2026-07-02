@@ -35,7 +35,7 @@ export default function Navbar() {
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled ? 'bg-white/95 backdrop-blur-md shadow-sm' : 'bg-white'
+        scrolled ? 'bg-[#000000]/95 backdrop-blur-md shadow-sm' : 'bg-[#000000]'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,13 +43,13 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="cursor-pointer flex items-center gap-2">
             <Image
-              src="/crestwave_logo.png"
+              src="/web_logo.png"
               alt="Crestwave"
               width={200}
               height={48}
               className="h-10 w-auto"
             />
-            {/* <span className="text-lg font-bold text-gray-900">Crestwave</span> */}
+            {/* <span className="text-lg font-bold text-white">Crestwave</span> */}
           </Link>
 
           {/* Desktop Nav */}
@@ -62,8 +62,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-sm font-medium transition-colors ${
                     active
-                      ? 'text-blue-600 border-b-2 border-blue-600 pb-0.5'
-                      : 'text-gray-600 hover:text-gray-900'
+                      ? 'text-[#AAFF00] border-b-2 border-[#AAFF00] pb-0.5'
+                      : 'text-[#9CA3AF] hover:text-white'
                   }`}
                 >
                   {link.label}
@@ -79,13 +79,13 @@ export default function Navbar() {
             aria-label="Toggle menu"
           >
             <span
-              className={`block w-5 h-0.5 bg-gray-700 transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
+              className={`block w-5 h-0.5 bg-[#555555] transition-all ${mobileOpen ? 'rotate-45 translate-y-2' : ''}`}
             />
             <span
-              className={`block w-5 h-0.5 bg-gray-700 transition-all ${mobileOpen ? 'opacity-0' : ''}`}
+              className={`block w-5 h-0.5 bg-[#555555] transition-all ${mobileOpen ? 'opacity-0' : ''}`}
             />
             <span
-              className={`block w-5 h-0.5 bg-gray-700 transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
+              className={`block w-5 h-0.5 bg-[#555555] transition-all ${mobileOpen ? '-rotate-45 -translate-y-2' : ''}`}
             />
           </button>
         </div>
@@ -98,7 +98,7 @@ export default function Navbar() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-white border-t border-gray-100"
+            className="md:hidden bg-[#000000] border-t border-[#1A1A1A]"
           >
             <nav className="flex flex-col px-4 py-4 gap-4">
               {navLinks.map((link) => {
@@ -108,7 +108,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`text-sm font-medium ${active ? 'text-blue-600' : 'text-gray-700'}`}
+                    className={`text-sm font-medium ${active ? 'text-[#AAFF00]' : 'text-[#E5E7EB]'}`}
                   >
                     {link.label}
                   </Link>

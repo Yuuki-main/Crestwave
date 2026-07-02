@@ -101,31 +101,31 @@ function Icon({ name, className = 'w-5 h-5' }) {
 function TermsIllustration() {
   return (
     <div className="relative w-full max-w-sm h-72 hidden lg:flex items-center justify-center">
-      <div className="absolute inset-0 rounded-full bg-blue-50" />
+      <div className="absolute inset-0 rounded-full bg-[#1A1A1A]" />
 
       <motion.div
         initial={{ opacity: 0, y: 18 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.55, delay: 0.15 }}
-        className="relative w-40 h-52 bg-white rounded-3xl shadow-sm border border-blue-100 flex flex-col px-8 py-9"
+        className="relative w-40 h-52 bg-[#111111] rounded-3xl shadow-sm border border-[#222222] flex flex-col px-8 py-9"
       >
-        <div className="h-3 w-20 bg-blue-100 rounded-full mb-5" />
-        <div className="h-3 w-28 bg-blue-100 rounded-full mb-4" />
-        <div className="h-3 w-24 bg-blue-100 rounded-full mb-4" />
-        <div className="h-3 w-14 bg-blue-100 rounded-full" />
+        <div className="h-3 w-20 bg-[#1A1A1A] rounded-full mb-5" />
+        <div className="h-3 w-28 bg-[#1A1A1A] rounded-full mb-4" />
+        <div className="h-3 w-24 bg-[#1A1A1A] rounded-full mb-4" />
+        <div className="h-3 w-14 bg-[#1A1A1A] rounded-full" />
       </motion.div>
 
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-8 bottom-10 w-24 h-24 rounded-3xl bg-blue-100 text-blue-600 flex items-center justify-center shadow-sm"
+        className="absolute right-8 bottom-10 w-24 h-24 rounded-3xl bg-[#1A1A1A] text-[#AAFF00] flex items-center justify-center shadow-sm"
       >
         <Icon name="shield" className="w-12 h-12" />
       </motion.div>
 
       <div className="absolute left-4 top-6 grid grid-cols-5 gap-2 opacity-40">
         {Array.from({ length: 25 }).map((_, index) => (
-          <span key={index} className="w-1.5 h-1.5 rounded-full bg-blue-300" />
+          <span key={index} className="w-1.5 h-1.5 rounded-full bg-[#AAFF00]" />
         ))}
       </div>
     </div>
@@ -136,8 +136,8 @@ function TermsIllustration() {
 
 function SectionLabel({ children }) {
   return (
-    <p className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm uppercase tracking-wide mb-6">
-      <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
+    <p className="inline-flex items-center gap-2 text-[#AAFF00] font-bold text-sm uppercase tracking-wide mb-6">
+      <span className="w-2.5 h-2.5 rounded-full bg-[#AAFF00]" />
       {children}
     </p>
   )
@@ -150,15 +150,15 @@ function TermsItem({ item, index }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.4, delay: index * 0.04 }}
-      className="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10 py-9 border-b border-gray-200 last:border-b-0"
+      className="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10 py-9 border-b border-[#222222] last:border-b-0"
     >
-      <div className="w-16 h-16 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center text-xl font-bold shrink-0">
+      <div className="w-16 h-16 rounded-full bg-[#1A1A1A] text-[#AAFF00] flex items-center justify-center text-xl font-bold shrink-0">
         {item.number}
       </div>
 
       <div>
-        <h2 className="text-2xl font-bold text-gray-900 mb-4">{item.title}</h2>
-        <p className="text-gray-700 text-base leading-relaxed max-w-4xl">
+        <h2 className="text-2xl font-bold text-white mb-4">{item.title}</h2>
+        <p className="text-[#E5E7EB] text-base leading-relaxed max-w-4xl">
           {item.description}
         </p>
       </div>
@@ -170,14 +170,14 @@ function TermsItem({ item, index }) {
 
 export default function TermsAndConditionsPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#000000]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative pt-16 overflow-hidden bg-white border-b border-gray-100">
+      <section className="relative pt-16 overflow-hidden bg-[#000000] border-b border-[#1A1A1A]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-blue-100/50 blur-3xl" />
-          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full bg-indigo-100/40 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-96 h-96 rounded-full bg-[#1A1A1A]/50 blur-3xl" />
+          <div className="absolute top-1/3 -left-24 w-72 h-72 rounded-full bg-[#1A1A1A]/40 blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-20">
@@ -189,11 +189,11 @@ export default function TermsAndConditionsPage() {
             >
               <SectionLabel>Legal</SectionLabel>
 
-              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 tracking-tight leading-tight mb-7">
+              <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white tracking-tight leading-tight mb-7">
                 Terms &amp; Conditions
               </h1>
 
-              <p className="text-xl text-gray-600 leading-relaxed max-w-2xl">
+              <p className="text-xl text-[#9CA3AF] leading-relaxed max-w-2xl">
                 Please read these terms and conditions carefully before using
                 our website or services.
               </p>
@@ -211,7 +211,7 @@ export default function TermsAndConditionsPage() {
       </section>
 
       {/* ── Terms Content ── */}
-      <section className="py-14 sm:py-16 bg-white">
+      <section className="py-14 sm:py-16 bg-[#000000]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div>
             {termsSections.map((item, index) => (
@@ -224,7 +224,7 @@ export default function TermsAndConditionsPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35 }}
-            className="mt-10 text-sm text-gray-600"
+            className="mt-10 text-sm text-[#9CA3AF]"
           >
             Last updated: May 20, 2025
           </motion.p>

@@ -27,8 +27,8 @@ function ContactIllustration() {
             width="212"
             height="126"
             rx="12"
-            fill="white"
-            stroke="#DBEAFE"
+            fill="#111111"
+            stroke="#1A1A1A"
             strokeWidth="2"
           />
           <rect
@@ -40,18 +40,18 @@ function ContactIllustration() {
             fill="url(#envGrad)"
             opacity="0.4"
           />
-          <path d="M4 32L110 88L216 32" stroke="#BFDBFE" strokeWidth="2" />
+          <path d="M4 32L110 88L216 32" stroke="#333333" strokeWidth="2" />
           <circle
             cx="170"
             cy="50"
             r="24"
-            fill="#EFF6FF"
-            stroke="#DBEAFE"
+            fill="#111111"
+            stroke="#1A1A1A"
             strokeWidth="2"
           />
           <path
             d="M162 50h16M170 42v16"
-            stroke="#93C5FD"
+            stroke="#555555"
             strokeWidth="2"
             strokeLinecap="round"
           />
@@ -64,8 +64,8 @@ function ContactIllustration() {
               y2="146"
               gradientUnits="userSpaceOnUse"
             >
-              <stop stopColor="#EFF6FF" />
-              <stop offset="1" stopColor="#DBEAFE" />
+              <stop stopColor="#111111" />
+              <stop offset="1" stopColor="#1A1A1A" />
             </linearGradient>
           </defs>
         </svg>
@@ -75,14 +75,14 @@ function ContactIllustration() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-2 left-6 w-14 h-14 bg-white rounded-2xl shadow-lg border border-blue-50 flex items-center justify-center"
+        className="absolute bottom-2 left-6 w-14 h-14 bg-[#111111] rounded-2xl shadow-lg border border-[#222222] flex items-center justify-center"
       >
         <svg
           width="26"
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#3B82F6"
+          stroke="#AAFF00"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -101,7 +101,7 @@ function ContactIllustration() {
           key={i}
           animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 2.5, repeat: Infinity, delay: d.delay }}
-          className="absolute rounded-full bg-blue-300"
+          className="absolute rounded-full bg-[#AAFF00]"
           style={{
             width: d.size,
             height: d.size,
@@ -119,50 +119,50 @@ function ContactIllustration() {
 /* ─── Sydney map SVG ─── */
 function SydneyMap() {
   return (
-    <div className="relative w-full h-full min-h-64 bg-linear-to-br from-blue-50 to-indigo-100 rounded-2xl overflow-hidden">
+    <div className="relative w-full h-full min-h-64 bg-[#0A0A0A] rounded-2xl overflow-hidden">
       <svg
         viewBox="0 0 500 320"
         className="w-full h-full"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        style={{ background: '#EEF5FF' }}
+        style={{ background: '#0D0D0D' }}
       >
         {/* Water */}
-        <rect width="500" height="320" fill="#EEF5FF" />
+        <rect width="500" height="320" fill="#0D0D0D" />
         {/* Land masses */}
         <path
           d="M0 80 Q60 60 120 90 Q180 50 220 70 Q260 40 300 80 Q340 60 380 90 Q420 70 460 100 Q500 80 500 120V320H0Z"
-          fill="#DAE8FF"
+          fill="#1A1A1A"
           opacity="0.5"
         />
         <path
           d="M100 120 Q140 100 180 130 Q220 110 260 140 Q300 120 340 150 Q370 130 400 160V320H80Z"
-          fill="#C7DCF8"
+          fill="#1A1A1A"
           opacity="0.6"
         />
         {/* Roads */}
         <path
           d="M0 180 Q100 170 200 185 Q300 175 500 180"
-          stroke="#B3CAEA"
+          stroke="#2A2A2A"
           strokeWidth="3"
           strokeDasharray="8 4"
         />
         <path
           d="M220 320 Q230 250 240 200 Q250 160 260 120"
-          stroke="#B3CAEA"
+          stroke="#2A2A2A"
           strokeWidth="2.5"
           strokeDasharray="6 4"
         />
         <path
           d="M150 320 Q180 280 200 240 Q220 210 250 200"
-          stroke="#B3CAEA"
+          stroke="#2A2A2A"
           strokeWidth="2"
           strokeDasharray="5 4"
         />
         {/* Harbour bridge shape */}
         <path
           d="M180 160 Q200 140 220 160"
-          stroke="#93BFED"
+          stroke="#333333"
           strokeWidth="3"
           fill="none"
         />
@@ -181,16 +181,16 @@ function SydneyMap() {
             width={w}
             height={h}
             rx="2"
-            fill="#A8C7F0"
+            fill="#2A2A2A"
             opacity="0.8"
           />
         ))}
         {/* Pin */}
         <g transform="translate(248, 145)">
-          <circle cx="12" cy="12" r="12" fill="#3B82F6" opacity="0.15" />
+          <circle cx="12" cy="12" r="12" fill="#AAFF00" opacity="0.15" />
           <path
             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-            fill="#3B82F6"
+            fill="#AAFF00"
           />
         </g>
         {/* Label */}
@@ -199,7 +199,7 @@ function SydneyMap() {
           y="178"
           fontFamily="system-ui"
           fontSize="11"
-          fill="#5B8FC9"
+          fill="#9CA3AF"
           fontWeight="600"
         >
           Sydney CBD
@@ -210,7 +210,7 @@ function SydneyMap() {
           y="210"
           fontFamily="system-ui"
           fontSize="9"
-          fill="#7AAAD6"
+          fill="#6B7280"
         >
           Darling Harbour
         </text>
@@ -220,7 +220,7 @@ function SydneyMap() {
           y="235"
           fontFamily="system-ui"
           fontSize="9"
-          fill="#7AAAD6"
+          fill="#6B7280"
         >
           Pyrmont
         </text>
@@ -230,7 +230,7 @@ function SydneyMap() {
           y="140"
           fontFamily="system-ui"
           fontSize="8"
-          fill="#7AAAD6"
+          fill="#6B7280"
         >
           Circular Quay
         </text>
@@ -240,7 +240,7 @@ function SydneyMap() {
           y="158"
           fontFamily="system-ui"
           fontSize="8"
-          fill="#7AAAD6"
+          fill="#6B7280"
         >
           Barangaroo
         </text>
@@ -250,7 +250,7 @@ function SydneyMap() {
           y="128"
           fontFamily="system-ui"
           fontSize="8"
-          fill="#7AAAD6"
+          fill="#6B7280"
         >
           Wynyard
         </text>
@@ -281,12 +281,12 @@ const faqs = [
 
 function FAQItem({ faq, isOpen, onToggle }) {
   return (
-    <div className="border-b border-gray-200 overflow-hidden ">
+    <div className="border-b border-[#222222] overflow-hidden ">
       <button
         onClick={onToggle}
-        className="w-full flex items-center justify-between px-6 py-4 text-left bg-white hover:bg-gray-50 transition-colors cursor-pointer"
+        className="w-full flex items-center justify-between px-6 py-4 text-left bg-[#000000] hover:bg-[#0A0A0A] transition-colors cursor-pointer"
       >
-        <span className="font-semibold text-gray-900 text-sm sm:text-base">
+        <span className="font-semibold text-white text-sm sm:text-base">
           {faq.q}
         </span>
         <svg
@@ -296,7 +296,7 @@ function FAQItem({ faq, isOpen, onToggle }) {
           fill="none"
           stroke="currentColor"
           strokeWidth="2"
-          className={`text-gray-400 shrink-0 ml-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
+          className={`text-[#6B7280] shrink-0 ml-4 transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
         >
           <polyline points="6 9 12 15 18 9" />
         </svg>
@@ -310,7 +310,7 @@ function FAQItem({ faq, isOpen, onToggle }) {
             transition={{ duration: 0.22 }}
             className="overflow-hidden"
           >
-            <p className="px-6 pb-5 text-gray-600 text-sm leading-relaxed border-t border-gray-100 pt-4">
+            <p className="px-6 pb-5 text-[#9CA3AF] text-sm leading-relaxed border-t border-[#1A1A1A] pt-4">
               {faq.a}
             </p>
           </motion.div>
@@ -356,10 +356,10 @@ export default function ContactPage() {
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative pt-16 overflow-hidden bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <section className="relative pt-16 overflow-hidden bg-[#000000]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-blue-200/40 blur-3xl" />
-          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-indigo-200/30 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-[#222222]/40 blur-3xl" />
+          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-[#00AAFF]/10 blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
@@ -368,7 +368,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 text-blue-700 text-xs font-semibold px-3 py-1.5 rounded-full mb-5"
+                className="inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5"
               >
                 <svg
                   width="12"
@@ -387,7 +387,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl font-bold text-gray-900 leading-tight mb-4"
+                className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4"
               >
                 Let&apos;s Start the
                 <br />
@@ -397,7 +397,7 @@ export default function ContactPage() {
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-gray-600 text-lg leading-relaxed max-w-md"
+                className="text-[#9CA3AF] text-lg leading-relaxed max-w-md"
               >
                 Tell us what you&apos;re building, where you are in the process,
                 and what kind of support you need. We&apos;ll help you find the
@@ -417,7 +417,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Form + Cards ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#000000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[1fr_340px] xl:grid-cols-[1fr_380px] gap-8 items-start">
             {/* Form card */}
@@ -426,10 +426,10 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
-              className="bg-white border border-gray-100 rounded-3xl shadow-sm p-8"
+              className="bg-[#111111] border border-[#222222] rounded-3xl shadow-sm p-8"
             >
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
                   <svg
                     width="18"
                     height="18"
@@ -442,18 +442,18 @@ export default function ContactPage() {
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
                 </div>
-                <h2 className="text-xl font-bold text-gray-900">
+                <h2 className="text-xl font-bold text-white">
                   Send an Enquiry
                 </h2>
               </div>
-              <p className="text-sm text-gray-500 mb-7 ml-12">
+              <p className="text-sm text-[#9CA3AF] mb-7 ml-12">
                 Fill out the form below and we&apos;ll get back to you shortly.
               </p>
 
               <form className="space-y-5" onSubmit={handleSubmit}>
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Full Name
                     </label>
                     <input
@@ -462,11 +462,11 @@ export default function ContactPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Enter your full name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Work Email
                     </label>
                     <input
@@ -475,14 +475,14 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your work email"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
                     />
                   </div>
                 </div>
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Company Name
                     </label>
                     <input
@@ -491,11 +491,11 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Enter your company name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Phone Number
                     </label>
                     <input
@@ -504,13 +504,13 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Enter your phone number"
-                      className="w-full px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
                     />
                   </div>
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                     What do you need help with?
                   </label>
                   <div className="relative">
@@ -518,7 +518,7 @@ export default function ContactPage() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-500 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all pr-10"
+                      className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
                     >
                       <option value="" disabled>
                         Select an option
@@ -537,7 +537,7 @@ export default function ContactPage() {
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#9CA3AF"
+                      stroke="#555555"
                       strokeWidth="2"
                       className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                     >
@@ -548,7 +548,7 @@ export default function ContactPage() {
 
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Project stage
                     </label>
                     <div className="relative">
@@ -556,7 +556,7 @@ export default function ContactPage() {
                         name="stage"
                         value={formData.stage}
                         onChange={handleChange}
-                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-500 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all pr-10"
+                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
                       >
                         <option value="" disabled>
                           Select project stage
@@ -571,7 +571,7 @@ export default function ContactPage() {
                         height="14"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#9CA3AF"
+                        stroke="#555555"
                         strokeWidth="2"
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                       >
@@ -580,7 +580,7 @@ export default function ContactPage() {
                     </div>
                   </div>
                   <div>
-                    <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                    <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                       Budget range
                     </label>
                     <div className="relative">
@@ -588,7 +588,7 @@ export default function ContactPage() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-gray-200 text-sm text-gray-500 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all pr-10"
+                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
                       >
                         <option value="" disabled>
                           Select budget range
@@ -604,7 +604,7 @@ export default function ContactPage() {
                         height="14"
                         viewBox="0 0 24 24"
                         fill="none"
-                        stroke="#9CA3AF"
+                        stroke="#555555"
                         strokeWidth="2"
                         className="absolute right-3.5 top-1/2 -translate-y-1/2 pointer-events-none"
                       >
@@ -615,7 +615,7 @@ export default function ContactPage() {
                 </div>
 
                 <div>
-                  <label className="block text-xs font-semibold text-gray-600 mb-1.5">
+                  <label className="block text-xs font-semibold text-[#D1D5DB] mb-1.5">
                     Message
                   </label>
                   <textarea
@@ -624,14 +624,14 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Tell us about your project, goals, or any specific requirements..."
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 text-sm text-gray-900 placeholder-gray-400 bg-gray-50 focus:outline-none focus:border-blue-400 focus:ring-2 focus:ring-blue-100 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all resize-none"
                   />
                 </div>
 
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
                     onClick={() => setAgreed(!agreed)}
-                    className={`w-4 h-4 mt-0.5 rounded border shrink-0 flex items-center justify-center transition-colors ${agreed ? 'bg-blue-600 border-blue-600' : 'border-gray-300 bg-white'}`}
+                    className={`w-4 h-4 mt-0.5 rounded border shrink-0 flex items-center justify-center transition-colors ${agreed ? 'bg-[#AAFF00] border-[#AAFF00]' : 'border-[#333333] bg-[#0D0D0D]'}`}
                   >
                     {agreed && (
                       <svg
@@ -646,11 +646,11 @@ export default function ContactPage() {
                       </svg>
                     )}
                   </div>
-                  <span className="text-xs text-gray-500 leading-relaxed">
+                  <span className="text-xs text-[#9CA3AF] leading-relaxed">
                     I agree to the{' '}
                     <Link
                       href="/privacy"
-                      className="text-blue-600 underline underline-offset-2 hover:text-blue-700"
+                      className="text-[#AAFF00] underline underline-offset-2 hover:text-[#D1D5DB]"
                     >
                       Privacy Policy
                     </Link>{' '}
@@ -672,7 +672,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={!agreed || status === 'loading'}
-                      className="w-full flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 disabled:bg-gray-300 disabled:cursor-not-allowed text-white font-semibold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200 hover:-translate-y-0.5 text-sm"
+                      className="w-full flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] disabled:bg-[#333333] disabled:cursor-not-allowed text-[#000000] font-semibold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20 hover:-translate-y-0.5 text-sm"
                     >
                       {status === 'loading' ? (
                         <>Sending...</>
@@ -701,7 +701,7 @@ export default function ContactPage() {
                     )}
                   </>
                 )}
-                <p className="text-center text-xs text-gray-400 flex items-center justify-center gap-1.5">
+                <p className="text-center text-xs text-[#6B7280] flex items-center justify-center gap-1.5">
                   <svg
                     width="12"
                     height="12"
@@ -726,10 +726,10 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.05 }}
-                className="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:border-blue-200 hover:shadow-md transition-all group"
+                className="flex items-center justify-between p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm hover:border-[#333333] hover:shadow-md transition-all group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-100 transition-colors">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] group-hover:bg-[#1A1A1A] transition-colors">
                     <svg
                       width="18"
                       height="18"
@@ -743,10 +743,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">
+                    <p className="font-semibold text-white text-sm">
                       Email Us
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5">
+                    <p className="text-xs text-[#9CA3AF] mt-0.5">
                       hello@crestwavedigital.com
                     </p>
                   </div>
@@ -756,9 +756,9 @@ export default function ContactPage() {
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#9CA3AF"
+                  stroke="#555555"
                   strokeWidth="2"
-                  className="group-hover:stroke-blue-500 transition-colors"
+                  className="group-hover:stroke-[#AAFF00] transition-colors"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -771,10 +771,10 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex items-center justify-between p-5 bg-white border border-gray-100 rounded-2xl shadow-sm hover:border-blue-200 hover:shadow-md transition-all group"
+                className="flex items-center justify-between p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm hover:border-[#333333] hover:shadow-md transition-all group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 group-hover:bg-blue-100 transition-colors">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] group-hover:bg-[#1A1A1A] transition-colors">
                     <svg
                       width="18"
                       height="18"
@@ -787,10 +787,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">
+                    <p className="font-semibold text-white text-sm">
                       Call Us
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5">
+                    <p className="text-xs text-[#9CA3AF] mt-0.5">
                       +61 428 895 741
                     </p>
                   </div>
@@ -800,9 +800,9 @@ export default function ContactPage() {
                   height="16"
                   viewBox="0 0 24 24"
                   fill="none"
-                  stroke="#9CA3AF"
+                  stroke="#555555"
                   strokeWidth="2"
-                  className="group-hover:stroke-blue-500 transition-colors"
+                  className="group-hover:stroke-[#AAFF00] transition-colors"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -814,10 +814,10 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.15 }}
-                className="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm"
+                className="p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
                     <svg
                       width="18"
                       height="18"
@@ -831,17 +831,17 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">
+                    <p className="font-semibold text-white text-sm">
                       Book a Consultation
                     </p>
-                    <p className="text-xs text-gray-500 mt-0.5">
+                    <p className="text-xs text-[#9CA3AF] mt-0.5">
                       Schedule a free consultation with our team.
                     </p>
                   </div>
                 </div>
                 <a
                   href="#"
-                  className="flex items-center justify-center gap-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md"
+                  className="flex items-center justify-center gap-2 w-full bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold py-2.5 rounded-xl text-sm transition-all duration-200 hover:shadow-md"
                 >
                   <svg
                     width="14"
@@ -864,9 +864,9 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.2 }}
-                className="flex items-center gap-4 p-5 bg-white border border-gray-100 rounded-2xl shadow-sm"
+                className="flex items-center gap-4 p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
-                <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] shrink-0">
                   <svg
                     width="18"
                     height="18"
@@ -880,13 +880,13 @@ export default function ContactPage() {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-semibold text-gray-900 text-sm">
+                  <p className="font-semibold text-white text-sm">
                     Average Response Time
                   </p>
-                  <p className="text-xs text-blue-600 font-medium mt-0.5">
+                  <p className="text-xs text-[#AAFF00] font-medium mt-0.5">
                     Within 1 business day
                   </p>
-                  <p className="text-xs text-gray-500 mt-1">
+                  <p className="text-xs text-[#9CA3AF] mt-1">
                     We&apos;re quick, helpful, and easy to reach.
                   </p>
                 </div>
@@ -898,10 +898,10 @@ export default function ContactPage() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.25 }}
-                className="p-5 bg-white border border-gray-100 rounded-2xl shadow-sm"
+                className="p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 shrink-0">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] shrink-0">
                     <svg
                       width="18"
                       height="18"
@@ -917,10 +917,10 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900 text-sm">
+                    <p className="font-semibold text-white text-sm">
                       Best For
                     </p>
-                    <p className="text-xs text-gray-500">
+                    <p className="text-xs text-[#9CA3AF]">
                       We help businesses with:
                     </p>
                   </div>
@@ -935,7 +935,7 @@ export default function ContactPage() {
                   ].map((tag) => (
                     <span
                       key={tag}
-                      className="px-3 py-1.5 bg-blue-50 text-blue-700 text-xs font-medium rounded-lg border border-blue-100"
+                      className="px-3 py-1.5 bg-[#1A1A1A] text-[#D1D5DB] text-xs font-medium rounded-lg border border-[#222222]"
                     >
                       {tag}
                     </span>
@@ -948,7 +948,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── Our Office ── */}
-      <section className="py-16 bg-gray-50">
+      <section className="py-16 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <motion.div
@@ -957,7 +957,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-blue-600 font-semibold text-sm flex items-center gap-1.5 mb-3">
+              <p className="text-[#AAFF00] font-semibold text-sm flex items-center gap-1.5 mb-3">
                 <svg
                   width="14"
                   height="14"
@@ -971,15 +971,15 @@ export default function ContactPage() {
                 </svg>
                 Our Office
               </p>
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-5">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
                 Canberra, Australia
               </h2>
-              <p className="text-gray-600 mb-2">Level 1, 11–17 Swanson Court</p>
-              <p className="text-gray-600 mb-6">Belconnen, ACT 2617</p>
+              <p className="text-[#9CA3AF] mb-2">Level 1, 11–17 Swanson Court</p>
+              <p className="text-[#9CA3AF] mb-6">Belconnen, ACT 2617</p>
               <div className="space-y-3 mb-6">
                 <a
                   href="tel:1300123456"
-                  className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#AAFF00] transition-colors text-sm"
                 >
                   <svg
                     width="14"
@@ -995,7 +995,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="mailto:hello@crestwavedigital.com"
-                  className="flex items-center gap-2 text-gray-700 hover:text-blue-600 transition-colors text-sm"
+                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#AAFF00] transition-colors text-sm"
                 >
                   <svg
                     width="14"
@@ -1011,7 +1011,7 @@ export default function ContactPage() {
                   hello@crestwavedigital.com
                 </a>
               </div>
-              <p className="text-gray-500 text-sm">
+              <p className="text-[#9CA3AF] text-sm">
                 Working with clients across Australia.
               </p>
             </motion.div>
@@ -1021,7 +1021,7 @@ export default function ContactPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="h-64 sm:h-72 rounded-2xl overflow-hidden border border-blue-100 shadow-sm"
+              className="h-64 sm:h-72 rounded-2xl overflow-hidden border border-[#222222] shadow-sm"
             >
               <SydneyMap />
             </motion.div>
@@ -1030,7 +1030,7 @@ export default function ContactPage() {
       </section>
 
       {/* ── FAQ ── */}
-      <section className="py-16 bg-white">
+      <section className="py-16 bg-[#000000]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
@@ -1039,7 +1039,7 @@ export default function ContactPage() {
             transition={{ duration: 0.45 }}
             className="mb-10 flex items-center gap-3"
           >
-            <div className="w-9 h-9 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600">
+            <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
               <svg
                 width="18"
                 height="18"
@@ -1051,7 +1051,7 @@ export default function ContactPage() {
                 <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
               </svg>
             </div>
-            <h2 className="text-2xl font-bold text-gray-900">
+            <h2 className="text-2xl font-bold text-white">
               Frequently Asked Questions
             </h2>
           </motion.div>
@@ -1084,10 +1084,10 @@ export default function ContactPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="bg-blue-600 rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+            className="bg-[#000000] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="flex items-start gap-5">
-              <div className="w-11 h-11 bg-white/20 rounded-2xl flex items-center justify-center text-white shrink-0">
+              <div className="w-11 h-11 bg-[#FFFFFF]/10 rounded-2xl flex items-center justify-center text-white shrink-0">
                 <svg
                   width="22"
                   height="22"
@@ -1103,7 +1103,7 @@ export default function ContactPage() {
                 <h3 className="text-xl font-bold text-white mb-1">
                   Not sure what you need yet?
                 </h3>
-                <p className="text-blue-100 text-sm">
+                <p className="text-[#D1D5DB] text-sm">
                   Send us a short message and we&apos;ll guide you toward the
                   right option.
                 </p>
@@ -1111,7 +1111,7 @@ export default function ContactPage() {
             </div>
             <a
               href="#"
-              className="shrink-0 inline-flex items-center gap-2 bg-white text-blue-600 font-semibold px-6 py-3.5 rounded-xl hover:bg-blue-50 transition-all duration-200 hover:shadow-md"
+              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] text-[#AAFF00] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:shadow-md"
             >
               Ask a Question
               <svg

@@ -46,7 +46,7 @@ const points = [
 
 export default function StartingPoints() {
   return (
-    <section className="py-20 bg-gray-50">
+    <section className="py-20 bg-[#0A0A0A]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -55,7 +55,7 @@ export default function StartingPoints() {
           transition={{ duration: 0.5 }}
           className="mb-12"
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white">
             Choose the Right Starting Point
           </h2>
         </motion.div>
@@ -68,28 +68,28 @@ export default function StartingPoints() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.1 }}
-              className="bg-white rounded-2xl p-6 border border-gray-100 hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col"
+              className="bg-[#111111] rounded-2xl p-6 border border-[#222222] hover:shadow-md hover:-translate-y-1 transition-all duration-300 flex flex-col"
             >
-              <div className="w-11 h-11 bg-blue-50 rounded-xl flex items-center justify-center text-blue-600 mb-5">
+              <div className="w-11 h-11 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] mb-5">
                 {p.icon}
               </div>
-              <h3 className="font-bold text-gray-900 text-lg mb-4">{p.title}</h3>
+              <h3 className="font-bold text-white text-lg mb-4">{p.title}</h3>
               <div className="space-y-3 flex-1">
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Best for:</p>
-                  <p className="text-sm text-gray-700">{p.bestFor}</p>
+                  <p className="text-xs font-semibold text-[#D1D5DB] uppercase tracking-wide mb-1">Best for:</p>
+                  <p className="text-sm text-[#E5E7EB]">{p.bestFor}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Includes:</p>
-                  <p className="text-sm text-gray-700">{p.includes}</p>
+                  <p className="text-xs font-semibold text-[#D1D5DB] uppercase tracking-wide mb-1">Includes:</p>
+                  <p className="text-sm text-[#E5E7EB]">{p.includes}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Timeline:</p>
-                  <p className="text-sm text-gray-700">{p.timeline}</p>
+                  <p className="text-xs font-semibold text-[#D1D5DB] uppercase tracking-wide mb-1">Timeline:</p>
+                  <p className="text-sm text-[#E5E7EB]">{p.timeline}</p>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-gray-400 uppercase tracking-wide mb-1">Outcome:</p>
-                  <p className="text-sm text-gray-700">{p.outcome}</p>
+                  <p className="text-xs font-semibold text-[#D1D5DB] uppercase tracking-wide mb-1">Outcome:</p>
+                  <p className="text-sm text-[#E5E7EB]">{p.outcome}</p>
                 </div>
               </div>
             </motion.div>

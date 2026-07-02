@@ -152,7 +152,7 @@ function Icon({ name, className = 'w-5 h-5' }) {
 function TeamMeetingVisual() {
   return (
     <div className="relative">
-      <div className="relative h-[360px] rounded-[2rem] overflow-hidden bg-linear-to-br from-slate-100 via-blue-50 to-slate-200 border border-blue-100 shadow-sm">
+      <div className="relative h-[360px] rounded-[2rem] overflow-hidden bg-[#0A0A0A] border border-[#222222] shadow-sm">
         <svg viewBox="0 0 520 360" className="w-full h-full" fill="none">
           <rect width="520" height="360" fill="url(#meetingBg)" />
 
@@ -163,10 +163,10 @@ function TeamMeetingVisual() {
             width="120"
             height="190"
             rx="18"
-            fill="#DBEAFE"
+            fill="#1A1A1A"
             opacity="0.8"
           />
-          <path d="M410 40v190M350 105h120" stroke="#BFDBFE" strokeWidth="3" />
+          <path d="M410 40v190M350 105h120" stroke="#333333" strokeWidth="3" />
 
           {/* Screen */}
           <rect
@@ -175,17 +175,17 @@ function TeamMeetingVisual() {
             width="190"
             height="112"
             rx="18"
-            fill="#0F172A"
+            fill="#000000"
           />
-          <rect x="166" y="75" width="158" height="78" rx="12" fill="#F8FAFC" />
-          <circle cx="204" cy="114" r="18" fill="#2563EB" opacity="0.16" />
+          <rect x="166" y="75" width="158" height="78" rx="12" fill="#111111" />
+          <circle cx="204" cy="114" r="18" fill="#AAFF00" opacity="0.16" />
           <text
             x="230"
             y="119"
             fontFamily="system-ui"
             fontSize="18"
             fontWeight="700"
-            fill="#1E293B"
+            fill="#FFFFFF"
           >
             Crestwave
           </text>
@@ -196,10 +196,10 @@ function TeamMeetingVisual() {
             cy="270"
             rx="190"
             ry="58"
-            fill="#CBD5E1"
+            fill="#222222"
             opacity="0.55"
           />
-          <ellipse cx="265" cy="252" rx="170" ry="45" fill="#F8FAFC" />
+          <ellipse cx="265" cy="252" rx="170" ry="45" fill="#111111" />
 
           {/* People */}
           <g opacity="0.95">
@@ -211,35 +211,35 @@ function TeamMeetingVisual() {
               width="90"
               height="88"
               rx="28"
-              fill="#1F2937"
+              fill="#111111"
             />
           </g>
 
           <g>
             <circle cx="120" cy="230" r="20" fill="#CFA48B" />
-            <path d="M68 350c4-54 21-86 54-86s50 32 54 86" fill="#334155" />
+            <path d="M68 350c4-54 21-86 54-86s50 32 54 86" fill="#222222" />
           </g>
 
           <g>
             <circle cx="405" cy="230" r="20" fill="#D6B39B" />
-            <path d="M350 350c4-54 21-86 54-86s51 32 55 86" fill="#475569" />
+            <path d="M350 350c4-54 21-86 54-86s51 32 55 86" fill="#2A2A2A" />
           </g>
 
           <g>
             <circle cx="300" cy="230" r="17" fill="#D8B197" />
-            <path d="M260 350c3-48 18-76 45-76s42 28 45 76" fill="#64748B" />
+            <path d="M260 350c3-48 18-76 45-76s42 28 45 76" fill="#333333" />
           </g>
 
           {/* Laptops */}
-          <rect x="155" y="250" width="66" height="42" rx="8" fill="#E2E8F0" />
-          <rect x="315" y="250" width="66" height="42" rx="8" fill="#E2E8F0" />
-          <rect x="235" y="245" width="70" height="45" rx="8" fill="#E2E8F0" />
+          <rect x="155" y="250" width="66" height="42" rx="8" fill="#222222" />
+          <rect x="315" y="250" width="66" height="42" rx="8" fill="#222222" />
+          <rect x="235" y="245" width="70" height="45" rx="8" fill="#222222" />
 
           <defs>
             <linearGradient id="meetingBg" x1="0" y1="0" x2="520" y2="360">
-              <stop stopColor="#F8FAFC" />
-              <stop offset="0.5" stopColor="#EEF6FF" />
-              <stop offset="1" stopColor="#DDEBFF" />
+              <stop stopColor="#111111" />
+              <stop offset="0.5" stopColor="#0A0A0A" />
+              <stop offset="1" stopColor="#111111" />
             </linearGradient>
           </defs>
         </svg>
@@ -248,13 +248,13 @@ function TeamMeetingVisual() {
       <motion.div
         animate={{ y: [0, -7, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -right-5 top-10 bg-white border border-blue-100 rounded-3xl shadow-lg p-5 w-36"
+        className="absolute -right-5 top-10 bg-[#111111] border border-[#222222] rounded-3xl shadow-lg p-5 w-36"
       >
-        <div className="w-10 h-10 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-3">
+        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-3">
           <Icon name="users" className="w-5 h-5" />
         </div>
-        <p className="text-2xl font-bold text-gray-900">10+</p>
-        <p className="text-xs text-gray-500 leading-tight">
+        <p className="text-2xl font-bold text-white">10+</p>
+        <p className="text-xs text-[#D1D5DB] leading-tight">
           Years of Experience
         </p>
       </motion.div>
@@ -262,13 +262,13 @@ function TeamMeetingVisual() {
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute -left-5 bottom-8 bg-white border border-blue-100 rounded-3xl shadow-lg p-5 w-36"
+        className="absolute -left-5 bottom-8 bg-[#111111] border border-[#222222] rounded-3xl shadow-lg p-5 w-36"
       >
-        <div className="w-10 h-10 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 mb-3">
+        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-3">
           <Icon name="chart" className="w-5 h-5" />
         </div>
-        <p className="text-2xl font-bold text-gray-900">150+</p>
-        <p className="text-xs text-gray-500 leading-tight">
+        <p className="text-2xl font-bold text-white">150+</p>
+        <p className="text-xs text-[#D1D5DB] leading-tight">
           Projects Delivered
         </p>
       </motion.div>
@@ -278,37 +278,37 @@ function TeamMeetingVisual() {
 
 function SydneyVisual() {
   return (
-    <div className="relative h-[330px] rounded-[2rem] overflow-hidden border border-blue-100 shadow-sm bg-linear-to-br from-blue-100 to-slate-200">
+    <div className="relative h-[330px] rounded-[2rem] overflow-hidden border border-[#222222] shadow-sm bg-[#0A0A0A]">
       <svg viewBox="0 0 620 330" className="w-full h-full" fill="none">
         <rect width="620" height="330" fill="url(#sky)" />
         <path
           d="M0 225C120 200 190 230 295 205C410 178 510 210 620 188V330H0Z"
-          fill="#93C5FD"
+          fill="#555555"
           opacity="0.45"
         />
         <path
           d="M0 250C120 225 210 260 315 235C430 208 520 238 620 218V330H0Z"
-          fill="#60A5FA"
+          fill="#444444"
           opacity="0.35"
         />
 
         {/* Opera House */}
-        <path d="M115 205C138 140 175 115 212 205H115Z" fill="#F8FAFC" />
-        <path d="M165 205C194 132 238 108 270 205H165Z" fill="#E2E8F0" />
-        <path d="M218 205C250 150 290 132 320 205H218Z" fill="#F8FAFC" />
+        <path d="M115 205C138 140 175 115 212 205H115Z" fill="#111111" />
+        <path d="M165 205C194 132 238 108 270 205H165Z" fill="#222222" />
+        <path d="M218 205C250 150 290 132 320 205H218Z" fill="#111111" />
 
         {/* Bridge */}
         <path
           d="M330 198C405 90 520 92 590 198"
-          stroke="#334155"
+          stroke="#222222"
           strokeWidth="8"
         />
-        <path d="M340 198H600" stroke="#334155" strokeWidth="5" />
+        <path d="M340 198H600" stroke="#222222" strokeWidth="5" />
         {Array.from({ length: 9 }).map((_, i) => (
           <path
             key={i}
             d={`M${350 + i * 27} 198L${375 + i * 18} ${135 + Math.abs(i - 4) * 8}`}
-            stroke="#334155"
+            stroke="#222222"
             strokeWidth="2"
             opacity="0.75"
           />
@@ -316,20 +316,20 @@ function SydneyVisual() {
 
         <defs>
           <linearGradient id="sky" x1="0" y1="0" x2="620" y2="330">
-            <stop stopColor="#FDEBD3" />
-            <stop offset="0.45" stopColor="#DBEAFE" />
-            <stop offset="1" stopColor="#EFF6FF" />
+            <stop stopColor="#111111" />
+            <stop offset="0.45" stopColor="#1A1A1A" />
+            <stop offset="1" stopColor="#111111" />
           </linearGradient>
         </defs>
       </svg>
 
-      <div className="absolute left-8 bottom-8 bg-white rounded-3xl border border-blue-100 shadow-lg p-5 flex items-center gap-4">
-        <div className="w-11 h-11 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600">
+      <div className="absolute left-8 bottom-8 bg-[#111111] rounded-3xl border border-[#222222] shadow-lg p-5 flex items-center gap-4">
+        <div className="w-11 h-11 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00]">
           <Icon name="pin" className="w-5 h-5" />
         </div>
         <div>
-          <p className="text-xs text-gray-500">Proudly based in</p>
-          <p className="font-bold text-gray-900">Canberra, Australia</p>
+          <p className="text-xs text-[#9CA3AF]">Proudly based in</p>
+          <p className="font-bold text-white">Canberra, Australia</p>
         </div>
       </div>
     </div>
@@ -340,7 +340,7 @@ function SydneyVisual() {
 
 function SectionLabel({ children }) {
   return (
-    <p className="inline-flex items-center gap-2 text-blue-600 font-bold text-xs uppercase tracking-wide mb-4">
+    <p className="inline-flex items-center gap-2 text-[#AAFF00] font-bold text-xs uppercase tracking-wide mb-4">
       <Icon name="spark" className="w-3.5 h-3.5" />
       {children}
     </p>
@@ -356,12 +356,12 @@ function StatCard({ stat, index }) {
       transition={{ duration: 0.35, delay: index * 0.06 }}
       className="flex items-center gap-4"
     >
-      <div className="w-13 h-13 bg-blue-50 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
+      <div className="w-13 h-13 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] shrink-0">
         <Icon name={stat.icon} className="w-6 h-6" />
       </div>
       <div>
-        <p className="text-2xl font-bold text-gray-900">{stat.value}</p>
-        <p className="text-sm text-gray-500">{stat.label}</p>
+        <p className="text-2xl font-bold text-white">{stat.value}</p>
+        <p className="text-sm text-[#9CA3AF]">{stat.label}</p>
       </div>
     </motion.div>
   )
@@ -376,11 +376,11 @@ function ValueItem({ value, index }) {
       transition={{ duration: 0.35, delay: index * 0.06 }}
       className="text-center"
     >
-      <div className="w-16 h-16 mx-auto bg-blue-50 rounded-full flex items-center justify-center text-blue-600 mb-5">
+      <div className="w-16 h-16 mx-auto bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#AAFF00] mb-5">
         <Icon name={value.icon} className="w-7 h-7" />
       </div>
-      <h3 className="font-bold text-gray-900 mb-2">{value.title}</h3>
-      <p className="text-sm text-gray-600 leading-relaxed max-w-[170px] mx-auto">
+      <h3 className="font-bold text-white mb-2">{value.title}</h3>
+      <p className="text-sm text-[#9CA3AF] leading-relaxed max-w-[170px] mx-auto">
         {value.description}
       </p>
     </motion.div>
@@ -391,14 +391,14 @@ function ValueItem({ value, index }) {
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen bg-white">
+    <main className="min-h-screen bg-[#000000]">
       <Navbar />
 
       {/* ── Hero ── */}
-      <section className="relative pt-16 overflow-hidden bg-linear-to-br from-slate-50 via-blue-50 to-indigo-100">
+      <section className="relative pt-16 overflow-hidden bg-[#000000]">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-blue-200/40 blur-3xl" />
-          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-indigo-200/30 blur-3xl" />
+          <div className="absolute -top-32 -right-32 w-80 h-80 rounded-full bg-[#222222]/40 blur-3xl" />
+          <div className="absolute top-1/2 -left-16 w-64 h-64 rounded-full bg-[#00AAFF]/10 blur-3xl" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-16">
@@ -416,17 +416,17 @@ export default function AboutPage() {
                 initial={{ opacity: 0, y: 18 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 leading-tight mb-6"
+                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
                 We build digital solutions that drive{' '}
-                <span className="text-blue-600">real growth.</span>
+                <span className="text-[#AAFF00]">real growth.</span>
               </motion.h1>
 
               <motion.p
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-gray-600 text-lg leading-relaxed max-w-xl mb-8"
+                className="text-[#9CA3AF] text-lg leading-relaxed max-w-xl mb-8"
               >
                 Crestwave is a digital agency based in Canberra, Australia. We
                 partner with ambitious businesses to design, build and grow
@@ -441,7 +441,7 @@ export default function AboutPage() {
               >
                 <a
                   href="/work"
-                  className="inline-flex items-center justify-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
                 >
                   Our Work
                   <Icon name="arrow" className="w-4 h-4" />
@@ -449,7 +449,7 @@ export default function AboutPage() {
 
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-white border border-blue-200 text-blue-700 font-semibold px-7 py-3.5 rounded-xl hover:bg-blue-50 transition-all duration-200"
+                  className="inline-flex items-center justify-center gap-2 bg-transparent border border-[#333333] text-white font-semibold px-7 py-3.5 rounded-xl hover:border-white hover:bg-transparent transition-all duration-200"
                 >
                   <Icon name="mail" className="w-4 h-4" />
                   Get in Touch
@@ -472,9 +472,9 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="mt-16 bg-white border border-gray-100 rounded-3xl shadow-sm p-6 sm:p-8"
+            className="mt-16 bg-[#111111] border border-[#1A1A1A] rounded-3xl shadow-sm p-6 sm:p-8"
           >
-            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-gray-100">
+            <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:divide-x divide-[#1A1A1A]">
               {stats.map((stat, index) => (
                 <div key={stat.label} className="lg:pl-8 first:pl-0">
                   <StatCard stat={stat} index={index} />
@@ -486,7 +486,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Story ── */}
-      <section className="py-20 bg-white">
+      <section className="py-20 bg-[#000000]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-[0.8fr_1.2fr] gap-12 items-center">
             <motion.div
@@ -497,12 +497,12 @@ export default function AboutPage() {
             >
               <SectionLabel>Our Story</SectionLabel>
 
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-tight mb-5">
+              <h2 className="text-3xl sm:text-4xl font-bold text-white leading-tight mb-5">
                 Built on purpose. <br />
                 Driven by results.
               </h2>
 
-              <div className="space-y-5 text-gray-600 leading-relaxed mb-8">
+              <div className="space-y-5 text-[#9CA3AF] leading-relaxed mb-8">
                 <p>
                   We started Crestwave with a simple mission — to help
                   businesses succeed online through smart strategy, technical
@@ -518,7 +518,7 @@ export default function AboutPage() {
 
               <a
                 href="/contact"
-                className="inline-flex items-center gap-2 bg-white border border-blue-300 text-blue-700 font-semibold px-6 py-3.5 rounded-xl hover:bg-blue-50 transition-all"
+                className="inline-flex items-center gap-2 bg-[#000000] border border-[#333333] text-[#D1D5DB] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all"
               >
                 More About Us
                 <Icon name="arrow" className="w-4 h-4" />
@@ -538,7 +538,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Values ── */}
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-[#0A0A0A]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 18 }}
@@ -549,7 +549,7 @@ export default function AboutPage() {
           >
             <SectionLabel>Our Values</SectionLabel>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900">
+            <h2 className="text-3xl sm:text-4xl font-bold text-white">
               The principles that guide our work
             </h2>
           </motion.div>
@@ -563,25 +563,25 @@ export default function AboutPage() {
       </section>
 
       {/* ── CTA ── */}
-      <section className="py-14 bg-white px-4">
+      <section className="py-14 bg-[#000000] px-4">
         <div className="max-w-7xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.45 }}
-            className="bg-blue-50 border border-blue-100 rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+            className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 bg-white rounded-2xl border border-blue-100 flex items-center justify-center text-blue-600 shrink-0 shadow-sm">
+              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#AAFF00] shrink-0 shadow-sm">
                 <Icon name="message" className="w-7 h-7" />
               </div>
 
               <div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">
+                <h3 className="text-2xl font-bold text-white mb-2">
                   Ready to build something great together?
                 </h3>
-                <p className="text-gray-600">
+                <p className="text-[#9CA3AF]">
                   Let&apos;s create digital solutions that drive real results
                   for your business.
                 </p>
@@ -590,7 +590,7 @@ export default function AboutPage() {
 
             <a
               href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-blue-200"
+              className="shrink-0 inline-flex items-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
             >
               Book a Consultation
               <Icon name="arrow" className="w-5 h-5" />
