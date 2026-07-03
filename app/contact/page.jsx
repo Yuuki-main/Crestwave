@@ -743,11 +743,9 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-sm">
-                      Email Us
-                    </p>
+                    <p className="font-semibold text-white text-sm">Email Us</p>
                     <p className="text-xs text-[#9CA3AF] mt-0.5">
-                      hello@crestwavedigital.com
+                      info.crestwave.com.au
                     </p>
                   </div>
                 </div>
@@ -787,12 +785,8 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-sm">
-                      Call Us
-                    </p>
-                    <p className="text-xs text-[#9CA3AF] mt-0.5">
-                      +61 428 895 741
-                    </p>
+                    <p className="font-semibold text-white text-sm">Call Us</p>
+                    <p className="text-xs text-[#9CA3AF] mt-0.5">0489943211</p>
                   </div>
                 </div>
                 <svg
@@ -917,9 +911,7 @@ export default function ContactPage() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-semibold text-white text-sm">
-                      Best For
-                    </p>
+                    <p className="font-semibold text-white text-sm">Best For</p>
                     <p className="text-xs text-[#9CA3AF]">
                       We help businesses with:
                     </p>
@@ -974,7 +966,9 @@ export default function ContactPage() {
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-5">
                 Canberra, Australia
               </h2>
-              <p className="text-[#9CA3AF] mb-2">Level 1, 11–17 Swanson Court</p>
+              <p className="text-[#9CA3AF] mb-2">
+                Level 1, 11–17 Swanson Court
+              </p>
               <p className="text-[#9CA3AF] mb-6">Belconnen, ACT 2617</p>
               <div className="space-y-3 mb-6">
                 <a
