@@ -157,7 +157,7 @@ export default function Footer() {
                 0489943211
               </a>
               <a
-                href="mailto:hello@crestwavedigital.com"
+                href="mailto:info.crestwave.com.au"
                 className="cursor-pointer flex items-center gap-2 text-sm text-[#9CA3AF] hover:text-[#E5E7EB] transition-colors"
               >
                 <svg
@@ -171,7 +171,7 @@ export default function Footer() {
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
-                hello@crestwavedigital.com
+                info.crestwave.com.au
               </a>
               <div className="flex items-center gap-2 text-sm text-[#9CA3AF]">
                 <svg
