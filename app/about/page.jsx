@@ -178,7 +178,7 @@ function TeamMeetingVisual() {
             fill="#000000"
           />
           <rect x="166" y="75" width="158" height="78" rx="12" fill="#111111" />
-          <circle cx="204" cy="114" r="18" fill="#AAFF00" opacity="0.16" />
+          <circle cx="204" cy="114" r="18" fill="#00C8F8" opacity="0.16" />
           <text
             x="230"
             y="119"
@@ -250,7 +250,7 @@ function TeamMeetingVisual() {
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute -right-5 top-10 bg-[#111111] border border-[#222222] rounded-3xl shadow-lg p-5 w-36"
       >
-        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-3">
+        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8] mb-3">
           <Icon name="users" className="w-5 h-5" />
         </div>
         <p className="text-2xl font-bold text-white">10+</p>
@@ -264,7 +264,7 @@ function TeamMeetingVisual() {
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
         className="absolute -left-5 bottom-8 bg-[#111111] border border-[#222222] rounded-3xl shadow-lg p-5 w-36"
       >
-        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-3">
+        <div className="w-10 h-10 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8] mb-3">
           <Icon name="chart" className="w-5 h-5" />
         </div>
         <p className="text-2xl font-bold text-white">150+</p>
@@ -324,7 +324,7 @@ function SydneyVisual() {
       </svg>
 
       <div className="absolute left-8 bottom-8 bg-[#111111] rounded-3xl border border-[#222222] shadow-lg p-5 flex items-center gap-4">
-        <div className="w-11 h-11 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00]">
+        <div className="w-11 h-11 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8]">
           <Icon name="pin" className="w-5 h-5" />
         </div>
         <div>
@@ -340,7 +340,7 @@ function SydneyVisual() {
 
 function SectionLabel({ children }) {
   return (
-    <p className="inline-flex items-center gap-2 text-[#AAFF00] font-bold text-xs uppercase tracking-wide mb-4">
+    <p className="inline-flex items-center gap-2 text-[#00C8F8] font-bold text-xs uppercase tracking-wide mb-4">
       <Icon name="spark" className="w-3.5 h-3.5" />
       {children}
     </p>
@@ -356,7 +356,7 @@ function StatCard({ stat, index }) {
       transition={{ duration: 0.35, delay: index * 0.06 }}
       className="flex items-center gap-4"
     >
-      <div className="w-13 h-13 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] shrink-0">
+      <div className="w-13 h-13 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8] shrink-0">
         <Icon name={stat.icon} className="w-6 h-6" />
       </div>
       <div>
@@ -376,7 +376,7 @@ function ValueItem({ value, index }) {
       transition={{ duration: 0.35, delay: index * 0.06 }}
       className="text-center"
     >
-      <div className="w-16 h-16 mx-auto bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#AAFF00] mb-5">
+      <div className="w-16 h-16 mx-auto bg-[#1A1A1A] rounded-full flex items-center justify-center text-[#00C8F8] mb-5">
         <Icon name={value.icon} className="w-7 h-7" />
       </div>
       <h3 className="font-bold text-white mb-2">{value.title}</h3>
@@ -419,7 +419,7 @@ export default function AboutPage() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6"
               >
                 We build digital solutions that drive{' '}
-                <span className="text-[#AAFF00]">real growth.</span>
+                <span className="text-[#00C8F8]">real growth.</span>
               </motion.h1>
 
               <motion.p
@@ -441,7 +441,7 @@ export default function AboutPage() {
               >
                 <a
                   href="/work"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-7 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
                 >
                   Our Work
                   <Icon name="arrow" className="w-4 h-4" />
@@ -573,7 +573,7 @@ export default function AboutPage() {
             className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#AAFF00] shrink-0 shadow-sm">
+              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#00C8F8] shrink-0 shadow-sm">
                 <Icon name="message" className="w-7 h-7" />
               </div>
 
@@ -590,7 +590,7 @@ export default function AboutPage() {
 
             <a
               href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
+              className="shrink-0 inline-flex items-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
             >
               Book a Consultation
               <Icon name="arrow" className="w-5 h-5" />

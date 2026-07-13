@@ -112,7 +112,7 @@ function PrivacyIllustration() {
 
       <div className="absolute left-4 top-6 grid grid-cols-5 gap-2 opacity-40">
         {Array.from({ length: 25 }).map((_, index) => (
-          <span key={index} className="w-1.5 h-1.5 rounded-full bg-[#AAFF00]" />
+          <span key={index} className="w-1.5 h-1.5 rounded-full bg-[#00C8F8]" />
         ))}
       </div>
 
@@ -131,7 +131,7 @@ function PrivacyIllustration() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-8 bottom-10 w-24 h-24 rounded-3xl bg-[#1A1A1A] text-[#AAFF00] flex items-center justify-center shadow-sm"
+        className="absolute right-8 bottom-10 w-24 h-24 rounded-3xl bg-[#1A1A1A] text-[#00C8F8] flex items-center justify-center shadow-sm"
       >
         <Icon name="lock" className="w-12 h-12" />
       </motion.div>
@@ -143,8 +143,8 @@ function PrivacyIllustration() {
 
 function SectionLabel({ children }) {
   return (
-    <p className="inline-flex items-center gap-2 text-[#AAFF00] font-bold text-sm uppercase tracking-wide mb-6">
-      <span className="w-2.5 h-2.5 rounded-full bg-[#AAFF00]" />
+    <p className="inline-flex items-center gap-2 text-[#00C8F8] font-bold text-sm uppercase tracking-wide mb-6">
+      <span className="w-2.5 h-2.5 rounded-full bg-[#00C8F8]" />
       {children}
     </p>
   )
@@ -159,7 +159,7 @@ function PrivacyItem({ item, index }) {
       transition={{ duration: 0.4, delay: index * 0.04 }}
       className="grid md:grid-cols-[80px_1fr] gap-6 md:gap-10 py-8 border-b border-[#222222] last:border-b-0"
     >
-      <div className="w-16 h-16 rounded-full bg-[#1A1A1A] text-[#AAFF00] flex items-center justify-center text-xl font-bold shrink-0">
+      <div className="w-16 h-16 rounded-full bg-[#1A1A1A] text-[#00C8F8] flex items-center justify-center text-xl font-bold shrink-0">
         {item.number}
       </div>
 

@@ -140,7 +140,7 @@ function WorkIllustration() {
           <circle cx="75" cy="44" r="4" fill="#333333" />
           <path
             d="M48 126C72 98 88 114 110 86C134 55 154 102 180 72C196 54 209 58 220 44"
-            stroke="#AAFF00"
+            stroke="#00C8F8"
             strokeWidth="4"
             strokeLinecap="round"
           />
@@ -167,14 +167,14 @@ function WorkIllustration() {
       >
         <div className="relative w-14 h-14 rounded-full bg-[#1A1A1A]">
           <div className="absolute inset-2 rounded-full border-8 border-[#333333]" />
-          <div className="absolute inset-2 rounded-full border-8 border-[#AAFF00] border-r-transparent border-b-transparent" />
+          <div className="absolute inset-2 rounded-full border-8 border-[#00C8F8] border-r-transparent border-b-transparent" />
         </div>
       </motion.div>
 
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-4 bottom-8 w-24 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#AAFF00]"
+        className="absolute right-4 bottom-8 w-24 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
       >
         <Icon name="image" className="w-10 h-10" />
       </motion.div>
@@ -215,7 +215,7 @@ function ProjectVisual({ project }) {
           <svg viewBox="0 0 500 220" className="w-full h-full" fill="none">
             <path
               d="M0 160C90 80 185 190 280 110C355 48 420 70 500 30"
-              stroke="#AAFF00"
+              stroke="#00C8F8"
               strokeWidth="3"
             />
             <path
@@ -226,12 +226,12 @@ function ProjectVisual({ project }) {
           </svg>
         </div>
         <div className="relative p-7">
-          <p className="text-xs text-[#AAFF00] font-semibold mb-5">Crestwave</p>
+          <p className="text-xs text-[#00C8F8] font-semibold mb-5">Crestwave</p>
           <h3 className="text-2xl font-bold leading-tight max-w-xs">
             Precision Plumbing <br /> Services You Can Trust
           </h3>
           <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-[#AAFF00] text-xs font-semibold">
+            <span className="px-4 py-2 rounded-full bg-[#00C8F8] text-xs font-semibold">
               Book Service
             </span>
             <span className="px-4 py-2 rounded-full border border-[#333333] text-xs">
@@ -244,7 +244,7 @@ function ProjectVisual({ project }) {
             <div className="h-2 rounded-full bg-[#222222]" />
             <div className="h-2 rounded-full bg-[#161616]" />
             <div className="h-9 rounded-xl bg-[#1A1A1A] mt-4" />
-            <div className="h-8 rounded-xl bg-[#AAFF00]" />
+            <div className="h-8 rounded-xl bg-[#00C8F8]" />
           </div>
         </div>
       </div>
@@ -263,7 +263,7 @@ function ProjectVisual({ project }) {
             Australia&apos;s Trusted <br /> Landscape Experts
           </h3>
           <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-[#AAFF00] text-white text-xs font-semibold">
+            <span className="px-4 py-2 rounded-full bg-[#00C8F8] text-white text-xs font-semibold">
               Get Quote
             </span>
             <span className="px-4 py-2 rounded-full bg-[#000000] text-[#E5E7EB] text-xs">
@@ -272,7 +272,7 @@ function ProjectVisual({ project }) {
           </div>
         </div>
         <div className="absolute right-6 bottom-6 w-40 h-28 rounded-2xl bg-[#000000] shadow-lg border border-green-100 overflow-hidden">
-          <div className="h-16 bg-linear-to-br from-[#AAFF00]/20 to-[#AAFF00]/40" />
+          <div className="h-16 bg-linear-to-br from-[#00C8F8]/20 to-[#00C8F8]/40" />
           <div className="p-3 space-y-2">
             <div className="h-2 rounded-full bg-green-100" />
             <div className="h-2 rounded-full bg-[#161616]" />
@@ -315,7 +315,7 @@ function ProjectVisual({ project }) {
       <div className={`${base} bg-black text-white`}>
         <div className="absolute inset-0 bg-[#000000]" />
         <div className="relative p-7">
-          <p className="text-xs text-[#AAFF00] font-semibold mb-5">
+          <p className="text-xs text-[#00C8F8] font-semibold mb-5">
             Apex Fitness
           </p>
           <h3 className="text-2xl font-bold leading-tight">
@@ -336,7 +336,7 @@ function ProjectVisual({ project }) {
           <svg viewBox="0 0 140 80" className="w-full h-full" fill="none">
             <path
               d="M5 60C25 20 45 70 70 38C95 8 105 55 135 20"
-              stroke="#AAFF00"
+              stroke="#00C8F8"
               strokeWidth="3"
             />
             <path d="M5 70h130" stroke="#222222" />
@@ -390,7 +390,7 @@ function ProjectVisual({ project }) {
           {['S', 'X', 'H', 'P'].map((item) => (
             <div
               key={item}
-              className="w-8 h-8 rounded-full bg-[#1A1A1A] text-[#AAFF00] text-xs font-bold flex items-center justify-center"
+              className="w-8 h-8 rounded-full bg-[#1A1A1A] text-[#00C8F8] text-xs font-bold flex items-center justify-center"
             >
               {item}
             </div>
@@ -488,9 +488,7 @@ function ProjectCard({ project, index }) {
           {project.category}
         </span>
 
-        <h3 className="text-xl font-bold text-white mb-2">
-          {project.title}
-        </h3>
+        <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
 
         <p className="text-sm text-[#9CA3AF] leading-relaxed mb-5">
           {project.description}
@@ -498,7 +496,7 @@ function ProjectCard({ project, index }) {
 
         <a
           href="#"
-          className="inline-flex items-center gap-2 text-sm font-bold text-[#AAFF00] group-hover:gap-3 transition-all"
+          className="inline-flex items-center gap-2 text-sm font-bold text-[#00C8F8] group-hover:gap-3 transition-all"
         >
           View Case Study
           <Icon name="arrow" className="w-4 h-4" />
@@ -537,7 +535,7 @@ function MobileProjectCard({ project, index }) {
 
           <a
             href="#"
-            className="inline-flex items-center gap-1 text-xs font-bold text-[#AAFF00]"
+            className="inline-flex items-center gap-1 text-xs font-bold text-[#00C8F8]"
           >
             View Case Study
             <Icon name="arrow" className="w-3.5 h-3.5" />
@@ -589,7 +587,7 @@ export default function WorkPage() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
               >
                 Digital Solutions. <br />
-                Real Business <span className="text-[#AAFF00]">Impact.</span>
+                Real Business <span className="text-[#00C8F8]">Impact.</span>
               </motion.h1>
 
               <motion.p
@@ -683,7 +681,7 @@ export default function WorkPage() {
             className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
           >
             <div className="flex items-start gap-5">
-              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#AAFF00] shrink-0 shadow-sm">
+              <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#00C8F8] shrink-0 shadow-sm">
                 <Icon name="message" className="w-7 h-7" />
               </div>
 
@@ -700,7 +698,7 @@ export default function WorkPage() {
 
             <a
               href="/contact"
-              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] hover:bg-[#000000] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
+              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] hover:bg-[#000000] text-white font-semibold px-8 py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
             >
               Book a Consultation
               <Icon name="arrow" className="w-5 h-5" />

@@ -322,12 +322,10 @@ function ServiceCard({ service }) {
         {/* Main content */}
         <div className="lg:col-span-3 p-8">
           <div className="flex items-center gap-3 mb-4">
-            <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
+            <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8]">
               {service.icon}
             </div>
-            <h3 className="text-2xl font-bold text-white">
-              {service.title}
-            </h3>
+            <h3 className="text-2xl font-bold text-white">{service.title}</h3>
           </div>
           <p className="text-[#9CA3AF] mb-6 leading-relaxed">
             {service.tagline}
@@ -351,7 +349,7 @@ function ServiceCard({ service }) {
 
           <div className="grid sm:grid-cols-2 gap-6">
             <div>
-              <p className="text-sm font-semibold text-[#AAFF00] mb-3">
+              <p className="text-sm font-semibold text-[#00C8F8] mb-3">
                 What&apos;s included
               </p>
               <ul className="space-y-2">
@@ -365,7 +363,7 @@ function ServiceCard({ service }) {
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#AAFF00"
+                      stroke="#00C8F8"
                       strokeWidth="2.5"
                     >
                       <polyline points="20 6 9 17 4 12" />
@@ -376,7 +374,7 @@ function ServiceCard({ service }) {
               </ul>
             </div>
             <div>
-              <p className="text-sm font-semibold text-[#AAFF00] mb-3">
+              <p className="text-sm font-semibold text-[#00C8F8] mb-3">
                 Typical outcomes
               </p>
               <ul className="space-y-2">
@@ -390,7 +388,7 @@ function ServiceCard({ service }) {
                       height="14"
                       viewBox="0 0 24 24"
                       fill="none"
-                      stroke="#AAFF00"
+                      stroke="#00C8F8"
                       strokeWidth="2.5"
                     >
                       <polyline points="20 6 9 17 4 12" />
@@ -408,7 +406,7 @@ function ServiceCard({ service }) {
           <div className="w-full max-w-xs">
             <div className="bg-[#111111] rounded-2xl shadow-md p-5 space-y-3">
               <div className="flex items-center gap-2">
-                <div className="w-8 h-8 bg-[#AAFF00] rounded-lg flex items-center justify-center text-white">
+                <div className="w-8 h-8 bg-[#00C8F8] rounded-lg flex items-center justify-center text-white">
                   {service.icon}
                 </div>
                 <div className="h-3 bg-[#222222] rounded-full flex-1" />
@@ -419,7 +417,7 @@ function ServiceCard({ service }) {
                 <div className="h-2.5 bg-[#161616] rounded-full w-3/5" />
               </div>
               <div className="flex gap-2 pt-2">
-                <div className="h-7 bg-[#AAFF00] rounded-lg flex-1" />
+                <div className="h-7 bg-[#00C8F8] rounded-lg flex-1" />
                 <div className="h-7 bg-[#161616] rounded-lg w-16" />
               </div>
             </div>
@@ -437,7 +435,7 @@ function CompactServiceRow({ service, onClick }) {
       className="w-full flex items-center justify-between p-4 hover:bg-[#0A0A0A] rounded-xl transition-colors text-left group cursor-pointer"
     >
       <div className="flex items-center gap-4">
-        <div className="w-9 h-9 bg-[#0A0A0A] group-hover:bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#9CA3AF] group-hover:text-[#AAFF00] transition-colors">
+        <div className="w-9 h-9 bg-[#0A0A0A] group-hover:bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#9CA3AF] group-hover:text-[#00C8F8] transition-colors">
           {service.icon}
         </div>
         <div>
@@ -445,7 +443,7 @@ function CompactServiceRow({ service, onClick }) {
           <p className="text-xs text-[#9CA3AF] mt-0.5">{service.tagline}</p>
         </div>
       </div>
-      <span className="text-[#AAFF00] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shrink-0 ml-4">
+      <span className="text-[#00C8F8] text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity flex items-center gap-1 shrink-0 ml-4">
         View details
         <svg
           width="14"
@@ -501,7 +499,9 @@ export default function ServicesSection() {
                   }`}
                 >
                   <span
-                    className={active === i ? 'text-[#AAFF00]' : 'text-[#6B7280]'}
+                    className={
+                      active === i ? 'text-[#00C8F8]' : 'text-[#6B7280]'
+                    }
                   >
                     {s.icon}
                   </span>
@@ -559,7 +559,7 @@ function MobileServiceAccordion({ service, isOpen, onToggle }) {
       >
         <div className="flex items-center gap-3">
           <div
-            className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${isOpen ? 'bg-[#1A1A1A] text-[#AAFF00]' : 'bg-[#0A0A0A] text-[#9CA3AF]'}`}
+            className={`w-9 h-9 rounded-xl flex items-center justify-center transition-colors ${isOpen ? 'bg-[#1A1A1A] text-[#00C8F8]' : 'bg-[#0A0A0A] text-[#9CA3AF]'}`}
           >
             {service.icon}
           </div>
@@ -602,7 +602,7 @@ function MobileServiceAccordion({ service, isOpen, onToggle }) {
               </div>
               <div className="grid grid-cols-2 gap-4">
                 <div>
-                  <p className="text-xs font-semibold text-[#AAFF00] mb-2">
+                  <p className="text-xs font-semibold text-[#00C8F8] mb-2">
                     What&apos;s included
                   </p>
                   <ul className="space-y-1.5">
@@ -616,7 +616,7 @@ function MobileServiceAccordion({ service, isOpen, onToggle }) {
                           height="12"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="#AAFF00"
+                          stroke="#00C8F8"
                           strokeWidth="2.5"
                           className="mt-0.5 shrink-0"
                         >
@@ -628,7 +628,7 @@ function MobileServiceAccordion({ service, isOpen, onToggle }) {
                   </ul>
                 </div>
                 <div>
-                  <p className="text-xs font-semibold text-[#AAFF00] mb-2">
+                  <p className="text-xs font-semibold text-[#00C8F8] mb-2">
                     Typical outcomes
                   </p>
                   <ul className="space-y-1.5">
@@ -642,7 +642,7 @@ function MobileServiceAccordion({ service, isOpen, onToggle }) {
                           height="12"
                           viewBox="0 0 24 24"
                           fill="none"
-                          stroke="#AAFF00"
+                          stroke="#00C8F8"
                           strokeWidth="2.5"
                           className="mt-0.5 shrink-0"
                         >

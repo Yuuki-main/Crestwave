@@ -94,7 +94,7 @@ export default function Footer() {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={s.label}
-                  className="cursor-pointer w-8 h-8 bg-[#161616] hover:bg-[#1A1A1A] hover:text-[#AAFF00] rounded-lg flex items-center justify-center text-[#9CA3AF] transition-colors"
+                  className="cursor-pointer w-8 h-8 bg-[#161616] hover:bg-[#1A1A1A] hover:text-[#00C8F8] rounded-lg flex items-center justify-center text-[#9CA3AF] transition-colors"
                 >
                   <svg
                     width="15"

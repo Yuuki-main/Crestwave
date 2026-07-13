@@ -82,7 +82,7 @@ function ContactIllustration() {
           height="26"
           viewBox="0 0 24 24"
           fill="none"
-          stroke="#AAFF00"
+          stroke="#00C8F8"
           strokeWidth="2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -101,7 +101,7 @@ function ContactIllustration() {
           key={i}
           animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
           transition={{ duration: 2.5, repeat: Infinity, delay: d.delay }}
-          className="absolute rounded-full bg-[#AAFF00]"
+          className="absolute rounded-full bg-[#00C8F8]"
           style={{
             width: d.size,
             height: d.size,
@@ -187,10 +187,10 @@ function SydneyMap() {
         ))}
         {/* Pin */}
         <g transform="translate(248, 145)">
-          <circle cx="12" cy="12" r="12" fill="#AAFF00" opacity="0.15" />
+          <circle cx="12" cy="12" r="12" fill="#00C8F8" opacity="0.15" />
           <path
             d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
-            fill="#AAFF00"
+            fill="#00C8F8"
           />
         </g>
         {/* Label */}
@@ -429,7 +429,7 @@ export default function ContactPage() {
               className="bg-[#111111] border border-[#222222] rounded-3xl shadow-sm p-8"
             >
               <div className="flex items-center gap-3 mb-2">
-                <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
+                <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8]">
                   <svg
                     width="18"
                     height="18"
@@ -462,7 +462,7 @@ export default function ContactPage() {
                       value={formData.fullName}
                       onChange={handleChange}
                       placeholder="Enter your full name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all"
                     />
                   </div>
                   <div>
@@ -475,7 +475,7 @@ export default function ContactPage() {
                       value={formData.email}
                       onChange={handleChange}
                       placeholder="Enter your work email"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all"
                     />
                   </div>
                 </div>
@@ -491,7 +491,7 @@ export default function ContactPage() {
                       value={formData.company}
                       onChange={handleChange}
                       placeholder="Enter your company name"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all"
                     />
                   </div>
                   <div>
@@ -504,7 +504,7 @@ export default function ContactPage() {
                       value={formData.phone}
                       onChange={handleChange}
                       placeholder="Enter your phone number"
-                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all"
+                      className="w-full px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all"
                     />
                   </div>
                 </div>
@@ -518,7 +518,7 @@ export default function ContactPage() {
                       name="service"
                       value={formData.service}
                       onChange={handleChange}
-                      className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
+                      className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all pr-10"
                     >
                       <option value="" disabled>
                         Select an option
@@ -556,7 +556,7 @@ export default function ContactPage() {
                         name="stage"
                         value={formData.stage}
                         onChange={handleChange}
-                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
+                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all pr-10"
                       >
                         <option value="" disabled>
                           Select project stage
@@ -588,7 +588,7 @@ export default function ContactPage() {
                         name="budget"
                         value={formData.budget}
                         onChange={handleChange}
-                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all pr-10"
+                        className="cursor-pointer w-full appearance-none px-4 py-2.5 rounded-xl border border-[#222222] text-sm text-[#9CA3AF] bg-[#0A0A0A] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all pr-10"
                       >
                         <option value="" disabled>
                           Select budget range
@@ -624,14 +624,14 @@ export default function ContactPage() {
                     onChange={handleChange}
                     rows={4}
                     placeholder="Tell us about your project, goals, or any specific requirements..."
-                    className="w-full px-4 py-3 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#AAFF00] focus:ring-2 focus:ring-[#AAFF00]/10 transition-all resize-none"
+                    className="w-full px-4 py-3 rounded-xl border border-[#222222] text-sm text-white placeholder-[#6B7280] bg-[#0D0D0D] focus:outline-none focus:border-[#00C8F8] focus:ring-2 focus:ring-[#00C8F8]/10 transition-all resize-none"
                   />
                 </div>
 
                 <label className="flex items-start gap-3 cursor-pointer group">
                   <div
                     onClick={() => setAgreed(!agreed)}
-                    className={`w-4 h-4 mt-0.5 rounded border shrink-0 flex items-center justify-center transition-colors ${agreed ? 'bg-[#AAFF00] border-[#AAFF00]' : 'border-[#333333] bg-[#0D0D0D]'}`}
+                    className={`w-4 h-4 mt-0.5 rounded border shrink-0 flex items-center justify-center transition-colors ${agreed ? 'bg-[#00C8F8] border-[#00C8F8]' : 'border-[#333333] bg-[#0D0D0D]'}`}
                   >
                     {agreed && (
                       <svg
@@ -650,7 +650,7 @@ export default function ContactPage() {
                     I agree to the{' '}
                     <Link
                       href="/privacy"
-                      className="text-[#AAFF00] underline underline-offset-2 hover:text-[#D1D5DB]"
+                      className="text-[#00C8F8] underline underline-offset-2 hover:text-[#D1D5DB]"
                     >
                       Privacy Policy
                     </Link>{' '}
@@ -672,7 +672,7 @@ export default function ContactPage() {
                     <button
                       type="submit"
                       disabled={!agreed || status === 'loading'}
-                      className="w-full flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] disabled:bg-[#333333] disabled:cursor-not-allowed text-[#000000] font-semibold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20 hover:-translate-y-0.5 text-sm"
+                      className="w-full flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] disabled:bg-[#333333] disabled:cursor-not-allowed text-[#000000] font-semibold py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20 hover:-translate-y-0.5 text-sm"
                     >
                       {status === 'loading' ? (
                         <>Sending...</>
@@ -729,7 +729,7 @@ export default function ContactPage() {
                 className="flex items-center justify-between p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm hover:border-[#333333] hover:shadow-md transition-all group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] group-hover:bg-[#1A1A1A] transition-colors">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8] group-hover:bg-[#1A1A1A] transition-colors">
                     <svg
                       width="18"
                       height="18"
@@ -756,7 +756,7 @@ export default function ContactPage() {
                   fill="none"
                   stroke="#555555"
                   strokeWidth="2"
-                  className="group-hover:stroke-[#AAFF00] transition-colors"
+                  className="group-hover:stroke-[#00C8F8] transition-colors"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -772,7 +772,7 @@ export default function ContactPage() {
                 className="flex items-center justify-between p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm hover:border-[#333333] hover:shadow-md transition-all group"
               >
                 <div className="flex items-center gap-4">
-                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] group-hover:bg-[#1A1A1A] transition-colors">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8] group-hover:bg-[#1A1A1A] transition-colors">
                     <svg
                       width="18"
                       height="18"
@@ -796,7 +796,7 @@ export default function ContactPage() {
                   fill="none"
                   stroke="#555555"
                   strokeWidth="2"
-                  className="group-hover:stroke-[#AAFF00] transition-colors"
+                  className="group-hover:stroke-[#00C8F8] transition-colors"
                 >
                   <path d="M5 12h14M12 5l7 7-7 7" />
                 </svg>
@@ -811,7 +811,7 @@ export default function ContactPage() {
                 className="p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8]">
                     <svg
                       width="18"
                       height="18"
@@ -860,7 +860,7 @@ export default function ContactPage() {
                 transition={{ duration: 0.4, delay: 0.2 }}
                 className="flex items-center gap-4 p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
-                <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] shrink-0">
+                <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8] shrink-0">
                   <svg
                     width="18"
                     height="18"
@@ -877,7 +877,7 @@ export default function ContactPage() {
                   <p className="font-semibold text-white text-sm">
                     Average Response Time
                   </p>
-                  <p className="text-xs text-[#AAFF00] font-medium mt-0.5">
+                  <p className="text-xs text-[#00C8F8] font-medium mt-0.5">
                     Within 1 business day
                   </p>
                   <p className="text-xs text-[#9CA3AF] mt-1">
@@ -895,7 +895,7 @@ export default function ContactPage() {
                 className="p-5 bg-[#000000] border border-[#1A1A1A] rounded-2xl shadow-sm"
               >
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] shrink-0">
+                  <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8] shrink-0">
                     <svg
                       width="18"
                       height="18"
@@ -949,7 +949,7 @@ export default function ContactPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
             >
-              <p className="text-[#AAFF00] font-semibold text-sm flex items-center gap-1.5 mb-3">
+              <p className="text-[#00C8F8] font-semibold text-sm flex items-center gap-1.5 mb-3">
                 <svg
                   width="14"
                   height="14"
@@ -973,7 +973,7 @@ export default function ContactPage() {
               <div className="space-y-3 mb-6">
                 <a
                   href="tel:1300123456"
-                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#AAFF00] transition-colors text-sm"
+                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#00C8F8] transition-colors text-sm"
                 >
                   <svg
                     width="14"
@@ -989,7 +989,7 @@ export default function ContactPage() {
                 </a>
                 <a
                   href="mailto:hello@crestwavedigital.com"
-                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#AAFF00] transition-colors text-sm"
+                  className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#00C8F8] transition-colors text-sm"
                 >
                   <svg
                     width="14"
@@ -1033,7 +1033,7 @@ export default function ContactPage() {
             transition={{ duration: 0.45 }}
             className="mb-10 flex items-center gap-3"
           >
-            <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00]">
+            <div className="w-9 h-9 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8]">
               <svg
                 width="18"
                 height="18"
@@ -1105,7 +1105,7 @@ export default function ContactPage() {
             </div>
             <a
               href="#"
-              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] text-[#AAFF00] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:shadow-md"
+              className="shrink-0 inline-flex items-center gap-2 bg-[#000000] text-[#00C8F8] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:shadow-md"
             >
               Ask a Question
               <svg

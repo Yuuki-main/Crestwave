@@ -410,7 +410,7 @@ function CheckIcon() {
       fill="none"
       stroke="currentColor"
       strokeWidth="2.8"
-      className="mt-0.5 shrink-0 text-[#AAFF00]"
+      className="mt-0.5 shrink-0 text-[#00C8F8]"
     >
       <polyline points="20 6 9 17 4 12" />
     </svg>
@@ -444,7 +444,7 @@ function ServiceIllustration() {
       <motion.div
         animate={{ y: [0, -8, 0] }}
         transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-8 top-24 w-20 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#AAFF00]"
+        className="absolute right-8 top-24 w-20 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
       >
         <Icon name="speed" className="w-9 h-9" />
       </motion.div>
@@ -452,7 +452,7 @@ function ServiceIllustration() {
       <motion.div
         animate={{ y: [0, 7, 0] }}
         transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute left-4 top-24 w-16 h-16 bg-[#111111] rounded-2xl shadow-lg border border-[#222222] flex items-center justify-center text-[#AAFF00]"
+        className="absolute left-4 top-24 w-16 h-16 bg-[#111111] rounded-2xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
       >
         <Icon name="support" className="w-7 h-7" />
       </motion.div>
@@ -460,7 +460,7 @@ function ServiceIllustration() {
       <motion.div
         animate={{ scale: [1, 1.08, 1] }}
         transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-2 top-8 w-12 h-12 bg-[#111111] rounded-2xl shadow-sm border border-[#222222] flex items-center justify-center text-[#AAFF00]"
+        className="absolute right-2 top-8 w-12 h-12 bg-[#111111] rounded-2xl shadow-sm border border-[#222222] flex items-center justify-center text-[#00C8F8]"
       >
         <Icon name="search" className="w-6 h-6" />
       </motion.div>
@@ -502,7 +502,9 @@ function CategoryCard({ category, active, onClick }) {
       <div className="flex items-start gap-3">
         <div
           className={`w-10 h-10 rounded-xl flex items-center justify-center shrink-0 ${
-            active ? 'bg-[#111111] border-[#333333] text-white' : 'bg-[#1A1A1A] text-[#D1D5DB]'
+            active
+              ? 'bg-[#111111] border-[#333333] text-white'
+              : 'bg-[#1A1A1A] text-[#D1D5DB]'
           }`}
         >
           <Icon name={category.icon} className="w-5 h-5" />
@@ -540,7 +542,7 @@ function ServiceSidebar({ activeService, setActiveService }) {
                 <span
                   className={`w-8 h-8 rounded-lg flex items-center justify-center ${
                     isActive
-                      ? 'bg-[#000000] text-[#AAFF00]'
+                      ? 'bg-[#000000] text-[#00C8F8]'
                       : 'bg-[#0A0A0A] text-[#9CA3AF]'
                   }`}
                 >
@@ -555,7 +557,7 @@ function ServiceSidebar({ activeService, setActiveService }) {
                 fill="none"
                 stroke="currentColor"
                 strokeWidth="2"
-                className={isActive ? 'text-[#AAFF00]' : 'text-[#555555]'}
+                className={isActive ? 'text-[#00C8F8]' : 'text-[#555555]'}
               >
                 <path d="M9 18l6-6-6-6" />
               </svg>
@@ -579,7 +581,7 @@ function ExpandedService({ service }) {
       <div className="grid lg:grid-cols-[1fr_240px] gap-8">
         <div>
           <div className="flex items-center gap-4 mb-4">
-            <div className="w-12 h-12 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00]">
+            <div className="w-12 h-12 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8]">
               <Icon name={service.icon} className="w-6 h-6" />
             </div>
             <h2 className="text-[22px] sm:text-[28px] font-bold text-white">
@@ -647,7 +649,7 @@ function ExpandedService({ service }) {
             <div className="absolute inset-0 rounded-4xl bg-[#0A0A0A] border border-[#222222]" />
             <div className="absolute top-8 left-7 right-7 h-28 bg-[#111111] rounded-2xl border border-[#222222] shadow-sm">
               <div className="flex gap-1.5 px-4 pt-4">
-                <span className="w-2 h-2 rounded-full bg-[#AAFF00]" />
+                <span className="w-2 h-2 rounded-full bg-[#00C8F8]" />
                 <span className="w-2 h-2 rounded-full bg-[#222222]" />
                 <span className="w-2 h-2 rounded-full bg-[#1A1A1A]" />
               </div>
@@ -664,7 +666,7 @@ function ExpandedService({ service }) {
                 <div className="w-3/5 h-2 rounded-full bg-[#1A1A1A]" />
               </div>
             </div>
-            <div className="absolute bottom-5 left-5 w-12 h-12 rounded-2xl bg-[#000000] border border-[#222222] shadow-md flex items-center justify-center text-[#AAFF00]">
+            <div className="absolute bottom-5 left-5 w-12 h-12 rounded-2xl bg-[#000000] border border-[#222222] shadow-md flex items-center justify-center text-[#00C8F8]">
               <Icon name="users" className="w-6 h-6" />
             </div>
           </div>
@@ -681,7 +683,7 @@ function CollapsedServiceRow({ service, onClick }) {
       className="w-full flex items-center justify-between gap-4 bg-[#000000] border border-[#1A1A1A] rounded-2xl px-4 py-4 hover:border-[#333333] hover:shadow-sm transition-all text-left"
     >
       <div className="flex items-center gap-4 min-w-0">
-        <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#AAFF00] shrink-0">
+        <div className="w-10 h-10 bg-[#1A1A1A] rounded-xl flex items-center justify-center text-[#00C8F8] shrink-0">
           <Icon name={service.icon} className="w-5 h-5" />
         </div>
         <div className="min-w-0">
@@ -690,7 +692,7 @@ function CollapsedServiceRow({ service, onClick }) {
         </div>
       </div>
 
-      <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#AAFF00] shrink-0">
+      <span className="hidden sm:inline-flex items-center gap-1 text-xs font-semibold text-[#00C8F8] shrink-0">
         View details
         <svg
           width="13"
@@ -710,7 +712,7 @@ function CollapsedServiceRow({ service, onClick }) {
 function StartingPointCard({ item }) {
   return (
     <div className="bg-[#000000] border border-[#1A1A1A] rounded-3xl p-6 shadow-sm">
-      <div className="w-11 h-11 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-5">
+      <div className="w-11 h-11 bg-[#1A1A1A] rounded-2xl flex items-center justify-center text-[#00C8F8] mb-5">
         <Icon name={item.icon} className="w-5 h-5" />
       </div>
 
@@ -755,7 +757,7 @@ function WorkModelCard({ model }) {
           : 'bg-[#000000] border-[#1A1A1A]'
       }`}
     >
-      <div className="w-11 h-11 bg-[#000000] rounded-2xl flex items-center justify-center text-[#AAFF00] mb-5 border border-[#222222]">
+      <div className="w-11 h-11 bg-[#000000] rounded-2xl flex items-center justify-center text-[#00C8F8] mb-5 border border-[#222222]">
         <Icon name={model.icon} className="w-5 h-5" />
       </div>
 
@@ -787,7 +789,7 @@ function WorkModelCard({ model }) {
         className={`inline-flex w-full items-center justify-center gap-2 rounded-xl px-4 py-3 text-sm font-semibold transition-all ${
           model.featured
             ? 'bg-white text-[#000000] hover:bg-[#F0F0F0]'
-            : 'bg-[#000000] text-[#AAFF00] border border-[#333333] hover:bg-[#1A1A1A]'
+            : 'bg-[#000000] text-[#00C8F8] border border-[#333333] hover:bg-[#1A1A1A]'
         }`}
       >
         {model.cta}
@@ -826,14 +828,14 @@ function MobileServiceAccordion() {
               }`}
             >
               <span className="flex items-center gap-3">
-                <span className="w-9 h-9 bg-[#000000] border border-[#222222] rounded-xl flex items-center justify-center text-[#AAFF00]">
+                <span className="w-9 h-9 bg-[#000000] border border-[#222222] rounded-xl flex items-center justify-center text-[#00C8F8]">
                   <Icon name={service.icon} className="w-4 h-4" />
                 </span>
                 <span className="font-bold text-white text-sm">
                   {service.name}
                 </span>
               </span>
-              <span className="text-[#AAFF00] font-bold text-lg">
+              <span className="text-[#00C8F8] font-bold text-lg">
                 {isOpen ? '−' : '+'}
               </span>
             </button>
@@ -954,7 +956,7 @@ export default function Services() {
                 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
               >
                 Services Built Around{' '}
-                <span className="text-[#AAFF00]">Digital Growth</span>
+                <span className="text-[#00C8F8]">Digital Growth</span>
               </motion.h1>
 
               <motion.p
@@ -977,7 +979,7 @@ export default function Services() {
               >
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#AAFF00]/20"
+                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
                 >
                   Explore Services
                   <svg
@@ -1050,7 +1052,7 @@ export default function Services() {
             transition={{ duration: 0.45 }}
             className="mb-10"
           >
-            <p className="text-[#AAFF00] font-semibold text-sm mb-2">
+            <p className="text-[#00C8F8] font-semibold text-sm mb-2">
               Our Services
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-white">
@@ -1171,7 +1173,7 @@ export default function Services() {
               viewport={{ once: true }}
               transition={{ duration: 0.45 }}
             >
-              <p className="text-[#AAFF00] font-semibold text-sm mb-2">
+              <p className="text-[#00C8F8] font-semibold text-sm mb-2">
                 What You Can Expect
               </p>
               <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
@@ -1238,7 +1240,7 @@ export default function Services() {
 
             <a
               href="/contact"
-              className="relative shrink-0 inline-flex items-center gap-2 bg-[#000000] text-[#AAFF00] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:shadow-md"
+              className="relative shrink-0 inline-flex items-center gap-2 bg-[#000000] text-[#00C8F8] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200 hover:shadow-md"
             >
               Find My Service Mix
               <svg

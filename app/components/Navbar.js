@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="cursor-pointer flex items-center gap-2">
             <Image
-              src="/web_logo.png"
+              src="/cd_logo.jpeg"
               alt="Crestwave"
               width={200}
               height={48}
@@ -62,7 +62,7 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-sm font-medium transition-colors ${
                     active
-                      ? 'text-[#AAFF00] border-b-2 border-[#AAFF00] pb-0.5'
+                      ? 'text-[#00C8F8] border-b-2 border-[#00C8F8] pb-0.5'
                       : 'text-[#9CA3AF] hover:text-white'
                   }`}
                 >
@@ -108,7 +108,7 @@ export default function Navbar() {
                     key={link.label}
                     href={link.href}
                     onClick={() => setMobileOpen(false)}
-                    className={`text-sm font-medium ${active ? 'text-[#AAFF00]' : 'text-[#E5E7EB]'}`}
+                    className={`text-sm font-medium ${active ? 'text-[#00C8F8]' : 'text-[#E5E7EB]'}`}
                   >
                     {link.label}
                   </Link>
