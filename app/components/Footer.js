@@ -78,7 +78,7 @@ export default function Footer() {
             </Link> */}
             <Link href="/" className="cursor-pointer flex items-center gap-2">
               <Image
-                src="/web_logo.png"
+                src="/png.png"
                 alt="Crestwave"
                 width={200}
                 height={48}

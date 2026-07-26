@@ -43,7 +43,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link href="/" className="cursor-pointer flex items-center gap-2">
             <Image
-              src="/cd_logo.jpeg"
+              src="/png.png"
               alt="Crestwave"
               width={200}
               height={48}
