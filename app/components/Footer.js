@@ -113,7 +113,7 @@ export default function Footer() {
               ))}
             </div>
 
-            <div className="text-[#9ca3af] text-[14px] mt-2.5 flex gap-3 items-center">
+            <div className="text-[#9ca3af] text-[14px] mt-2.5 flex gap-3 items-center ml-2">
               <BriefcaseBusiness size={16} /> ABN - 16697313054
             </div>
           </div>
