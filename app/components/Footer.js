@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import Link from 'next/link'
+import { BriefcaseBusiness } from 'lucide-react'
 
 const socialLinks = [
   {
@@ -110,6 +111,10 @@ export default function Footer() {
                   </svg>
                 </a>
               ))}
+            </div>
+
+            <div className="text-[#9ca3af] text-[14px] mt-2.5 flex gap-3 items-center">
+              <BriefcaseBusiness size={16} /> ABN - 16697313054
             </div>
           </div>
 
