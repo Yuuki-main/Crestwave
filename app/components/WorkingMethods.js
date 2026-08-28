@@ -1,18 +1,18 @@
 'use client'
-import { useState } from 'react'
+
+import { useState, useRef, useEffect } from 'react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { motion, AnimatePresence } from 'framer-motion'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const methods = [
   {
     icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z" />
         <path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z" />
         <path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z" />
@@ -31,14 +31,7 @@ const methods = [
   },
   {
     icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
       </svg>
     ),
@@ -50,14 +43,7 @@ const methods = [
   },
   {
     icon: (
-      <svg
-        width="22"
-        height="22"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="2"
-      >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
         <circle cx="12" cy="12" r="10" />
         <path d="M12 6v6l4 2" />
       </svg>
@@ -89,35 +75,101 @@ const packageCards = [
 
 export default function WorkingMethods() {
   const [openMethod, setOpenMethod] = useState(null)
+  const sectionRef = useRef(null)
+  const leftRef = useRef(null)
+  const rightRef = useRef(null)
+  const deskCardsRef = useRef(null)
+  const expectListRef = useRef(null)
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (reduced) {
+        gsap.set([leftRef.current, rightRef.current], { opacity: 1, y: 0 })
+        if (deskCardsRef.current) gsap.set(deskCardsRef.current.children, { opacity: 1, y: 0 })
+        return
+      }
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: sectionRef.current,
+          start: 'top 80%',
+          end: 'bottom 30%',
+          scrub: 0.5,
+        },
+      })
+
+      // Left heading
+      tl.fromTo(
+        leftRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }
+      )
+
+      // Desktop cards stagger
+      if (deskCardsRef.current) {
+        tl.fromTo(
+          deskCardsRef.current.children,
+          { opacity: 0, y: 40, scale: 0.96 },
+          {
+            opacity: 1,
+            y: 0,
+            scale: 1,
+            duration: 0.7,
+            stagger: 0.1,
+            ease: 'power3.out',
+          },
+          '-=0.2'
+        )
+      }
+
+      // Right section heading + items
+      tl.fromTo(
+        rightRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' },
+        '-=0.4'
+      )
+
+      if (expectListRef.current) {
+        tl.fromTo(
+          expectListRef.current.children,
+          { opacity: 0, x: 30 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.5,
+            stagger: 0.06,
+            ease: 'power3.out',
+          },
+          '-=0.3'
+        )
+      }
+    }, sectionRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
-    <section className="py-20 bg-[#000000]">
+    <section ref={sectionRef} className="py-20 bg-[#000000]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Ways to Work */}
           <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="text-3xl sm:text-4xl font-bold text-white mb-8"
-            >
-              Ways to Work With Crestwave
-            </motion.h2>
+            <div ref={leftRef}>
+              <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
+                Ways to Work With Crestwave
+              </h2>
+            </div>
 
             {/* Desktop cards */}
-            <div className="hidden md:grid grid-cols-3 gap-4">
-              {methods.map((m, i) => (
-                <motion.div
+            <div ref={deskCardsRef} className="hidden md:grid grid-cols-3 gap-4">
+              {methods.map((m) => (
+                <div
                   key={m.title}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  className="bg-[#0A0A0A] rounded-2xl p-5 border border-[#1A1A1A] hover:border-[#333333] hover:bg-[#1A1A1A]/30 transition-all duration-200 flex flex-col"
+                  className="method-card bg-[#0A0A0A] rounded-2xl p-5 border border-[#1A1A1A] hover:border-[#333333] hover:bg-[#1A1A1A]/30 transition-all duration-300 flex flex-col cursor-pointer"
                 >
-                  <div className="w-10 h-10 bg-[#000000] rounded-xl flex items-center justify-center text-[#00C8F8] shadow-sm mb-4">
+                  <div className="w-10 h-10 bg-[#000000] rounded-xl flex items-center justify-center text-[#00C8F8] shadow-sm mb-4 group-hover:scale-110 transition-transform duration-300">
                     {m.icon}
                   </div>
                   <h3 className="font-bold text-white mb-3">{m.title}</h3>
@@ -135,15 +187,15 @@ export default function WorkingMethods() {
                       <span className="text-[#E5E7EB]">{m.duration}</span>
                     </div>
                   </div>
-                  <button className="cursor-pointer mt-4 w-full text-center text-sm font-semibold text-white border border-[#333333] rounded-xl py-2.5 hover:border-white bg-transparent transition-all duration-200">
+                  <button className="cursor-pointer mt-4 w-full text-center text-sm font-semibold text-white border border-[#333333] rounded-xl py-2.5 hover:border-white bg-transparent transition-all duration-300">
                     {m.cta} →
                   </button>
-                </motion.div>
+                </div>
               ))}
             </div>
 
             {/* Mobile accordion */}
-            <div className="md:hidden space-y-2">
+            <div className="md:hidden space-y-2 mt-8">
               {methods.map((m, i) => (
                 <div
                   key={m.title}
@@ -162,12 +214,8 @@ export default function WorkingMethods() {
                       </span>
                     </div>
                     <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
+                      width="16" height="16" viewBox="0 0 24 24"
+                      fill="none" stroke="currentColor" strokeWidth="2"
                       className={`text-[#6B7280] transition-transform ${openMethod === i ? 'rotate-180' : ''}`}
                     >
                       <polyline points="6 9 12 15 18 9" />
@@ -187,12 +235,8 @@ export default function WorkingMethods() {
                             <span className="text-[#E5E7EB]">{m.bestFor}</span>
                           </div>
                           <div>
-                            <span className="text-[#9CA3AF]">
-                              What you get:{' '}
-                            </span>
-                            <span className="text-[#E5E7EB]">
-                              {m.whatYouGet}
-                            </span>
+                            <span className="text-[#9CA3AF]">What you get: </span>
+                            <span className="text-[#E5E7EB]">{m.whatYouGet}</span>
                           </div>
                           <div>
                             <span className="text-[#9CA3AF]">Duration: </span>
@@ -222,14 +266,7 @@ export default function WorkingMethods() {
                     </p>
                     <p className="text-xs text-[#9CA3AF] mt-0.5">{card.sub}</p>
                   </div>
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="#9CA3AF"
-                    strokeWidth="2"
-                  >
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2">
                     <polyline points="6 9 12 15 18 9" />
                   </svg>
                 </div>
@@ -238,41 +275,24 @@ export default function WorkingMethods() {
           </div>
 
           {/* What You Can Expect */}
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="text-3xl sm:text-4xl font-bold text-white mb-8"
-            >
+          <div ref={rightRef}>
+            <h2 className="text-3xl sm:text-4xl font-bold text-white mb-8">
               What You Can Expect
-            </motion.h2>
+            </h2>
 
-            <div className="space-y-3">
-              {expectations.map((item, i) => (
-                <motion.div
+            <div ref={expectListRef} className="space-y-3">
+              {expectations.map((item) => (
+                <div
                   key={item}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.07 }}
-                  className="flex items-center gap-3"
+                  className="expect-item flex items-center gap-3"
                 >
                   <div className="w-6 h-6 rounded-full bg-[#1A1A1A] flex items-center justify-center shrink-0">
-                    <svg
-                      width="12"
-                      height="12"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#00C8F8"
-                      strokeWidth="3"
-                    >
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#00C8F8" strokeWidth="3">
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
                   </div>
                   <span className="text-[#E5E7EB] font-medium">{item}</span>
-                </motion.div>
+                </div>
               ))}
             </div>
           </div>

@@ -1,9 +1,15 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 /* ─── Data ─── */
 
@@ -550,11 +556,45 @@ function MobileProjectCard({ project, index }) {
 
 export default function WorkPage() {
   const [activeFilter, setActiveFilter] = useState('All Projects')
+  const heroRef = useRef(null)
+  const projectsRef = useRef(null)
+  const ctaRef = useRef(null)
 
   const filteredProjects = useMemo(() => {
     if (activeFilter === 'All Projects') return projects
     return projects.filter((project) => project.category === activeFilter)
   }, [activeFilter])
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (reduced) return
+
+      // Hero timeline
+      const tl = gsap.timeline()
+      tl.fromTo('.work-badge', { opacity: 0, y: 16, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6 })
+      tl.fromTo('.work-heading-line', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1)
+      tl.fromTo('.work-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.4)
+
+      // Projects stagger — scrub-tied for smooth scroll sync
+      if (projectsRef.current) {
+        gsap.fromTo(projectsRef.current.children, { opacity: 0, y: 40, scale: 0.97 }, {
+          opacity: 1, y: 0, scale: 1, duration: 0.7, stagger: 0.06, ease: 'power3.out',
+          scrollTrigger: { trigger: projectsRef.current, start: 'top 85%', end: 'bottom 35%', scrub: 0.5 },
+        })
+      }
+
+      // CTA reveal
+      if (ctaRef.current) {
+        gsap.fromTo(ctaRef.current, { opacity: 0, y: 30 }, {
+          opacity: 1, y: 0, duration: 0.7, ease: 'power3.out',
+          scrollTrigger: { trigger: ctaRef.current, start: 'top 90%', once: true },
+        })
+      }
+    })
+
+    return () => ctx.revert()
+  }, [])
 
   return (
     <main className="min-h-screen bg-[#000000]">
@@ -570,46 +610,28 @@ export default function WorkPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase"
-              >
+              <div className="work-badge inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5 uppercase">
                 <Icon name="grid" className="w-3 h-3" />
                 Our Work
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
-              >
-                Digital Solutions. <br />
-                Real Business <span className="text-[#00C8F8]">Impact.</span>
-              </motion.h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+                <span className="work-heading-line block">Digital Solutions.</span>
+                <span className="work-heading-line block">Real Business{' '}
+                  <span className="text-[#00C8F8]">Impact.</span>
+                </span>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-[#9CA3AF] text-lg leading-relaxed max-w-xl"
-              >
+              <p className="work-desc text-[#9CA3AF] text-lg leading-relaxed max-w-xl">
                 We partner with businesses to design, build and grow digital
                 systems that drive leads, improve performance and create
                 long-term value.
-              </motion.p>
+              </p>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
-            >
+            <div className="flex justify-center lg:justify-end">
               <WorkIllustration />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>
@@ -632,7 +654,7 @@ export default function WorkPage() {
           </div>
 
           <AnimatePresence mode="popLayout">
-            <div className="hidden lg:grid lg:grid-cols-3 gap-7">
+            <div ref={projectsRef} className="hidden lg:grid lg:grid-cols-3 gap-7">
               {filteredProjects.map((project, index) => (
                 <ProjectCard
                   key={project.title}
@@ -655,30 +677,21 @@ export default function WorkPage() {
             </div>
           </AnimatePresence>
 
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="mt-10 flex justify-center"
-          >
+          <div className="mt-10 flex justify-center">
             <button className="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-[#333333] bg-[#000000] text-[#D1D5DB] font-semibold text-sm hover:bg-[#1A1A1A] hover:border-[#444444] transition-all">
               Load More Projects
               <Icon name="chevron" className="w-4 h-4" />
             </button>
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ── CTA ── */}
       <section className="py-10 px-4 bg-[#000000]">
         <div className="max-w-7xl mx-auto">
-          <motion.div
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.45 }}
-            className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6"
+          <div
+            ref={ctaRef}
+            className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-[#333333] transition-colors duration-500"
           >
             <div className="flex items-start gap-5">
               <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#00C8F8] shrink-0 shadow-sm">
@@ -703,7 +716,7 @@ export default function WorkPage() {
               Book a Consultation
               <Icon name="arrow" className="w-5 h-5" />
             </a>
-          </motion.div>
+          </div>
         </div>
       </section>
 

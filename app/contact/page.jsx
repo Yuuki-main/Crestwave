@@ -1,7 +1,8 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import { motion, AnimatePresence } from 'framer-motion'
+import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -336,6 +337,20 @@ export default function ContactPage() {
   const [agreed, setAgreed] = useState(false)
   const [status, setStatus] = useState('idle')
 
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (reduced) return
+
+      const tl = gsap.timeline()
+      tl.fromTo('.ct-badge', { opacity: 0, y: 16, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6 })
+      tl.fromTo('.ct-heading-line', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1)
+      tl.fromTo('.ct-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.4)
+    })
+
+    return () => ctx.revert()
+  }, [])
+
   const handleChange = (e) =>
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }))
 
@@ -364,54 +379,26 @@ export default function ContactPage() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5"
-              >
-                <svg
-                  width="12"
-                  height="12"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2.5"
-                >
+              <div className="ct-badge inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 Contact Us
-              </motion.div>
-              <motion.h1
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4"
-              >
-                Let&apos;s Start the
-                <br />
-                Right Conversation
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-[#9CA3AF] text-lg leading-relaxed max-w-md"
-              >
+              </div>
+              <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
+                <span className="ct-heading-line block">Let&apos;s Start the</span>
+                <span className="ct-heading-line block">Right Conversation</span>
+              </h1>
+              <p className="ct-desc text-[#9CA3AF] text-lg leading-relaxed max-w-md">
                 Tell us what you&apos;re building, where you are in the process,
                 and what kind of support you need. We&apos;ll help you find the
                 best next step.
-              </motion.p>
+              </p>
             </div>
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
-            >
+            <div className="flex justify-center lg:justify-end">
               <ContactIllustration />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

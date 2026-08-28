@@ -1,7 +1,8 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
@@ -920,6 +921,21 @@ export default function Services() {
   const [activeCategory, setActiveCategory] = useState(0)
   const [activeService, setActiveService] = useState(0)
 
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (reduced) return
+
+      const tl = gsap.timeline()
+      tl.fromTo('.svc-badge', { opacity: 0, y: 16, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6 })
+      tl.fromTo('.svc-heading-line', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1)
+      tl.fromTo('.svc-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.4)
+      tl.fromTo('.svc-cta', { opacity: 0, y: 16, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.1 }, 0.55)
+    })
+
+    return () => ctx.revert()
+  }, [])
+
   const selectedService = services[activeService]
   const collapsedServices = services.filter(
     (_, index) => index !== activeService,
@@ -939,56 +955,31 @@ export default function Services() {
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-14">
           <div className="grid lg:grid-cols-2 gap-10 items-center">
             <div>
-              <motion.div
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45 }}
-                className="inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5"
-              >
+              <div className="svc-badge inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
                 <Icon name="window" className="w-3 h-3" />
                 Services
-              </motion.div>
+              </div>
 
-              <motion.h1
-                initial={{ opacity: 0, y: 18 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.55, delay: 0.08 }}
-                className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5"
-              >
-                Services Built Around{' '}
-                <span className="text-[#00C8F8]">Digital Growth</span>
-              </motion.h1>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
+                <span className="svc-heading-line block">Services Built Around</span>
+                <span className="svc-heading-line block text-[#00C8F8]">Digital Growth</span>
+              </h1>
 
-              <motion.p
-                initial={{ opacity: 0, y: 16 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.16 }}
-                className="text-[#9CA3AF] text-lg leading-relaxed max-w-xl mb-8"
-              >
+              <p className="svc-desc text-[#9CA3AF] text-lg leading-relaxed max-w-xl mb-8">
                 From CRM websites and CMS platforms to technical SEO,
                 performance optimisation and analytics, Crestwave helps
                 businesses build digital systems that are faster, clearer and
                 easier to scale.
-              </motion.p>
+              </p>
 
-              <motion.div
-                initial={{ opacity: 0, y: 14 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.45, delay: 0.24 }}
-                className="flex flex-col sm:flex-row gap-3"
-              >
+              <div className="flex flex-col sm:flex-row gap-3">
                 <a
                   href="#services"
-                  className="inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
+                  className="svc-cta inline-flex items-center justify-center gap-2 bg-white hover:bg-[#F0F0F0] text-[#000000] font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-[#00C8F8]/20"
                 >
                   Explore Services
                   <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
+                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -996,32 +987,22 @@ export default function Services() {
 
                 <a
                   href="/contact"
-                  className="inline-flex items-center justify-center gap-2 bg-[#000000] border border-[#333333] text-[#D1D5DB] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200"
+                  className="svc-cta inline-flex items-center justify-center gap-2 bg-[#000000] border border-[#333333] text-[#D1D5DB] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200"
                 >
                   <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
+                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
                   >
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
                   </svg>
                   Book a Consultation
                 </a>
-              </motion.div>
+              </div>
             </div>
 
-            <motion.div
-              initial={{ opacity: 0, x: 28 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="flex justify-center lg:justify-end"
-            >
+            <div className="flex justify-center lg:justify-end">
               <ServiceIllustration />
-            </motion.div>
+            </div>
           </div>
         </div>
       </section>

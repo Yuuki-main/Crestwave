@@ -1,6 +1,12 @@
 'use client'
-import { useState } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+if (typeof window !== 'undefined') {
+  gsap.registerPlugin(ScrollTrigger)
+}
 
 const services = [
   {
@@ -462,29 +468,73 @@ function CompactServiceRow({ service, onClick }) {
 
 export default function ServicesSection() {
   const [active, setActive] = useState(0)
+  const headerRef = useRef(null)
+  const sidebarRef = useRef(null)
+
+  useEffect(() => {
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const ctx = gsap.context(() => {
+      if (reduced) {
+        gsap.set(headerRef.current, { opacity: 1, y: 0 })
+        if (sidebarRef.current) {
+          gsap.set(sidebarRef.current, { opacity: 1, x: 0 })
+          gsap.set(sidebarRef.current.children, { opacity: 1, x: 0 })
+        }
+        return
+      }
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: '#services',
+          start: 'top 75%',
+          once: true,
+        },
+      })
+
+      tl.fromTo(
+        headerRef.current,
+        { opacity: 0, y: 30 },
+        { opacity: 1, y: 0, duration: 0.7, ease: 'power3.out' }
+      )
+
+      if (sidebarRef.current) {
+        tl.fromTo(
+          sidebarRef.current,
+          { opacity: 0, x: -30 },
+          { opacity: 1, x: 0, duration: 0.6, ease: 'power3.out' },
+          '-=0.3'
+        )
+        tl.fromTo(
+          sidebarRef.current.children,
+          { opacity: 0, x: -20 },
+          {
+            opacity: 1,
+            x: 0,
+            duration: 0.4,
+            stagger: 0.04,
+            ease: 'power3.out',
+          },
+          '-=0.2'
+        )
+      }
+    }, headerRef)
+
+    return () => ctx.revert()
+  }, [])
 
   return (
     <section id="services" className="py-20 bg-[#000000]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="mb-12"
-        >
+        <div ref={headerRef} className="mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-white mb-2">
             Our Services
           </h2>
-        </motion.div>
+        </div>
 
         <div className="grid lg:grid-cols-[220px_1fr] gap-8">
           {/* Sidebar */}
-          <motion.aside
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+          <aside
+            ref={sidebarRef}
             className="hidden lg:block"
           >
             <nav className="space-y-1 sticky top-24">
@@ -509,7 +559,7 @@ export default function ServicesSection() {
                 </button>
               ))}
             </nav>
-          </motion.aside>
+          </aside>
 
           {/* Main content */}
           <div className="space-y-4">
