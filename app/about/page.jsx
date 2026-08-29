@@ -115,42 +115,6 @@ function SectionLabel({ children }) {
 
 /* ─── Visuals ─── */
 
-function TeamMeetingVisual() {
-  return (
-    <div className="relative">
-      <div className="relative h-[360px] rounded-[2rem] overflow-hidden bg-[#0A0A0A] border border-[#222222] shadow-sm">
-        <svg viewBox="0 0 520 360" className="w-full h-full" fill="none">
-          <rect width="520" height="360" fill="url(#meetingBg)" />
-          <rect x="350" y="40" width="120" height="190" rx="18" fill="#1A1A1A" opacity="0.8" />
-          <path d="M410 40v190M350 105h120" stroke="#333333" strokeWidth="3" />
-          <rect x="150" y="58" width="190" height="112" rx="18" fill="#000000" />
-          <rect x="166" y="75" width="158" height="78" rx="12" fill="#111111" />
-          <circle cx="204" cy="114" r="18" fill="#00C8F8" opacity="0.16" />
-          <text x="230" y="119" fontFamily="system-ui" fontSize="18" fontWeight="700" fill="#FFFFFF">Crestwave</text>
-          <ellipse cx="265" cy="270" rx="190" ry="58" fill="#222222" opacity="0.55" />
-          <ellipse cx="265" cy="252" rx="170" ry="45" fill="#111111" />
-          <g opacity="0.95">
-            <circle cx="240" cy="190" r="24" fill="#D7B79D" />
-            <path d="M204 350c2-70 22-112 58-112s57 42 59 112" fill="#111827" />
-            <rect x="215" y="215" width="90" height="88" rx="28" fill="#111111" />
-          </g>
-          <g><circle cx="120" cy="230" r="20" fill="#CFA48B" /><path d="M68 350c4-54 21-86 54-86s50 32 54 86" fill="#222222" /></g>
-          <g><circle cx="405" cy="230" r="20" fill="#D6B39B" /><path d="M350 350c4-54 21-86 54-86s51 32 55 86" fill="#2A2A2A" /></g>
-          <g><circle cx="300" cy="230" r="17" fill="#D8B197" /><path d="M260 350c3-48 18-76 45-76s42 28 45 76" fill="#333333" /></g>
-          <rect x="155" y="250" width="66" height="42" rx="8" fill="#222222" />
-          <rect x="315" y="250" width="66" height="42" rx="8" fill="#222222" />
-          <rect x="235" y="245" width="70" height="45" rx="8" fill="#222222" />
-          <defs>
-            <linearGradient id="meetingBg" x1="0" y1="0" x2="520" y2="360">
-              <stop stopColor="#111111" /><stop offset="0.5" stopColor="#0A0A0A" /><stop offset="1" stopColor="#111111" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </div>
-    </div>
-  )
-}
-
 function SydneyVisual() {
   return (
     <div className="relative h-[330px] rounded-[2rem] overflow-hidden border border-[#222222] shadow-sm bg-[#0A0A0A]">
@@ -297,9 +261,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <div ref={heroImgRef}>
-              <TeamMeetingVisual />
-            </div>
+            {/* Hero image slot — artwork to be added */}
+            <div
+              ref={heroImgRef}
+              className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]"
+            />
           </div>
 
           {/* Stats */}

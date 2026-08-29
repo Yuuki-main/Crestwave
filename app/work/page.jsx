@@ -24,52 +24,46 @@ const filters = [
 
 const projects = [
   {
-    title: 'Precision Plumbing',
+    title: "Som's Energy",
     category: 'CRM Websites',
     description:
-      'CRM-connected website with advanced enquiry routing and conversion-focused landing pages.',
-    theme: 'dark',
-    visual: 'plumbing',
+      'Solar and battery storage site for a Melbourne installer, built around free-consultation enquiries and $0-upfront system offers.',
+    url: 'https://somsenergy.com.au/',
   },
   {
-    title: 'GreenScape Australia',
+    title: 'Aussie Energreen',
     category: 'CMS Platforms',
     description:
-      'Scalable CMS platform with custom content modules for a growing team.',
-    theme: 'green',
-    visual: 'landscape',
+      'VEU-accredited provider site covering solar, batteries, heat pumps and air conditioning across Victoria.',
+    url: 'https://aussieenergreen.com.au/',
   },
   {
-    title: 'Living Space Co.',
-    category: 'E-commerce',
-    description:
-      'E-commerce experience designed to increase AOV and streamline checkout.',
-    theme: 'warm',
-    visual: 'commerce',
-  },
-  {
-    title: 'Apex Fitness',
-    category: 'SEO & Performance',
-    description:
-      'Core Web Vitals optimisation that improved speed and user experience.',
-    theme: 'black',
-    visual: 'fitness',
-  },
-  {
-    title: 'Data Driven Co.',
-    category: 'SEO & Performance',
-    description:
-      'Analytics setup, KPI tracking and custom dashboards for clarity.',
-    theme: 'data',
-    visual: 'analytics',
-  },
-  {
-    title: 'WorkFlow Hub',
+    title: 'Moving Easy',
     category: 'Integrations',
     description:
-      'Custom integrations connecting CRM, payments and marketing platforms.',
-    theme: 'blue',
-    visual: 'workflow',
+      'Moving marketplace connecting New Zealand customers with verified carriers, returning comparable quotes in minutes.',
+    url: 'https://movingeasy.co.nz/',
+  },
+  {
+    title: 'Averon Electricals',
+    category: 'SEO & Performance',
+    description:
+      'Adelaide solar and electrical site with fixed transparent pricing, rebate guidance and 40+ supported equipment brands.',
+    url: 'https://averon-web.vercel.app/',
+  },
+  {
+    title: 'Nexon Energy',
+    category: 'E-commerce',
+    description:
+      'Product catalogue for a solar distributor — panels, hybrid inverters and LiFePO4 storage, with a system sizing calculator.',
+    url: 'https://www.nexonandco.com.au/',
+  },
+  {
+    title: 'CrestWave Energy',
+    category: 'CRM Websites',
+    description:
+      'Solar and energy-efficiency site for Victorian homes and businesses, with CEC-approved installs and warranty-led messaging.',
+    url: 'https://www.crestwaveenergy.com.au/',
   },
 ]
 
@@ -126,285 +120,6 @@ function Icon({ name, className = 'w-5 h-5' }) {
   }
 
   return icons[name] || icons.grid
-}
-
-/* ─── Hero Illustration ─── */
-
-function WorkIllustration() {
-  return (
-    <div className="relative w-full max-w-md h-64">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, delay: 0.15 }}
-        className="absolute left-16 top-8 w-64 h-44 rounded-3xl bg-[#111111]/80 border border-[#222222] shadow-sm"
-      >
-        <svg viewBox="0 0 260 180" className="w-full h-full" fill="none">
-          <rect x="26" y="24" width="208" height="132" rx="18" fill="#111111" />
-          <circle cx="47" cy="44" r="4" fill="#444444" />
-          <circle cx="61" cy="44" r="4" fill="#555555" />
-          <circle cx="75" cy="44" r="4" fill="#333333" />
-          <path
-            d="M48 126C72 98 88 114 110 86C134 55 154 102 180 72C196 54 209 58 220 44"
-            stroke="#00C8F8"
-            strokeWidth="4"
-            strokeLinecap="round"
-          />
-          <path d="M48 137h172" stroke="#1A1A1A" strokeWidth="2" />
-          <path
-            d="M58 70h40"
-            stroke="#1A1A1A"
-            strokeWidth="8"
-            strokeLinecap="round"
-          />
-          <path
-            d="M58 88h28"
-            stroke="#1A1A1A"
-            strokeWidth="8"
-            strokeLinecap="round"
-          />
-        </svg>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute left-8 top-28 w-24 h-24 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center"
-      >
-        <div className="relative w-14 h-14 rounded-full bg-[#1A1A1A]">
-          <div className="absolute inset-2 rounded-full border-8 border-[#333333]" />
-          <div className="absolute inset-2 rounded-full border-8 border-[#00C8F8] border-r-transparent border-b-transparent" />
-        </div>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 7, 0] }}
-        transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-4 bottom-8 w-24 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
-      >
-        <Icon name="image" className="w-10 h-10" />
-      </motion.div>
-
-      <svg
-        viewBox="0 0 420 260"
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        fill="none"
-      >
-        <path
-          d="M70 135C95 72 165 45 224 68C290 94 323 42 374 70"
-          stroke="#333333"
-          strokeWidth="2"
-          strokeDasharray="5 7"
-        />
-        <path
-          d="M68 176C152 235 279 218 350 145"
-          stroke="#333333"
-          strokeWidth="2"
-          strokeDasharray="5 7"
-        />
-      </svg>
-    </div>
-  )
-}
-
-/* ─── Project Visuals ─── */
-
-function ProjectVisual({ project }) {
-  const base =
-    'relative h-48 overflow-hidden rounded-t-3xl border-b border-[#1A1A1A]'
-
-  if (project.theme === 'dark') {
-    return (
-      <div className={`${base} bg-[#000000] text-white`}>
-        <div className="absolute inset-0 bg-[#000000]" />
-        <div className="absolute inset-0 opacity-30">
-          <svg viewBox="0 0 500 220" className="w-full h-full" fill="none">
-            <path
-              d="M0 160C90 80 185 190 280 110C355 48 420 70 500 30"
-              stroke="#00C8F8"
-              strokeWidth="3"
-            />
-            <path
-              d="M0 190C120 120 200 210 310 140C390 88 445 96 500 70"
-              stroke="#444444"
-              strokeWidth="2"
-            />
-          </svg>
-        </div>
-        <div className="relative p-7">
-          <p className="text-xs text-[#00C8F8] font-semibold mb-5">Crestwave</p>
-          <h3 className="text-2xl font-bold leading-tight max-w-xs">
-            Precision Plumbing <br /> Services You Can Trust
-          </h3>
-          <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-[#00C8F8] text-xs font-semibold">
-              Book Service
-            </span>
-            <span className="px-4 py-2 rounded-full border border-[#333333] text-xs">
-              View Services
-            </span>
-          </div>
-        </div>
-        <div className="absolute right-7 top-10 w-28 bg-[#000000] rounded-2xl p-4 shadow-xl">
-          <div className="space-y-2">
-            <div className="h-2 rounded-full bg-[#222222]" />
-            <div className="h-2 rounded-full bg-[#161616]" />
-            <div className="h-9 rounded-xl bg-[#1A1A1A] mt-4" />
-            <div className="h-8 rounded-xl bg-[#00C8F8]" />
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (project.theme === 'green') {
-    return (
-      <div className={`${base} bg-[#0A0A0A]`}>
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A0A0A] to-[#0D0D0D]" />
-        <div className="relative p-7">
-          <p className="text-xs text-green-700 font-semibold mb-5">
-            GreenScape
-          </p>
-          <h3 className="text-2xl font-bold text-white leading-tight max-w-xs">
-            Australia&apos;s Trusted <br /> Landscape Experts
-          </h3>
-          <div className="mt-7 flex gap-3">
-            <span className="px-4 py-2 rounded-full bg-[#00C8F8] text-white text-xs font-semibold">
-              Get Quote
-            </span>
-            <span className="px-4 py-2 rounded-full bg-[#000000] text-[#E5E7EB] text-xs">
-              Services
-            </span>
-          </div>
-        </div>
-        <div className="absolute right-6 bottom-6 w-40 h-28 rounded-2xl bg-[#000000] shadow-lg border border-green-100 overflow-hidden">
-          <div className="h-16 bg-linear-to-br from-[#00C8F8]/20 to-[#00C8F8]/40" />
-          <div className="p-3 space-y-2">
-            <div className="h-2 rounded-full bg-green-100" />
-            <div className="h-2 rounded-full bg-[#161616]" />
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  if (project.theme === 'warm') {
-    return (
-      <div className={`${base} bg-[#0A0A0A]`}>
-        <div className="absolute inset-0 bg-linear-to-br from-[#0A0A0A] to-[#0D0D0D]" />
-        <div className="relative p-7">
-          <p className="text-xs text-stone-600 font-semibold mb-5">LivSpace</p>
-          <h3 className="text-2xl font-bold text-white leading-tight max-w-xs">
-            Quality Furniture, <br /> Designed for Life
-          </h3>
-          <p className="text-xs text-[#9CA3AF] max-w-xs mt-3">
-            Discover better living with curated interiors.
-          </p>
-        </div>
-        <div className="absolute right-5 bottom-5 flex gap-3">
-          {[1, 2, 3].map((item) => (
-            <div
-              key={item}
-              className="w-20 h-24 bg-[#111111] rounded-2xl shadow-md p-2"
-            >
-              <div className="h-12 rounded-xl bg-stone-200 mb-2" />
-              <div className="h-2 rounded-full bg-stone-200" />
-            </div>
-          ))}
-        </div>
-      </div>
-    )
-  }
-
-  if (project.theme === 'black') {
-    return (
-      <div className={`${base} bg-black text-white`}>
-        <div className="absolute inset-0 bg-[#000000]" />
-        <div className="relative p-7">
-          <p className="text-xs text-[#00C8F8] font-semibold mb-5">
-            Apex Fitness
-          </p>
-          <h3 className="text-2xl font-bold leading-tight">
-            Performance <br /> That Drives Results
-          </h3>
-          <div className="mt-8 flex gap-3">
-            {[96, 100, 96, 100].map((score, i) => (
-              <div
-                key={i}
-                className="w-12 h-12 rounded-full border-2 border-green-400 flex items-center justify-center text-xs font-bold"
-              >
-                {score}
-              </div>
-            ))}
-          </div>
-        </div>
-        <div className="absolute right-6 top-9 w-40 h-28 bg-[#0A0A0A] rounded-2xl border border-[#333333] p-4">
-          <svg viewBox="0 0 140 80" className="w-full h-full" fill="none">
-            <path
-              d="M5 60C25 20 45 70 70 38C95 8 105 55 135 20"
-              stroke="#00C8F8"
-              strokeWidth="3"
-            />
-            <path d="M5 70h130" stroke="#222222" />
-          </svg>
-        </div>
-      </div>
-    )
-  }
-
-  if (project.theme === 'data') {
-    return (
-      <div className={`${base} bg-[#000000] text-white`}>
-        <div className="absolute inset-0 bg-[#000000]" />
-        <div className="relative p-7">
-          <p className="text-xs text-cyan-300 font-semibold mb-5">
-            Data Driven Co.
-          </p>
-          <h3 className="text-2xl font-bold leading-tight max-w-xs">
-            Data That Drives <br /> Smarter Decisions
-          </h3>
-        </div>
-        <div className="absolute right-6 bottom-6 w-44 h-28 bg-[#0A0A0A]/80 rounded-2xl border border-[#333333] p-4">
-          <div className="flex items-end gap-2 h-full">
-            {[35, 52, 44, 70, 58, 86, 74].map((h, i) => (
-              <div
-                key={i}
-                className="flex-1 rounded-t-md bg-cyan-400"
-                style={{ height: `${h}%` }}
-              />
-            ))}
-          </div>
-        </div>
-      </div>
-    )
-  }
-
-  return (
-    <div className={`${base} bg-[#000000] text-white`}>
-      <div className="absolute inset-0 bg-[#000000]" />
-      <div className="relative p-7">
-        <p className="text-xs text-[#D1D5DB] font-semibold mb-5">Crestwave</p>
-        <h3 className="text-2xl font-bold leading-tight max-w-xs">
-          All Your Tools. <br /> One Seamless Platform.
-        </h3>
-        <p className="text-xs text-[#D1D5DB] max-w-xs mt-3">
-          Connect your systems and simplify your workflows.
-        </p>
-      </div>
-      <div className="absolute right-7 bottom-6 w-44 bg-[#000000] rounded-2xl p-4 shadow-xl">
-        <div className="grid grid-cols-4 gap-2">
-          {['S', 'X', 'H', 'P'].map((item) => (
-            <div
-              key={item}
-              className="w-8 h-8 rounded-full bg-[#1A1A1A] text-[#00C8F8] text-xs font-bold flex items-center justify-center"
-            >
-              {item}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
-  )
 }
 
 /* ─── Components ─── */
@@ -487,7 +202,8 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.35, delay: index * 0.04 }}
       className="bg-[#000000] border border-[#222222] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-[#333333] transition-all duration-300 group"
     >
-      <ProjectVisual project={project} />
+      {/* Card image slot — artwork to be added */}
+      <div className="h-48 rounded-t-3xl bg-[#1A1A1A] border-b border-[#333333]" />
 
       <div className="p-6">
         <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#1A1A1A] text-[#D1D5DB] text-[11px] font-bold uppercase tracking-wide border border-[#222222] mb-3">
@@ -501,10 +217,12 @@ function ProjectCard({ project, index }) {
         </p>
 
         <a
-          href="#"
+          href={project.url}
+          target="_blank"
+          rel="noopener noreferrer"
           className="inline-flex items-center gap-2 text-sm font-bold text-[#00C8F8] group-hover:gap-3 transition-all"
         >
-          View Case Study
+          Visit Site
           <Icon name="arrow" className="w-4 h-4" />
         </a>
       </div>
@@ -522,9 +240,7 @@ function MobileProjectCard({ project, index }) {
       className="bg-[#000000] border border-[#222222] rounded-2xl p-3 shadow-sm"
     >
       <div className="grid grid-cols-[112px_1fr] gap-4">
-        <div className="rounded-xl overflow-hidden h-24">
-          <ProjectVisual project={project} />
-        </div>
+        <div className="h-24 rounded-xl bg-[#1A1A1A] border border-[#333333]" />
 
         <div className="min-w-0">
           <span className="inline-flex px-2 py-0.5 rounded-md bg-[#1A1A1A] text-[#D1D5DB] text-[9px] font-bold uppercase mb-1.5">
@@ -540,10 +256,12 @@ function MobileProjectCard({ project, index }) {
           </p>
 
           <a
-            href="#"
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center gap-1 text-xs font-bold text-[#00C8F8]"
           >
-            View Case Study
+            Visit Site
             <Icon name="arrow" className="w-3.5 h-3.5" />
           </a>
         </div>
@@ -629,9 +347,8 @@ export default function WorkPage() {
               </p>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <WorkIllustration />
-            </div>
+            {/* Hero image slot — artwork to be added */}
+            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
           </div>
         </div>
       </section>

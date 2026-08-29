@@ -418,76 +418,6 @@ function CheckIcon() {
   )
 }
 
-/* ─── Hero Illustration ─── */
-
-function ServiceIllustration() {
-  return (
-    <div className="relative w-full max-w-md h-64">
-      <motion.div
-        initial={{ opacity: 0, y: 18 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.55, delay: 0.15 }}
-        className="absolute left-12 top-6 w-64 h-44 rounded-3xl bg-[#111111]/80 border border-[#222222] shadow-sm"
-      >
-        <svg viewBox="0 0 260 180" className="w-full h-full" fill="none">
-          <rect x="24" y="26" width="212" height="128" rx="18" fill="#111111" />
-          <circle cx="45" cy="46" r="4" fill="#444444" />
-          <circle cx="59" cy="46" r="4" fill="#555555" />
-          <circle cx="73" cy="46" r="4" fill="#333333" />
-          <rect x="42" y="70" width="48" height="40" rx="8" fill="#1A1A1A" />
-          <rect x="106" y="72" width="92" height="8" rx="4" fill="#C7D2FE" />
-          <rect x="106" y="90" width="70" height="8" rx="4" fill="#E0E7FF" />
-          <rect x="42" y="126" width="126" height="7" rx="3.5" fill="#1A1A1A" />
-          <rect x="42" y="141" width="94" height="7" rx="3.5" fill="#E0E7FF" />
-        </svg>
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-8 top-24 w-20 h-20 bg-[#111111] rounded-3xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
-      >
-        <Icon name="speed" className="w-9 h-9" />
-      </motion.div>
-
-      <motion.div
-        animate={{ y: [0, 7, 0] }}
-        transition={{ duration: 3.2, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute left-4 top-24 w-16 h-16 bg-[#111111] rounded-2xl shadow-lg border border-[#222222] flex items-center justify-center text-[#00C8F8]"
-      >
-        <Icon name="support" className="w-7 h-7" />
-      </motion.div>
-
-      <motion.div
-        animate={{ scale: [1, 1.08, 1] }}
-        transition={{ duration: 2.8, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute right-2 top-8 w-12 h-12 bg-[#111111] rounded-2xl shadow-sm border border-[#222222] flex items-center justify-center text-[#00C8F8]"
-      >
-        <Icon name="search" className="w-6 h-6" />
-      </motion.div>
-
-      <svg
-        viewBox="0 0 420 260"
-        className="absolute inset-0 w-full h-full pointer-events-none"
-        fill="none"
-      >
-        <path
-          d="M72 132C92 70 165 42 229 65C293 88 324 39 375 64"
-          stroke="#333333"
-          strokeWidth="2"
-          strokeDasharray="5 7"
-        />
-        <path
-          d="M65 170C150 236 276 222 343 145"
-          stroke="#333333"
-          strokeWidth="2"
-          strokeDasharray="5 7"
-        />
-      </svg>
-    </div>
-  )
-}
-
 /* ─── Components ─── */
 
 function CategoryCard({ category, active, onClick }) {
@@ -645,32 +575,9 @@ function ExpandedService({ service }) {
           </div>
         </div>
 
+        {/* Service image slot — artwork to be added */}
         <div className="hidden lg:flex items-center justify-center">
-          <div className="relative w-56 h-56">
-            <div className="absolute inset-0 rounded-4xl bg-[#0A0A0A] border border-[#222222]" />
-            <div className="absolute top-8 left-7 right-7 h-28 bg-[#111111] rounded-2xl border border-[#222222] shadow-sm">
-              <div className="flex gap-1.5 px-4 pt-4">
-                <span className="w-2 h-2 rounded-full bg-[#00C8F8]" />
-                <span className="w-2 h-2 rounded-full bg-[#222222]" />
-                <span className="w-2 h-2 rounded-full bg-[#1A1A1A]" />
-              </div>
-              <div className="px-4 pt-4 space-y-2">
-                <div className="w-24 h-2 rounded-full bg-[#1A1A1A]" />
-                <div className="w-32 h-2 rounded-full bg-[#1A1A1A]" />
-                <div className="w-20 h-2 rounded-full bg-[#1A1A1A]" />
-              </div>
-            </div>
-            <div className="absolute bottom-8 right-4 w-24 bg-[#111111] rounded-2xl border border-[#222222] shadow-md p-4">
-              <div className="space-y-2">
-                <div className="w-full h-2 rounded-full bg-[#1A1A1A]" />
-                <div className="w-4/5 h-2 rounded-full bg-[#1A1A1A]" />
-                <div className="w-3/5 h-2 rounded-full bg-[#1A1A1A]" />
-              </div>
-            </div>
-            <div className="absolute bottom-5 left-5 w-12 h-12 rounded-2xl bg-[#000000] border border-[#222222] shadow-md flex items-center justify-center text-[#00C8F8]">
-              <Icon name="users" className="w-6 h-6" />
-            </div>
-          </div>
+          <div className="w-56 h-56 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
         </div>
       </div>
     </motion.div>
@@ -922,15 +829,36 @@ export default function Services() {
   const [activeService, setActiveService] = useState(0)
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
     const ctx = gsap.context(() => {
       if (reduced) return
 
       const tl = gsap.timeline()
-      tl.fromTo('.svc-badge', { opacity: 0, y: 16, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6 })
-      tl.fromTo('.svc-heading-line', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1)
-      tl.fromTo('.svc-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.4)
-      tl.fromTo('.svc-cta', { opacity: 0, y: 16, scale: 0.97 }, { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.1 }, 0.55)
+      tl.fromTo(
+        '.svc-badge',
+        { opacity: 0, y: 16, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6 },
+      )
+      tl.fromTo(
+        '.svc-heading-line',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 },
+        0.1,
+      )
+      tl.fromTo(
+        '.svc-desc',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        0.4,
+      )
+      tl.fromTo(
+        '.svc-cta',
+        { opacity: 0, y: 16, scale: 0.97 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.55, stagger: 0.1 },
+        0.55,
+      )
     })
 
     return () => ctx.revert()
@@ -961,8 +889,12 @@ export default function Services() {
               </div>
 
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-5">
-                <span className="svc-heading-line block">Services Built Around</span>
-                <span className="svc-heading-line block text-[#00C8F8]">Digital Growth</span>
+                <span className="svc-heading-line block">
+                  Services Built Around
+                </span>
+                <span className="svc-heading-line block text-[#00C8F8]">
+                  Digital Growth
+                </span>
               </h1>
 
               <p className="svc-desc text-[#9CA3AF] text-lg leading-relaxed max-w-xl mb-8">
@@ -979,7 +911,12 @@ export default function Services() {
                 >
                   Explore Services
                   <svg
-                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
                   >
                     <path d="M5 12h14M12 5l7 7-7 7" />
                   </svg>
@@ -990,7 +927,12 @@ export default function Services() {
                   className="svc-cta inline-flex items-center justify-center gap-2 bg-[#000000] border border-[#333333] text-[#D1D5DB] font-semibold px-6 py-3.5 rounded-xl hover:bg-[#1A1A1A] transition-all duration-200"
                 >
                   <svg
-                    width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
                   >
                     <rect x="3" y="4" width="18" height="18" rx="2" />
                     <path d="M16 2v4M8 2v4M3 10h18" />
@@ -1000,9 +942,8 @@ export default function Services() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end">
-              <ServiceIllustration />
-            </div>
+            {/* Hero image slot — artwork to be added */}
+            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
           </div>
         </div>
       </section>

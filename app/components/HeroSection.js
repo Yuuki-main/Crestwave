@@ -2,153 +2,6 @@
 
 import { useRef, useEffect } from 'react'
 import gsap from 'gsap'
-import { motion } from 'framer-motion'
-import { LineReveal } from './TextReveal'
-
-function HeroIllustration() {
-  const containerRef = useRef(null)
-
-  useEffect(() => {
-    const reduced = window.matchMedia(
-      '(prefers-reduced-motion: reduce)',
-    ).matches
-    if (reduced) return
-
-    const ctx = gsap.context(() => {
-      const tl = gsap.timeline({ delay: 0.3 })
-
-      tl.fromTo(
-        containerRef.current.querySelector('.hero-browser'),
-        { opacity: 0, y: 60, scale: 0.9 },
-        { opacity: 1, y: 0, scale: 1, duration: 1, ease: 'power4.out' },
-        0,
-      )
-      tl.fromTo(
-        containerRef.current.querySelector('.hero-badge-1'),
-        { opacity: 0, scale: 0, y: 20 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.7)' },
-        0.4,
-      )
-      tl.fromTo(
-        containerRef.current.querySelector('.hero-badge-2'),
-        { opacity: 0, scale: 0, y: -20 },
-        { opacity: 1, scale: 1, y: 0, duration: 0.6, ease: 'back.out(1.7)' },
-        0.55,
-      )
-      tl.fromTo(
-        containerRef.current.querySelector('.hero-badge-3'),
-        { opacity: 0, scale: 0 },
-        { opacity: 1, scale: 1, duration: 0.6, ease: 'back.out(1.7)' },
-        0.7,
-      )
-      tl.fromTo(
-        containerRef.current.querySelectorAll('.hero-dot'),
-        { opacity: 0, scale: 0 },
-        {
-          opacity: 1,
-          scale: 1,
-          duration: 0.4,
-          stagger: 0.1,
-          ease: 'back.out(1.7)',
-        },
-        0.85,
-      )
-    }, containerRef)
-
-    return () => ctx.revert()
-  }, [])
-
-  return (
-    <div ref={containerRef} className="relative w-full h-80 lg:h-96">
-      {/* Browser window mockup */}
-      <div className="hero-browser absolute top-0 left-1/2 -translate-x-1/2 w-72 lg:w-80 bg-[#111111] rounded-2xl shadow-xl border border-[#222222] overflow-hidden">
-        <div className="flex items-center gap-1.5 px-4 py-3 bg-[#0A0A0A] border-b border-[#1A1A1A]">
-          <div className="w-2.5 h-2.5 rounded-full bg-red-400" />
-          <div className="w-2.5 h-2.5 rounded-full bg-yellow-400" />
-          <div className="w-2.5 h-2.5 rounded-full bg-green-400" />
-          <div className="flex-1 mx-3 h-5 bg-[#222222] rounded-full" />
-        </div>
-        <div className="p-4 space-y-2">
-          <div className="h-3 bg-[#1A1A1A] rounded-full w-3/4" />
-          <div className="h-3 bg-[#161616] rounded-full w-full" />
-          <div className="h-3 bg-[#161616] rounded-full w-5/6" />
-          <div className="h-8 bg-[#00C8F8] rounded-lg w-1/2 mt-4" />
-        </div>
-      </div>
-
-      {/* Search icon badge */}
-      <div className="hero-badge-1 absolute top-8 right-4 lg:right-8 w-14 h-14 bg-[#111111] rounded-2xl shadow-lg flex items-center justify-center border border-[#222222]">
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#00C8F8"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <circle cx="11" cy="11" r="8" />
-          <path d="m21 21-4.35-4.35" />
-        </svg>
-      </div>
-
-      {/* Speed gauge badge */}
-      <div className="hero-badge-2 absolute bottom-8 right-8 lg:right-16 w-14 h-14 bg-[#111111] rounded-2xl shadow-lg flex items-center justify-center border border-[#222222]">
-        <svg
-          width="28"
-          height="28"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#00C8F8"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 2a10 10 0 0 1 10 10" />
-          <path d="M12 6a6 6 0 0 1 6 6" />
-          <circle cx="12" cy="12" r="2" />
-          <path d="m12 12 4-4" />
-        </svg>
-      </div>
-
-      {/* Person avatar badge */}
-      <div className="hero-badge-3 absolute bottom-4 left-8 w-12 h-12 bg-[#00C8F8] rounded-full shadow-lg flex items-center justify-center">
-        <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="white"
-          strokeWidth="2"
-        >
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
-        </svg>
-      </div>
-
-      {/* Floating dots */}
-      {[
-        { top: '20%', left: '15%', size: 6 },
-        { top: '60%', left: '10%', size: 4 },
-        { top: '40%', right: '5%', size: 5 },
-        { top: '75%', right: '30%', size: 4 },
-      ].map((dot, i) => (
-        <div
-          key={i}
-          className="hero-dot absolute rounded-full bg-[#00C8F8]"
-          style={{
-            width: dot.size,
-            height: dot.size,
-            top: dot.top,
-            left: dot.left,
-            right: dot.right,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
 
 const pillars = [
   {
@@ -321,8 +174,8 @@ export default function HeroSection() {
         <div className="absolute bottom-0 right-1/3 w-80 h-80 rounded-full bg-[#1A1A1A]/50 blur-3xl" />
       </div>
 
-      {/* <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8"> */}
-      <div className="relative bg-[url('/crest_home_bg.png')] bg-cover bg-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
+        {/* <div className="relative bg-[url('/crest_home_bg.png')] bg-cover bg-center"> */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
           <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-8rem)]">
             {/* Left content */}
@@ -369,8 +222,8 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* Right illustration */}
-            <div>{/* <HeroIllustration /> */}</div>
+            {/* Hero image slot — artwork to be added */}
+            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
           </div>
 
           {/* Pillars row */}

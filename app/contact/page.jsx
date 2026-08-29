@@ -6,117 +6,6 @@ import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 
-/* ─── Hero illustration ─── */
-function ContactIllustration() {
-  return (
-    <div className="relative w-64 h-48 sm:w-80 sm:h-56">
-      {/* Envelope */}
-      <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.3, duration: 0.6 }}
-        className="absolute top-4 left-1/2 -translate-x-1/2 w-48 sm:w-56"
-      >
-        <svg
-          viewBox="0 0 220 150"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            x="4"
-            y="20"
-            width="212"
-            height="126"
-            rx="12"
-            fill="#111111"
-            stroke="#1A1A1A"
-            strokeWidth="2"
-          />
-          <rect
-            x="4"
-            y="20"
-            width="212"
-            height="126"
-            rx="12"
-            fill="url(#envGrad)"
-            opacity="0.4"
-          />
-          <path d="M4 32L110 88L216 32" stroke="#333333" strokeWidth="2" />
-          <circle
-            cx="170"
-            cy="50"
-            r="24"
-            fill="#111111"
-            stroke="#1A1A1A"
-            strokeWidth="2"
-          />
-          <path
-            d="M162 50h16M170 42v16"
-            stroke="#555555"
-            strokeWidth="2"
-            strokeLinecap="round"
-          />
-          <defs>
-            <linearGradient
-              id="envGrad"
-              x1="4"
-              y1="20"
-              x2="216"
-              y2="146"
-              gradientUnits="userSpaceOnUse"
-            >
-              <stop stopColor="#111111" />
-              <stop offset="1" stopColor="#1A1A1A" />
-            </linearGradient>
-          </defs>
-        </svg>
-      </motion.div>
-
-      {/* Phone badge */}
-      <motion.div
-        animate={{ y: [0, -8, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-        className="absolute bottom-2 left-6 w-14 h-14 bg-[#111111] rounded-2xl shadow-lg border border-[#222222] flex items-center justify-center"
-      >
-        <svg
-          width="26"
-          height="26"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="#00C8F8"
-          strokeWidth="2"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.76 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.7 1h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.65a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
-        </svg>
-      </motion.div>
-
-      {/* Floating dots */}
-      {[
-        { top: '10%', right: '8%', size: 5, delay: 0 },
-        { top: '50%', left: '4%', size: 4, delay: 0.6 },
-        { bottom: '15%', right: '12%', size: 6, delay: 1.2 },
-      ].map((d, i) => (
-        <motion.div
-          key={i}
-          animate={{ scale: [1, 1.4, 1], opacity: [0.4, 1, 0.4] }}
-          transition={{ duration: 2.5, repeat: Infinity, delay: d.delay }}
-          className="absolute rounded-full bg-[#00C8F8]"
-          style={{
-            width: d.size,
-            height: d.size,
-            top: d.top,
-            right: d.right,
-            left: d.left,
-            bottom: d.bottom,
-          }}
-        />
-      ))}
-    </div>
-  )
-}
-
 /* ─── Sydney map SVG ─── */
 function SydneyMap() {
   return (
@@ -338,14 +227,30 @@ export default function ContactPage() {
   const [status, setStatus] = useState('idle')
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
     const ctx = gsap.context(() => {
       if (reduced) return
 
       const tl = gsap.timeline()
-      tl.fromTo('.ct-badge', { opacity: 0, y: 16, scale: 0.95 }, { opacity: 1, y: 0, scale: 1, duration: 0.6 })
-      tl.fromTo('.ct-heading-line', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 }, 0.1)
-      tl.fromTo('.ct-desc', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.7 }, 0.4)
+      tl.fromTo(
+        '.ct-badge',
+        { opacity: 0, y: 16, scale: 0.95 },
+        { opacity: 1, y: 0, scale: 1, duration: 0.6 },
+      )
+      tl.fromTo(
+        '.ct-heading-line',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.8, stagger: 0.12 },
+        0.1,
+      )
+      tl.fromTo(
+        '.ct-desc',
+        { opacity: 0, y: 20 },
+        { opacity: 1, y: 0, duration: 0.7 },
+        0.4,
+      )
     })
 
     return () => ctx.revert()
@@ -380,15 +285,26 @@ export default function ContactPage() {
           <div className="grid lg:grid-cols-2 gap-8 items-center">
             <div>
               <div className="ct-badge inline-flex items-center gap-2 bg-[#1A1A1A] border border-[#333333] text-[#D1D5DB] text-xs font-semibold px-3 py-1.5 rounded-full mb-5">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                <svg
+                  width="12"
+                  height="12"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                >
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                   <polyline points="22,6 12,13 2,6" />
                 </svg>
                 Contact Us
               </div>
               <h1 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-4">
-                <span className="ct-heading-line block">Let&apos;s Start the</span>
-                <span className="ct-heading-line block">Right Conversation</span>
+                <span className="ct-heading-line block">
+                  Let&apos;s Start the
+                </span>
+                <span className="ct-heading-line block">
+                  Right Conversation
+                </span>
               </h1>
               <p className="ct-desc text-[#9CA3AF] text-lg leading-relaxed max-w-md">
                 Tell us what you&apos;re building, where you are in the process,
@@ -396,9 +312,8 @@ export default function ContactPage() {
                 best next step.
               </p>
             </div>
-            <div className="flex justify-center lg:justify-end">
-              <ContactIllustration />
-            </div>
+            {/* Hero image slot — artwork to be added */}
+            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
           </div>
         </div>
       </section>
@@ -708,7 +623,7 @@ export default function ContactPage() {
             <div className="space-y-4">
               {/* Email Us */}
               <motion.a
-                href="mailto:hello@crestwavedigital.com"
+                href="mailto:info@crestwave.com.au"
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
@@ -975,7 +890,7 @@ export default function ContactPage() {
                   +61 428 895 741
                 </a>
                 <a
-                  href="mailto:hello@crestwavedigital.com"
+                  href="mailto:info@crestwave.com.au"
                   className="flex items-center gap-2 text-[#E5E7EB] hover:text-[#00C8F8] transition-colors text-sm"
                 >
                   <svg
@@ -989,7 +904,7 @@ export default function ContactPage() {
                     <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                     <polyline points="22,6 12,13 2,6" />
                   </svg>
-                  hello@crestwavedigital.com
+                  info@crestwave.com.au
                 </a>
               </div>
               <p className="text-[#9CA3AF] text-sm">
