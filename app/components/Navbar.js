@@ -25,7 +25,9 @@ export default function Navbar() {
   const headerRef = useRef(null)
 
   useEffect(() => {
-    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    const reduced = window.matchMedia(
+      '(prefers-reduced-motion: reduce)',
+    ).matches
     if (reduced) return
 
     const ctx = gsap.context(() => {
@@ -39,27 +41,23 @@ export default function Navbar() {
           duration: 0.7,
           ease: 'power3.out',
           delay: 0.1,
-        }
+        },
       )
 
-      // Scroll shrink — reduced blur for mobile perf, will-change pre-promotes layer
+      // Scroll shadow only — background stays as set by the bg-* class
       ScrollTrigger.create({
         trigger: document.body,
         start: 'top -80',
         onEnter: () => {
           gsap.to(headerRef.current, {
-            backgroundColor: 'rgba(0,0,0,0.95)',
-            backdropFilter: 'blur(8px)',
-            boxShadow: '0 1px 0 0 rgba(255,255,255,0.05)',
+            boxShadow: '0 1px 3px 0 rgba(0,0,0,0.10)',
             duration: 0.3,
             ease: 'power2.out',
           })
         },
         onLeaveBack: () => {
           gsap.to(headerRef.current, {
-            backgroundColor: 'rgba(0,0,0,1)',
-            backdropFilter: 'blur(0px)',
-            boxShadow: 'none',
+            boxShadow: '0 0 0 0 rgba(0,0,0,0)',
             duration: 0.3,
             ease: 'power2.out',
           })
@@ -78,13 +76,15 @@ export default function Navbar() {
   return (
     <header
       ref={headerRef}
-      className="fixed top-0 left-0 right-0 z-50"
-      style={{ willChange: 'backdrop-filter' }}
+      className="fixed top-0 left-0 right-0 z-50 bg-[#f4f4f5]"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="cursor-pointer flex items-center gap-2 group">
+          <Link
+            href="/"
+            className="cursor-pointer flex items-center gap-2 group"
+          >
             <Image
               src="/png.png"
               alt="Crestwave"
@@ -103,16 +103,16 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   className={`relative px-4 py-2 text-sm font-medium transition-colors duration-300 rounded-lg group ${
-                    active
-                      ? 'text-[#00C8F8]'
-                      : 'text-[#9CA3AF] hover:text-white'
+                    active ? 'text-[#00C8F8]' : 'text-[#69696a] '
                   }`}
                 >
                   {link.label}
                   {/* Hover underline */}
                   <span
                     className={`absolute bottom-0 left-1/2 -translate-x-1/2 h-[2px] bg-[#00C8F8] transition-all duration-300 rounded-full ${
-                      active ? 'w-5 opacity-100' : 'w-0 opacity-0 group-hover:w-5 group-hover:opacity-100'
+                      active
+                        ? 'w-5 opacity-100'
+                        : 'w-0 opacity-0 group-hover:w-5 group-hover:opacity-100'
                     }`}
                   />
                 </Link>
@@ -122,10 +122,17 @@ export default function Navbar() {
             {/* CTA button */}
             <Link
               href="/contact"
-              className="ml-4 inline-flex items-center gap-2 bg-white hover:bg-[#e5e5e5] text-[#000000] font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#00C8F8]/10 hover:-translate-y-[1px]"
+              className="ml-4 inline-flex items-center gap-2 bg-white hover:bg-[#e5e5e5] border border-[#69696a] text-[#000000] font-semibold px-4 py-2 rounded-lg text-sm transition-all duration-300 hover:shadow-lg hover:shadow-[#00C8F8]/10 hover:-translate-y-[1px]"
             >
               Start a Project
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+              <svg
+                width="14"
+                height="14"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+              >
                 <path d="M5 12h14M12 5l7 7-7 7" />
               </svg>
             </Link>
