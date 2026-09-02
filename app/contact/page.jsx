@@ -5,6 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
+import { faqs } from '../data/faqs'
+
+const FAQ_STEP = 6
 
 /* ─── Sydney map SVG ─── */
 function SydneyMap() {
@@ -150,24 +153,6 @@ function SydneyMap() {
 }
 
 /* ─── FAQ accordion ─── */
-const faqs = [
-  {
-    q: 'How quickly will you respond?',
-    a: 'We aim to respond to all enquiries within 1 business day. For urgent matters, please call us directly on +61 428 895 741.',
-  },
-  {
-    q: 'Can I book a call before sending a brief?',
-    a: "Absolutely. We're happy to have an initial conversation to understand your needs before you commit to anything. Use the Book a Time button to schedule a free 30-minute call.",
-  },
-  {
-    q: 'Do you work with businesses outside Sydney?',
-    a: 'Yes — we work with clients across Australia. Most of our work is done remotely with regular video calls. We can also travel for larger projects if needed.',
-  },
-  {
-    q: 'What should I include in my enquiry?',
-    a: "The more context the better: your goals, current situation, rough timeline, and budget range all help us prepare a relevant response. But even a short message works — we'll ask the right questions.",
-  },
-]
 
 function FAQItem({ faq, isOpen, onToggle }) {
   return (
@@ -213,6 +198,7 @@ function FAQItem({ faq, isOpen, onToggle }) {
 /* ─── Page ─── */
 export default function ContactPage() {
   const [openFaq, setOpenFaq] = useState(null)
+  const [faqCount, setFaqCount] = useState(FAQ_STEP)
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -953,13 +939,13 @@ export default function ContactPage() {
           </motion.div>
 
           <div className="space-y-3">
-            {faqs.map((faq, i) => (
+            {faqs.slice(0, faqCount).map((faq, i) => (
               <motion.div
-                key={i}
+                key={faq.q}
                 initial={{ opacity: 0, y: 12 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.35, delay: i * 0.07 }}
+                transition={{ duration: 0.35, delay: (i % FAQ_STEP) * 0.07 }}
               >
                 <FAQItem
                   faq={faq}
@@ -969,6 +955,34 @@ export default function ContactPage() {
               </motion.div>
             ))}
           </div>
+
+          {faqCount < faqs.length && (
+            <div className="mt-8 flex flex-col items-center gap-3">
+              <button
+                onClick={() =>
+                  setFaqCount((count) =>
+                    Math.min(count + FAQ_STEP, faqs.length),
+                  )
+                }
+                className="cursor-pointer inline-flex items-center gap-2 px-8 py-3.5 rounded-xl border border-[#333333] bg-[#000000] text-[#D1D5DB] font-semibold text-sm hover:bg-[#1A1A1A] hover:border-[#444444] transition-all"
+              >
+                Load More Questions
+                <svg
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                >
+                  <polyline points="6 9 12 15 18 9" />
+                </svg>
+              </button>
+              <p className="text-xs text-[#6B7280]">
+                Showing {faqCount} of {faqs.length}
+              </p>
+            </div>
+          )}
         </div>
       </section>
 
