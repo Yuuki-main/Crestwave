@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -462,8 +463,15 @@ export default function Home() {
               </div>
             </div>
 
-            {/* Hero image slot — artwork to be added */}
-            <div className="self-stretch w-full h-full min-h-72 sm:min-h-96 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/HomePageHero.png"
+                alt="Crestwave digital solutions"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -480,10 +488,7 @@ export default function Home() {
                 key={industry.label}
                 className="flex items-center gap-2.5 text-sm text-[#D1D5DB]"
               >
-                <Icon
-                  name={industry.icon}
-                  className="w-4 h-4 text-[#9CA3AF]"
-                />
+                <Icon name={industry.icon} className="w-4 h-4 text-[#9CA3AF]" />
                 {industry.label}
               </div>
             ))}
@@ -499,8 +504,7 @@ export default function Home() {
               <Eyebrow>Our Story</Eyebrow>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-white leading-tight mb-5">
                 More than
-                <br />
-                a service provider.
+                <br />a service provider.
               </h2>
               <p className="text-sm text-[#9CA3AF] leading-relaxed mb-6">
                 We&apos;re a team of builders, problem-solvers and long-term

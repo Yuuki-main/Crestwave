@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -29,6 +30,7 @@ const projects = [
     description:
       'Solar and battery storage site for a Melbourne installer, built around free-consultation enquiries and $0-upfront system offers.',
     url: 'https://somsenergy.com.au/',
+    image: '/Projects/soms.png',
   },
   {
     title: 'Aussie Energreen',
@@ -36,6 +38,7 @@ const projects = [
     description:
       'VEU-accredited provider site covering solar, batteries, heat pumps and air conditioning across Victoria.',
     url: 'https://aussieenergreen.com.au/',
+    image: '/Projects/aussie.png',
   },
   {
     title: 'Moving Easy',
@@ -43,6 +46,7 @@ const projects = [
     description:
       'Moving marketplace connecting New Zealand customers with verified carriers, returning comparable quotes in minutes.',
     url: 'https://movingeasy.co.nz/',
+    image: '/Projects/moving_easy.png',
   },
   {
     title: 'Averon Electricals',
@@ -50,6 +54,7 @@ const projects = [
     description:
       'Adelaide solar and electrical site with fixed transparent pricing, rebate guidance and 40+ supported equipment brands.',
     url: 'https://averon-web.vercel.app/',
+    image: '/Projects/averon.png',
   },
   {
     title: 'Nexon Energy',
@@ -57,6 +62,7 @@ const projects = [
     description:
       'Product catalogue for a solar distributor — panels, hybrid inverters and LiFePO4 storage, with a system sizing calculator.',
     url: 'https://www.nexonandco.com.au/',
+    image: '/Projects/nexon.png',
   },
   {
     title: 'CrestWave Energy',
@@ -64,6 +70,7 @@ const projects = [
     description:
       'Solar and energy-efficiency site for Victorian homes and businesses, with CEC-approved installs and warranty-led messaging.',
     url: 'https://www.crestwaveenergy.com.au/',
+    image: '/Projects/crest_energy.png',
   },
 ]
 
@@ -202,8 +209,14 @@ function ProjectCard({ project, index }) {
       transition={{ duration: 0.35, delay: index * 0.04 }}
       className="bg-[#000000] border border-[#222222] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-[#333333] transition-all duration-300 group"
     >
-      {/* Card image slot — artwork to be added */}
-      <div className="h-48 rounded-t-3xl bg-[#1A1A1A] border-b border-[#333333]" />
+      <div className="relative h-48 rounded-t-3xl overflow-hidden border-b border-[#333333]">
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover object-center"
+        />
+      </div>
 
       <div className="p-6">
         <span className="inline-flex items-center px-2.5 py-1 rounded-lg bg-[#1A1A1A] text-[#D1D5DB] text-[11px] font-bold uppercase tracking-wide border border-[#222222] mb-3">
@@ -240,7 +253,14 @@ function MobileProjectCard({ project, index }) {
       className="bg-[#000000] border border-[#222222] rounded-2xl p-3 shadow-sm"
     >
       <div className="grid grid-cols-[112px_1fr] gap-4">
-        <div className="h-24 rounded-xl bg-[#1A1A1A] border border-[#333333]" />
+        <div className="relative h-24 rounded-xl overflow-hidden border border-[#333333]">
+          <Image
+            src={project.image}
+            alt={project.title}
+            fill
+            className="object-cover object-center"
+          />
+        </div>
 
         <div className="min-w-0">
           <span className="inline-flex px-2 py-0.5 rounded-md bg-[#1A1A1A] text-[#D1D5DB] text-[9px] font-bold uppercase mb-1.5">
@@ -347,8 +367,15 @@ export default function WorkPage() {
               </p>
             </div>
 
-            {/* Hero image slot — artwork to be added */}
-            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/Our_Work.png"
+                alt="Crestwave work"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -1,6 +1,7 @@
 'use client'
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import Navbar from '../components/Navbar'
@@ -298,8 +299,15 @@ export default function ContactPage() {
                 best next step.
               </p>
             </div>
-            {/* Hero image slot — artwork to be added */}
-            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/Contact_us.png"
+                alt="Crestwave contact"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function BlogCard({ post, index = 0 }) {
@@ -12,8 +13,18 @@ export default function BlogCard({ post, index = 0 }) {
       transition={{ duration: 0.35, delay: (index % 9) * 0.04 }}
       className="flex flex-col bg-[#000000] border border-[#222222] rounded-3xl overflow-hidden shadow-sm hover:shadow-lg hover:border-[#333333] transition-all duration-300 group"
     >
-      {/* Card image slot — artwork to be added */}
-      <div className="h-48 rounded-t-3xl bg-[#1A1A1A] border-b border-[#333333]" />
+      {post.image ? (
+        <div className="relative h-48 rounded-t-3xl overflow-hidden border-b border-[#333333]">
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="object-cover object-center"
+          />
+        </div>
+      ) : (
+        <div className="h-48 rounded-t-3xl bg-[#1A1A1A] border-b border-[#333333]" />
+      )}
 
       <div className="flex flex-col flex-1 p-6">
         <span className="inline-flex self-start items-center px-2.5 py-1 rounded-lg bg-[#1A1A1A] text-[#D1D5DB] text-[11px] font-bold uppercase tracking-wide border border-[#222222] mb-3">

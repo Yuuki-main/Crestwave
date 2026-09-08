@@ -19,6 +19,7 @@ export const posts = [
   {
     slug: 'signs-your-website-needs-a-redesign',
     category: 'Website Development',
+    image: '/BLOGS_WEB_DEV/1.png',
     title: '10 Signs Your Business Website Needs a Redesign in 2026',
     purpose:
       'Help business owners identify when an outdated website is losing trust, traffic or conversions.',
@@ -44,6 +45,7 @@ export const posts = [
   {
     slug: 'custom-website-vs-template-website',
     category: 'Website Development',
+    image: '/BLOGS_WEB_DEV/2.png',
     title: 'Custom Website vs Template Website: Which Is Better?',
     purpose:
       'Explain the practical differences without unfairly dismissing either option.',
@@ -68,6 +70,7 @@ export const posts = [
   {
     slug: 'how-a-professional-website-generates-leads',
     category: 'Website Development',
+    image: '/BLOGS_WEB_DEV/3.png',
     title: 'How a Professional Website Can Generate More Leads',
     purpose:
       'Position a website as a sales and lead-generation asset, not only an online brochure.',
@@ -93,6 +96,7 @@ export const posts = [
   {
     slug: 'website-development-cost-in-australia',
     category: 'Website Development',
+    image: '/BLOGS_WEB_DEV/4.png',
     title: 'Website Development Cost in Australia',
     purpose:
       'Target high commercial-intent searches while explaining why costs vary.',
@@ -116,6 +120,7 @@ export const posts = [
   {
     slug: 'must-have-features-australian-business-website',
     category: 'Website Development',
+    image: '/BLOGS_WEB_DEV/5.png',
     title: '7 Must-Have Features Every Australian Business Website Needs',
     purpose: 'Educate businesses about core website quality requirements.',
     keyPoints: [
@@ -136,6 +141,7 @@ export const posts = [
   {
     slug: 'what-is-a-custom-crm',
     category: 'Custom CRM',
+    image: '/CUSTOM_CRM/1.png',
     title: 'What Is a Custom CRM and Does Your Business Need One?',
     purpose:
       'Explain CRM in simple business language and show when a custom system becomes useful.',
@@ -157,6 +163,7 @@ export const posts = [
   {
     slug: 'custom-crm-vs-off-the-shelf-crm',
     category: 'Custom CRM',
+    image: '/CUSTOM_CRM/2.png',
     title: 'Custom CRM vs Off-the-Shelf CRM',
     purpose:
       'Help businesses choose the right CRM model based on their requirements.',
@@ -180,6 +187,7 @@ export const posts = [
   {
     slug: 'business-processes-you-can-automate-with-crm',
     category: 'Custom CRM',
+    image: '/CUSTOM_CRM/3.png',
     title: '10 Business Processes You Can Automate With CRM',
     purpose: 'Demonstrate practical automation opportunities.',
     keyPoints: [
@@ -204,6 +212,7 @@ export const posts = [
   {
     slug: 'crm-software-improve-sales-team-performance',
     category: 'Custom CRM',
+    image: '/CUSTOM_CRM/4.png',
     title: 'How CRM Software Can Improve Sales Team Performance',
     purpose: 'Show managers how CRM improves visibility and accountability.',
     keyPoints: [
@@ -223,6 +232,7 @@ export const posts = [
   {
     slug: 'how-to-choose-the-right-crm-2026',
     category: 'Custom CRM',
+    image: '/CUSTOM_CRM/5.png',
     title: 'How to Choose the Right CRM in 2026',
     purpose: 'Provide a decision checklist for CRM buyers.',
     keyPoints: [
@@ -379,6 +389,7 @@ export const posts = [
   {
     slug: 'seo-for-australian-businesses-beginners-guide',
     category: 'SEO',
+    image: '/SEO/1.png',
     title: "SEO for Australian Businesses: Complete Beginner's Guide",
     purpose: 'Introduce SEO fundamentals to business owners.',
     keyPoints: [
@@ -397,6 +408,7 @@ export const posts = [
   {
     slug: 'local-seo-how-customers-near-you-find-your-business',
     category: 'SEO',
+    image: '/SEO/2.png',
     title: 'Local SEO: How Customers Near You Find Your Business',
     purpose: 'Explain the local-search ecosystem.',
     keyPoints: [
@@ -418,6 +430,7 @@ export const posts = [
   {
     slug: 'seo-vs-google-ads',
     category: 'SEO',
+    image: '/SEO/3.png',
     title: 'SEO vs Google Ads: Which Is Better?',
     purpose: 'Compare two major acquisition channels fairly.',
     keyPoints: [
@@ -435,6 +448,7 @@ export const posts = [
   {
     slug: 'seo-mistakes-hurting-your-rankings',
     category: 'SEO',
+    image: '/SEO/4.png',
     title: '10 SEO Mistakes Hurting Your Rankings',
     purpose: 'Help businesses identify common SEO problems.',
     keyPoints: [
@@ -459,6 +473,7 @@ export const posts = [
   {
     slug: 'how-long-does-seo-take-to-work',
     category: 'SEO',
+    image: '/SEO/5.png',
     title: 'How Long Does SEO Take to Work?',
     purpose: 'Set realistic expectations without ranking guarantees.',
     keyPoints: [
@@ -479,6 +494,7 @@ export const posts = [
   {
     slug: 'digital-marketing-strategies-2026',
     category: 'Digital Marketing',
+    image: '/Digi_Marketing/1.png',
     title: 'Digital Marketing Strategies Australian Businesses Should Use in 2026',
     purpose: 'Give businesses a connected channel strategy.',
     keyPoints: [
@@ -499,6 +515,7 @@ export const posts = [
   {
     slug: 'google-ads-vs-facebook-ads-lead-generation',
     category: 'Digital Marketing',
+    image: '/Digi_Marketing/2.png',
     title: 'Google Ads vs Facebook Ads for Lead Generation',
     purpose:
       'Help businesses understand intent-based vs audience-based advertising.',
@@ -520,6 +537,7 @@ export const posts = [
   {
     slug: 'reduce-cost-per-lead-without-sacrificing-quality',
     category: 'Digital Marketing',
+    image: '/Digi_Marketing/3.png',
     title: 'How to Reduce Cost Per Lead Without Sacrificing Quality',
     purpose: 'Focus on campaign efficiency and lead quality.',
     keyPoints: [
@@ -539,6 +557,7 @@ export const posts = [
   {
     slug: 'why-your-marketing-generates-leads-but-not-sales',
     category: 'Digital Marketing',
+    image: '/Digi_Marketing/4.png',
     title: 'Why Your Marketing Generates Leads But Not Sales',
     purpose:
       'Explain that conversion problems can occur after lead generation.',
@@ -581,6 +600,7 @@ export const posts = [
   {
     slug: 'why-social-media-management-matters',
     category: 'Social Media',
+    image: '/Social_Media/1.png',
     title: 'Why Social Media Management Matters for Growing Businesses',
     purpose: 'Explain the business value of consistent social presence.',
     keyPoints: [
@@ -599,6 +619,7 @@ export const posts = [
   {
     slug: 'facebook-vs-instagram-vs-linkedin',
     category: 'Social Media',
+    image: '/Social_Media/2.png',
     title:
       'Facebook vs Instagram vs LinkedIn: Where Should Your Business Focus?',
     purpose: 'Help businesses select platforms based on audience and content.',
@@ -616,6 +637,7 @@ export const posts = [
   {
     slug: 'how-often-should-your-business-post',
     category: 'Social Media',
+    image: '/Social_Media/3.png',
     title: 'How Often Should Your Business Post on Social Media?',
     purpose:
       'Replace arbitrary frequency advice with a quality-and-consistency framework.',
@@ -633,6 +655,7 @@ export const posts = [
   {
     slug: 'social-media-content-ideas-that-generate-leads',
     category: 'Social Media',
+    image: '/Social_Media/4.png',
     title: '10 Social Media Content Ideas That Can Help Generate Leads',
     purpose: 'Provide actionable content ideas.',
     keyPoints: [
@@ -653,6 +676,7 @@ export const posts = [
   {
     slug: 'social-media-management-is-more-than-posting',
     category: 'Social Media',
+    image: '/Social_Media/5.png',
     title: 'Why Professional Social Media Management Is More Than Posting',
     purpose: 'Explain the full management process.',
     keyPoints: [
@@ -672,6 +696,7 @@ export const posts = [
   {
     slug: 'optimise-google-business-profile',
     category: 'Google Business',
+    image: '/Google_busines/1.png',
     title:
       'How to Optimise Your Google Business Profile for More Local Visibility',
     purpose: 'Teach profile optimisation fundamentals.',
@@ -693,6 +718,7 @@ export const posts = [
   {
     slug: 'why-google-reviews-matter',
     category: 'Google Business',
+    image: '/Google_busines/2.png',
     title: 'Why Google Reviews Matter for Local Business Growth',
     purpose:
       'Explain trust and local visibility while promoting ethical review collection.',
@@ -709,6 +735,7 @@ export const posts = [
   {
     slug: 'google-business-profile-mistakes-to-avoid',
     category: 'Google Business',
+    image: '/Google_busines/3.png',
     title: '10 Google Business Profile Mistakes Businesses Should Avoid',
     purpose: 'Create a practical audit checklist.',
     keyPoints: [
@@ -726,6 +753,7 @@ export const posts = [
   {
     slug: 'google-maps-seo-local-visibility',
     category: 'Google Business',
+    image: '/Google_busines/4.png',
     title: 'Google Maps SEO: How to Improve Your Local Business Visibility',
     purpose: 'Explain local visibility factors without guarantees.',
     keyPoints: [
@@ -742,6 +770,7 @@ export const posts = [
   {
     slug: 'local-seo-and-google-business-profile-together',
     category: 'Google Business',
+    image: '/Google_busines/5.png',
     title: 'How Local SEO and Google Business Profile Work Together',
     purpose: 'Show the complete local-search ecosystem.',
     keyPoints: [
@@ -760,6 +789,7 @@ export const posts = [
   {
     slug: 'how-ai-automation-saves-hours-every-week',
     category: 'AI & Automation',
+    image: '/AI_Automation/1.png',
     title: 'How AI Automation Can Save Your Business Hours Every Week',
     purpose:
       'Show practical AI-assisted workflows while keeping human oversight.',
@@ -778,6 +808,7 @@ export const posts = [
   {
     slug: 'business-tasks-to-automate-in-2026',
     category: 'AI & Automation',
+    image: '/AI_Automation/2.png',
     title: '10 Business Tasks You Should Consider Automating in 2026',
     purpose: 'Give businesses an automation checklist.',
     keyPoints: [
@@ -798,6 +829,7 @@ export const posts = [
   {
     slug: 'how-ai-and-crm-work-together',
     category: 'AI & Automation',
+    image: '/AI_Automation/3.png',
     title: 'How AI and CRM Can Work Together to Improve Sales',
     purpose: 'Explain AI as an enhancement layer for CRM workflows.',
     keyPoints: [
@@ -815,6 +847,7 @@ export const posts = [
   {
     slug: 'ai-sales-assistants',
     category: 'AI & Automation',
+    image: '/AI_Automation/4.png',
     title: 'AI Sales Assistants: How They Can Support Your Sales Team',
     purpose: 'Explain useful internal sales-assistance scenarios.',
     keyPoints: [
@@ -832,6 +865,7 @@ export const posts = [
   {
     slug: 'manual-follow-ups-to-automation',
     category: 'AI & Automation',
+    image: '/AI_Automation/5.png',
     title:
       'From Manual Follow-Ups to Automation: Building a Smarter Sales Process',
     purpose: 'Compare manual and automated follow-up workflows.',
@@ -852,6 +886,7 @@ export const posts = [
   {
     slug: 'lead-generation-system-that-works-24-7',
     category: 'Lead Generation',
+    image: '/Leads_Generation/1.png',
     title: 'How to Build a Lead Generation System That Works 24/7',
     purpose: 'Explain always-on lead capture and organised routing.',
     keyPoints: [
@@ -869,6 +904,7 @@ export const posts = [
   {
     slug: 'why-businesses-lose-leads',
     category: 'Lead Generation',
+    image: '/Leads_Generation/2.png',
     title: 'Why Businesses Lose Leads and How Automation Can Fix It',
     purpose: 'Show operational causes of lead leakage.',
     keyPoints: [
@@ -886,6 +922,7 @@ export const posts = [
   {
     slug: 'automated-follow-ups-increase-conversion',
     category: 'Lead Generation',
+    image: '/Leads_Generation/3.png',
     title:
       'How Automated Follow-Ups Can Increase Lead Conversion Opportunities',
     purpose: 'Explain responsible follow-up sequences.',
@@ -903,6 +940,7 @@ export const posts = [
   {
     slug: 'lead-generation-vs-lead-conversion',
     category: 'Lead Generation',
+    image: '/Leads_Generation/4.png',
     title: 'Lead Generation vs Lead Conversion: Why Your Business Needs Both',
     purpose: 'Clarify marketing vs sales responsibilities and shared metrics.',
     keyPoints: [
@@ -920,6 +958,7 @@ export const posts = [
   {
     slug: 'automatically-distribute-leads-across-sales-team',
     category: 'Lead Generation',
+    image: '/Leads_Generation/5.png',
     title: 'How to Automatically Distribute Leads Across Your Sales Team',
     purpose: 'Explain advanced lead-routing models.',
     keyPoints: [
@@ -939,6 +978,7 @@ export const posts = [
   {
     slug: 'what-is-digital-transformation-for-smes',
     category: 'Digital Transformation',
+    image: '/Digital-Transformation/1.png',
     title: 'What Is Digital Transformation and Why Does It Matter for SMEs?',
     purpose:
       'Explain digital transformation as connected process improvement, not simply buying software.',
@@ -957,6 +997,7 @@ export const posts = [
   {
     slug: 'website-crm-marketing-connected-ecosystem',
     category: 'Digital Transformation',
+    image: '/Digital-Transformation/2.png',
     title:
       'Website + CRM + Marketing: How to Build a Connected Digital Ecosystem',
     purpose: 'Position Crestwave services as an integrated growth stack.',
@@ -977,6 +1018,7 @@ export const posts = [
   {
     slug: 'manual-processes-to-replace-with-technology',
     category: 'Digital Transformation',
+    image: '/Digital-Transformation/3.png',
     title: '7 Manual Business Processes You Should Replace With Technology',
     purpose: 'Show practical digitisation opportunities.',
     keyPoints: [
@@ -994,6 +1036,7 @@ export const posts = [
   {
     slug: 'centralise-sales-operations-customer-data',
     category: 'Digital Transformation',
+    image: '/Digital-Transformation/4.png',
     title:
       'How Growing Businesses Can Centralise Sales, Operations and Customer Data',
     purpose:
@@ -1012,6 +1055,7 @@ export const posts = [
   {
     slug: 'future-of-business-automation',
     category: 'Digital Transformation',
+    image: '/Digital-Transformation/5.png',
     title:
       'The Future of Business Automation: CRM, AI and Integrated Digital Systems',
     purpose: 'Create a forward-looking authority article.',

@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState, useRef, useEffect } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
@@ -187,8 +188,15 @@ export default function BlogsPage() {
               </p>
             </div>
 
-            {/* Hero image slot — artwork to be added */}
-            <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/BLOGS_HERO.png"
+                alt="Crestwave blogs"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
           </div>
         </div>
       </section>

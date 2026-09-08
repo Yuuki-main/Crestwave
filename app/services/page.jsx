@@ -1,6 +1,7 @@
 'use client'
 
 import { useMemo, useState } from 'react'
+import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
@@ -44,6 +45,7 @@ const featured = [
     price: '$1,500',
     cta: 'Build My Website',
     tint: 'bg-white',
+    image: '/Service_page/1.png',
   },
   {
     number: '02',
@@ -65,6 +67,7 @@ const featured = [
     price: '$3,000',
     cta: 'Build My CRM',
     tint: 'bg-[#EFF6FF]',
+    image: '/Service_page/2.png',
   },
 ]
 
@@ -411,8 +414,14 @@ function FeaturedRow({ service }) {
           ))}
         </ul>
 
-        {/* Image slot — artwork to be added */}
-        <div className="min-h-56 rounded-2xl bg-[#E2E8F0] border border-[#CBD5E1]" />
+        <div className="relative min-h-56 rounded-2xl overflow-hidden border border-[#CBD5E1]">
+          <Image
+            src={service.image}
+            alt={service.title}
+            fill
+            className="object-cover object-center"
+          />
+        </div>
       </div>
     </motion.section>
   )
@@ -640,7 +649,15 @@ export default function ServicesPage() {
               </div>
 
               {/* Hero image slot — artwork to be added */}
-              <div className="self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative self-stretch w-full h-full min-h-64 sm:min-h-80 rounded-3xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/Our_Services.png"
+                alt="Crestwave services"
+                fill
+                priority
+                className="object-cover"
+              />
+            </div>
             </div>
           </div>
         </div>
