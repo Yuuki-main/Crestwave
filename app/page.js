@@ -747,8 +747,15 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Image slot — artwork to be added */}
-            <div className="min-h-56 lg:min-h-64 rounded-2xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative min-h-56 lg:min-h-64 rounded-2xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/why_choose_us.png"
+                alt="Crestwave team at work"
+                fill
+                sizes="(min-width: 1024px) 460px, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
 
             <AnimatePresence mode="wait">
               <motion.p
