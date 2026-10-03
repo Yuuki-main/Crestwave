@@ -513,8 +513,15 @@ export default function Home() {
               <TextLink href="/about">Learn more about us</TextLink>
             </div>
 
-            {/* Image slot — artwork to be added */}
-            <div className="min-h-56 lg:min-h-64 rounded-2xl bg-[#1A1A1A] border border-[#333333]" />
+            <div className="relative min-h-56 lg:min-h-64 self-stretch rounded-2xl overflow-hidden border border-[#333333]">
+              <Image
+                src="/home/service_provider.png"
+                alt="Crestwave team"
+                fill
+                sizes="(min-width: 1024px) 400px, 100vw"
+                className="object-cover object-center"
+              />
+            </div>
 
             <div className="space-y-5">
               {storyPoints.map((point) => (

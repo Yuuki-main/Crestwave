@@ -256,6 +256,7 @@ export const posts = [
   {
     slug: 'why-solar-battery-businesses-need-specialised-crm',
     category: 'Energy CRM',
+    image: '/CUSTOM_CRM/1.png',
     title: 'Why Australian Solar & Battery Businesses Need a Specialised CRM',
     purpose:
       'Differentiate energy-industry workflows from generic CRM requirements.',
@@ -284,6 +285,7 @@ export const posts = [
   {
     slug: 'lead-to-installation-energy-customer-journey',
     category: 'Energy CRM',
+    image: '/CUSTOM_CRM/2.png',
     title:
       'From Lead to Installation: Managing the Complete Energy Customer Journey',
     purpose:
@@ -314,6 +316,7 @@ export const posts = [
   {
     slug: 'solar-battery-aircon-heat-pump-one-crm',
     category: 'Energy CRM',
+    image: '/CUSTOM_CRM/3.png',
     title: 'Managing Solar, Battery, Aircon & Heat Pump in One CRM',
     purpose:
       'Show how multiple energy products can operate inside one central platform.',
@@ -338,6 +341,7 @@ export const posts = [
   {
     slug: 'automating-energy-quotes-pricing-rebate-workflows',
     category: 'Energy CRM',
+    image: '/CUSTOM_CRM/4.png',
     title: 'Automating Energy Quotes, Pricing and Rebate Workflows',
     purpose:
       'Explain how validated pricing and program rules can power CRM calculators.',
@@ -362,6 +366,7 @@ export const posts = [
   {
     slug: 'features-every-australian-energy-crm-should-have',
     category: 'Energy CRM',
+    image: '/CUSTOM_CRM/5.png',
     title: '10 Features Every Australian Energy CRM Should Have',
     purpose:
       'Create a high-value buyer checklist for energy retailers and installers.',
@@ -578,6 +583,7 @@ export const posts = [
   {
     slug: 'building-a-complete-lead-generation-funnel',
     category: 'Digital Marketing',
+    image: '/Digi_Marketing/1.png',
     title: 'Building a Complete Lead Generation Funnel',
     purpose: 'Explain every stage from traffic to sale and remarketing.',
     keyPoints: [

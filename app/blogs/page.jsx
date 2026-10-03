@@ -232,8 +232,16 @@ export default function BlogsPage() {
         <div className="max-w-7xl mx-auto">
           <div
             ref={ctaRef}
-            className="bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-[#333333] transition-colors duration-500"
+            className="relative overflow-hidden bg-[#1A1A1A] border border-[#222222] rounded-3xl px-8 py-10 flex flex-col md:flex-row items-center justify-between gap-6 hover:border-[#333333] transition-colors duration-500 *:relative"
           >
+            <Image
+              src="/Service_page/3.png"
+              alt=""
+              fill
+              sizes="(min-width: 1280px) 1216px, 100vw"
+              className="absolute! object-cover object-center pointer-events-none"
+            />
+            <div className="absolute! inset-0 bg-[#0A0A0A]/60 pointer-events-none" />
             <div className="flex items-start gap-5">
               <div className="w-14 h-14 bg-[#111111] rounded-2xl border border-[#222222] flex items-center justify-center text-[#00C8F8] shrink-0 shadow-sm">
                 <svg

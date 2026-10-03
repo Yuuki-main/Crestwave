@@ -724,7 +724,14 @@ export default function ServicesPage() {
       <section className="pb-16 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative overflow-hidden bg-[#0A0A0A] rounded-3xl px-8 sm:px-10 py-10">
-            <div className="absolute -bottom-20 -right-16 w-72 h-72 rounded-full bg-[#00AAFF]/20 blur-3xl pointer-events-none" />
+            <Image
+              src="/Service_page/3.png"
+              alt=""
+              fill
+              sizes="(min-width: 1280px) 1216px, 100vw"
+              className="object-cover object-center pointer-events-none"
+            />
+            <div className="absolute inset-0 bg-[#0A0A0A]/60 pointer-events-none" />
 
             <div className="relative grid lg:grid-cols-[1fr_auto] gap-8 items-center">
               <div>
